@@ -22,6 +22,7 @@
     <bean id="authorizeServiceFactory" class="org.dspace.authorize.factory.AuthorizeServiceFactoryImpl"/>
     <bean id="checkerServiceFactory" class="org.dspace.checker.factory.CheckerServiceFactoryImpl"/>
     <bean id="contentServiceFactory" class="org.dspace.content.factory.ContentServiceFactoryImpl"/>
+    <bean id="atmireContentServiceFactory" class="com.atmire.dspace.content.factory.AtmireContentServiceFactoryImpl"/>
     <bean id="coreServiceFactory" class="org.dspace.core.factory.CoreServiceFactoryImpl"/>
     <bean id="curateServiceFactory" class="org.dspace.curate.factory.CurateServiceFactoryImpl"/>
 
@@ -46,6 +47,8 @@
     <bean id="workflowServiceFactory" class="org.dspace.workflowbasic.factory.BasicWorkflowServiceFactoryImpl"/>
     <!--Configurable workflow services, uncomment to enable-->
     <!--<bean id="workflowServiceFactory" class="org.dspace.xmlworkflow.factory.XmlWorkflowServiceFactoryImpl"/>-->
+
+    <bean id="halServiceFactory" class="com.atmire.dspace.hal.factory.HALServiceFactoryImpl"/>
 
 
 

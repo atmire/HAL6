@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <packaging>war</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>atmire-hal-xmlui-api</artifactId>
+    <name>Atmire :: HAL Module :: XMLUI API</name>
+
+    <parent>
+        <artifactId>hal</artifactId>
+        <groupId>com.atmire</groupId>
+        <version>6.x-1.1.0</version>
+    </parent>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <attachClasses>true</attachClasses>
+                    <!-- In version 2.1-alpha-1, this was incorrectly named warSourceExcludes -->
+                    <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+                    <warSourceExcludes>WEB-INF/lib/*.jar</warSourceExcludes>
+                    <!-- Filter the web.xml (needed for IDE compatibility/debugging) -->
+                    <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.atmire</groupId>
+            <artifactId>atmire-api-hal</artifactId>
+            <version>6.x-1.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>xom</groupId>
+                    <artifactId>xom</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- DSpace XMLUI Webapp -->
+        <dependency>
+            <groupId>org.dspace</groupId>
+            <artifactId>dspace-xmlui</artifactId>
+            <type>war</type>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- DSpace XMLUI API -->
+        <dependency>
+            <groupId>org.dspace</groupId>
+            <artifactId>dspace-xmlui</artifactId>
+            <type>jar</type>
+            <classifier>classes</classifier>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+    </dependencies>
+</project>

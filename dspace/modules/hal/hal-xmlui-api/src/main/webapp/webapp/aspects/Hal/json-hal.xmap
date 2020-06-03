@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+    <map:components>
+        <map:readers>
+            <map:reader name="HalStructureLookup" src="com.atmire.dspace.soap.lookup.HalStructureLookup"/>
+        </map:readers>
+        <map:serializers>
+            <map:serializer name="text" src="org.apache.cocoon.serialization.TextSerializer" mime-type="text/plain"
+                            logger="sitemap.serializer.text"/>
+        </map:serializers>
+    </map:components>
+    <map:pipelines>
+        <map:pipeline>
+            <!-- Create a servlet that accepts lookups and redirects them to the right reader -->
+            <!-- Servlet is called in structureLookup.js - does soap calls and return json array -->
+            <map:match pattern="**">
+                <map:match pattern="structure">
+                    <map:read type="HalStructureLookup"/>
+                </map:match>
+                <!--<map:serialize type="text"/>-->
+                <map:serialize type="xml"/>
+            </map:match>
+        </map:pipeline>
+    </map:pipelines>
+</map:sitemap>

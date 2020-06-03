@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rule-categories xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="item-validation-rules.xsd">
+
+    <category ordinal="1" name="Deposit Requirements"
+              description="To comply with the deposit requirements, the item must have all the correct metadata and it must have been deposited as soon after the point of acceptance as possible.">
+        <rules>
+            <!-- For items with dc.type "Thèse": Item has at least one file attached (bitstream) -->
+            <rule type="countGreaterThan"
+                  description="A compliant deposit must have at least one file."
+                  resolutionHint="Please upload the author's accepted and final peerreviewed text to this item.">
+                <preconditions>
+                    <rule type="value">
+                        <field>dc.type</field>
+                        <fieldDescription>de dépôt</fieldDescription>
+                        <fieldValue>
+                            <value>Thèse</value>
+                            <description>Thèse</description>
+                        </fieldValue>
+                    </rule>
+                </preconditions>
+                <field>bitstream.count</field>
+                <fieldDescription>fichiers liés</fieldDescription>
+                <fieldValue>
+                    <value>0</value>
+                </fieldValue>
+            </rule>
+
+            <!-- If an item has at least one bitstream, all authors need to be attached to a structure. -->
+            <rule type="atLeastOneAuthorWithStructure"
+                  description="If the deposit contains at least one file, then all attached authors need to have an associated structure."
+                  resolutionHint="Veuillez vous assurer qu’au moins un auteur soit lié à un laboratoire.">
+                <preconditions>
+                    <rule type="countGreaterThan">
+                        <field>bitstream.count</field>
+                        <fieldDescription>fichiers liés</fieldDescription>
+                        <fieldValue>
+                            <value>0</value>
+                        </fieldValue>
+                    </rule>
+                </preconditions>
+                <field>dc.contributor.author</field>
+                <fieldDescription>laboratoires attachés</fieldDescription>
+                <fieldValue>
+                    <value>0</value>
+                </fieldValue>
+            </rule>
+            <rule type="embargoShorterThanMonths"
+                  description="L’embargo sur les fichiers liés ne peut excéder 24 mois"
+                  resolutionHint="L’embargo sur les fichiers liés ne peut excéder 24 mois">
+            <!--description="L'embargo sur les fichiers liés ne peut excéder 24 mois. Sans modification, les fichiers concernés ne seront pas envoyés vers HAL."-->
+            <!--resolutionHint="L'embargo sur les fichiers liés ne peut excéder 24 mois. Sans modification, les fichiers concernés ne seront pas envoyés vers HAL.">-->
+                <fieldDescription>embargo</fieldDescription>
+                <fieldValue>
+                    <value>24</value>
+                </fieldValue>
+            </rule>
+            <rule type="uniqueBitstreamNames"
+                  description="Il ne peut y avoir aucun doublon dans les noms des fichiers"
+                  resolutionHint="Il ne peut y avoir aucun doublon dans les noms des fichiers">
+                <fieldDescription>Il ne peut y avoir aucun doublon dans les noms des fichiers</fieldDescription>
+            </rule>
+        </rules>
+    </category>
+</rule-categories>

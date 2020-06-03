@@ -373,4 +373,11 @@
             <class>org.dspace.app.util.Version</class>
         </step>
     </command>
+    <command>
+        <name>update-hal</name>
+        <description>Send items with certain statuses to HAL</description>
+        <step>
+            <class>com.atmire.dspace.hal.script.SendNewVersionToHALScript</class>
+        </step>
+    </command>
 </commands>

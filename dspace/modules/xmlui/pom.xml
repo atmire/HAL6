@@ -256,6 +256,37 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.atmire</groupId>
+            <artifactId>atmire-hal-xmlui-api</artifactId>
+            <version>6.x-1.1.0</version>
+            <type>war</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.dspace</groupId>
+                    <artifactId>dspace-xmlui</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.atmire</groupId>
+            <artifactId>atmire-hal-xmlui-api</artifactId>
+            <version>6.x-1.1.0</version>
+            <type>jar</type>
+            <classifier>classes</classifier>
+            <exclusions>
+                <exclusion>
+                    <groupId>xom</groupId>
+                    <artifactId>xom</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.dspace</groupId>
+                    <artifactId>dspace-xmlui</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
     </dependencies>
 
 </project>

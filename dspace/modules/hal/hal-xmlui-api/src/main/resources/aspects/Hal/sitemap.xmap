@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+    <map:components>
+        <map:transformers>
+            <map:transformer name="Navigation" src="com.atmire.xmlui.aspect.hal.Navigation"/>
+        </map:transformers>
+        <map:actions>
+            <map:action name="ResendToHalAction" src="com.atmire.xmlui.aspect.hal.ResendToHALAction"/>
+        </map:actions>
+    </map:components>
+
+    <map:pipelines>
+        <map:pipeline>
+            <map:generate/>
+            <map:select type="AuthenticatedSelector">
+                <map:when test="eperson">
+                    <map:transform type="Navigation"/>
+
+                    <map:match pattern="hal/resend/*">
+                        <map:act type="ResendToHalAction">
+                            <map:parameter name="itemID" value="{1}"/>
+                        </map:act>
+                    </map:match>
+                    <map:match pattern="hal/resend-metadata/*">
+                        <map:act type="ResendToHalAction">
+                            <map:parameter name="itemID" value="{1}"/>
+                            <map:parameter name="metadataOnly" value="true"/>
+                        </map:act>
+                    </map:match>
+                </map:when>
+                <map:otherwise>
+                    <map:match pattern="hal/resend/*">
+                        <map:act type="StartAuthentication"/>
+                    </map:match>
+                    <map:match pattern="hal/resend-metadata/*">
+                        <map:act type="StartAuthentication"/>
+                    </map:match>
+                </map:otherwise>
+            </map:select>
+            <!-- Not a URL we care about, so just pass it on. -->
+            <map:serialize type="xml"/>
+
+        </map:pipeline>
+    </map:pipelines>
+</map:sitemap>

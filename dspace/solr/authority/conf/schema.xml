@@ -270,6 +270,16 @@
             </analyzer>
       </fieldType>
 
+    <fieldType name="keywordFilter" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+      <analyzer>
+        <!--Treats the entire field as a single token, regardless of its content-->
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+
+        <filter class="solr.LowerCaseFilterFactory" />
+        <filter class="solr.TrimFilterFactory" />
+      </analyzer>
+    </fieldType>
+
  </types>
 
 
@@ -296,10 +306,12 @@
    <!-- catchall field, containing all other searchable text fields (implemented
         via copyField further on in this schema  -->
      <field name="id" type="string" multiValued="false" indexed="true" stored="true" required="true"/>
-     <field name="field" type="string" multiValued="false" indexed="true" stored="true" required="true" />
+     <field name="field" type="string" multiValued="false" indexed="true" stored="true" required="false" />
      <field name="email" type="string" multiValued="true" indexed="true" stored="true" required="false"/>
      <field name="institution" type="string" multiValued="false" indexed="true" stored="true" required="false"/>
      <field name="value" type="text" multiValued="false" indexed="true" stored="true" required="false"/>
+     <field name="value_keyword" type="keywordFilter" multiValued="false" indexed="true" stored="true" required="false"/>
+     <copyField source="value" dest="value_keyword"/>
 
      <field name="orcid_id" type="string" multiValued="false" indexed="true" stored="true" required="false"/>
      <field name="first_name" type="text" multiValued="false" indexed="true" stored="true" required="false"/>
@@ -309,9 +321,15 @@
      <field name="all_labels" type="text" multiValued="true" indexed="true" stored="true" required="false"/>
      <copyField source="label_*" dest="all_labels"/>
      <field name="deleted" type="boolean" multiValued="false" indexed="true" stored="true" required="false"/>
+        <field name="verified" type="boolean" multiValued="false" indexed="true" stored="true" required="false"/>
      <field name="last_modified_date" type="date" indexed="true" stored="true" required="true" />
      <field name="creation_date" type="date" indexed="true" stored="true" required="true" />
      <field name="authority_type" type="string" multiValued="false" indexed="true" stored="true" required="false"/>
+     <field name="authority_category" type="string" multiValued="false" indexed="true" stored="true" required="true"/>
+     <field name="search_field" type="text" multiValued="true" indexed="true" stored="false" required="false"/>
+     <copyField dest="search_field" source="value"/>
+     <dynamicField name="legacy_id_*" type="string" multiValued="true" indexed="true" stored="true" required="false"/>
+
  </fields>
 
  <!-- Field to use to determine and enforce document uniqueness.

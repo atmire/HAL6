@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+    <context:annotation-config/>
+
+    <!-- If the "useGlobalHeaders is set to "true", the user will not be prompted for the export/hide options during the submission
+         If this header is set to false, make sure that the input-forms also contain the correct metadatafields (Already present in the input-forms, but commented out) -->
+    <bean id="useGlobalHeaders" class="java.lang.Boolean">
+        <constructor-arg type="java.lang.String" value="false"/>
+    </bean>
+
+    <bean class="com.atmire.dspace.hal.swordapp.client.HALSWORDClient" name="HALSWORDClient">
+        <property name="halExportArxiv" value="false"/>
+        <property name="halExportPMC" value="false"/>
+        <property name="halHideForRepec" value="true"/>
+        <property name="halHideInOAI" value="false"/>
+    </bean>
+
+    <bean id="halSwordXmlGenerator"
+          class="com.atmire.dspace.hal.xmlgenerating.HALSwordXmlGeneratorImpl">
+        <property name="bodyElementGenerators">
+            <list>
+                <ref bean="bodyElementGenerators"/>
+            </list>
+        </property>
+        <property name="backElementGenerators">
+            <list>
+                <ref bean="backElementGenerators"/>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="bodyElementGenerators"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="listBibl"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                    <property name="elementName" value="biblFull"/>
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <ref bean="titleStmt"/>
+                            <ref bean="editionStmt"/>
+                            <ref bean="publicationStmt"/>
+                            <ref bean="seriesStmt"/>
+                            <ref bean="notesStmt"/>
+                            <ref bean="sourceDesc"/>
+                            <ref bean="profileDesc"/>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+
+    </bean>
+    <bean id="backElementGenerators"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="listOrg"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="org"/>
+                    <property name="metadataField" value="dc.contributor.author"/>
+                    <property name="attributes">
+                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                            <property name="name" value="type"/>
+                            <property name="value" value="laboratory"/>
+                        </bean>
+                    </property>
+                </bean>
+            </list>
+        </property>
+        <property name="attributes">
+            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                <property name="name" value="type"/>
+                <property name="value" value="structures"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="titleStmt"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="titleStmt"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <!-- Label: Titre -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="title"/>
+                    <property name="metadataField" value="dc.title"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="xml:lang"/>
+                                <property name="value" value="fr"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Title -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="title"/>
+                    <property name="metadataField" value="dc.title.en"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="xml:lang"/>
+                                <property name="value" value="en"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Sous-Titre -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="title"/>
+                    <property name="metadataField" value=""/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="xml:lang"/>
+                                <property name="value" value="fr"/>
+                            </bean>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="sub"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Sub-Title -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="title"/>
+                    <property name="metadataField" value=""/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="xml:lang"/>
+                                <property name="value" value="en"/>
+                            </bean>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="sub"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Auteur -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueAuthorGenerator">
+                    <property name="elementName" value="author"/>
+                    <property name="metadataField" value="dc.contributor.author"/>
+                </bean>
+
+                <!-- Financement -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="funder"/>
+                    <property name="metadataField" value="dc.description.sponsorship"/>
+                </bean>
+                <!-- Projet(s) ANR -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="funder"/>
+                    <property name="metadataField" value="hal.funder.anr"/>
+                    <property name="attributes">
+                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.authority.CategorySpecificAuthorityAttributeGenerator">
+                            <property name="name" value="ref"/>
+                            <property name="prefix" value="#projanr-"/>
+                        </bean>
+                    </property>
+                </bean>
+                <!-- Projet(s) Européen(s) -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="funder"/>
+                    <property name="metadataField" value="hal.funder.europe"/>
+                    <property name="attributes">
+                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.authority.CategorySpecificAuthorityAttributeGenerator">
+                            <property name="name" value="ref"/>
+                            <property name="prefix" value="#projeurop-"/>
+                        </bean>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="editionStmt"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="editionStmt"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                    <property name="elementName" value="edition"/>
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <!-- Label: Date de production/écriture -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
+                                <property name="elementName" value="date"/>
+                                <property name="metadataField" value=""/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="type"/>
+                                            <property name="value" value="whenWritten"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.bitstream.BitstreamInfoGenerator">
+                                <property name="elementName" value="ref"/>
+                                <property name="bitstreamRetrievalService" ref="bitstreamRetrievalServiceImpl"/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="subtype"/>
+                                            <property name="value" value="author"/>
+                                        </bean>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="type"/>
+                                            <property name="value" value="file"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                                <property name="bitstreamAttributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.bitstream.FileNameAttributeGenerator">
+                                            <property name="attributeName" value="target"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                                <property name="bodyElementGenerators">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.bitstream.BitstreamInfoGenerator">
+                                            <property name="elementName" value="date"/>
+                                            <property name="bitstreamAttributes">
+                                                <list>
+                                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.bitstream.EmbargoAttributeGenerator">
+                                                        <property name="attributeName" value="notBefore"/>
+                                                    </bean>
+                                                </list>
+                                            </property>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="com.atmire.dspace.hal.xmlgenerating.bitstream.BitstreamRetrievalServiceImpl"
+          id="bitstreamRetrievalServiceImpl"/>
+
+    <bean id="publicationStmt"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="publicationStmt"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <ref bean="availability"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="availability"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="availability"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <!-- Label: Licence -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:licence&fl=metaValue_s&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.CreativeCommonsAttributeGenerator">
+                    <property name="elementName" value="licence"/>
+                    <property name="metadataField" value="dc.rights.uri"/>
+                    <property name="attributeName" value="target"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="seriesStmt"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="seriesStmt"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <ref bean="idno"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="idno" class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+        <property name="elementName" value="idno"/>
+        <!--<property name="metadataField" value=""/>-->
+    </bean>
+
+    <bean id="notesStmt"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="notesStmt"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <!-- Label: Commentaire -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value="hal.comment"/>
+                    <property name="attributes">
+                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                            <property name="name" value="type"/>
+                            <property name="value" value="commentary"/>
+                        </bean>
+                    </property>
+                </bean>
+                <!-- Label: Description -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value="dc.description"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="description"/>
+                            </bean>
+
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Audience -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:audience&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.SingleValueMappedAttributeMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value="hal.audience"/>
+                    <property name="attributeName" value="n"/>
+                    <property name="attributes">
+                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                            <property name="name" value="type"/>
+                            <property name="value" value="audience"/>
+                        </bean>
+                    </property>
+                    <property name="map">
+                        <map>
+                            <entry key="Non spécifiée" value="1"/>
+                            <entry key="Internationale" value="2"/>
+                            <entry key="Nationale" value="3"/>
+                        </map>
+                    </property>
+                </bean>
+                <!-- Label: Invité -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:invitedCommunication&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMappedMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value="hal.invited"/>
+                    <property name="attributename" value="n"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="invited"/>
+                            </bean>
+                        </list>
+                    </property>
+                    <property name="map">
+                        <map>
+                            <entry key="oui" value="1"/>
+                            <entry key="non" value="0"/>
+                        </map>
+                    </property>
+                </bean>
+                <!-- Label: Vulgarisation -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:popularLevel&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMappedMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value="hal.popular"/>
+                    <property name="attributename" value="n"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="popular"/>
+                            </bean>
+                        </list>
+                    </property>
+                    <property name="map">
+                        <map>
+                            <entry key="oui" value="1"/>
+                            <entry key="non" value="0"/>
+                        </map>
+                    </property>
+                </bean>
+                <!-- Label: Comité de lecture -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:peerReviewing&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMappedMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value="hal.peerReviewed"/>
+                    <property name="attributename" value="n"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="peer"/>
+                            </bean>
+                        </list>
+                    </property>
+                    <property name="map">
+                        <map>
+                            <entry key="oui" value="1"/>
+                            <entry key="non" value="0"/>
+                        </map>
+                    </property>
+                </bean>
+                <!-- Label: Actes -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:proceedings&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMappedMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value="hal.proceedings"/>
+                    <property name="attributename" value="n"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="proceedings"/>
+                            </bean>
+                        </list>
+                    </property>
+                    <property name="map">
+                        <map>
+                            <entry key="oui" value="1"/>
+                            <entry key="non" value="0"/>
+                        </map>
+                    </property>
+                </bean>
+                <!-- Label: Type (for type REPORT) -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:reportType&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MultiValueMappedAttributeMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value="hal.type.rapport"/>
+                    <property name="attributes">
+                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                            <property name="name" value="type"/>
+                            <property name="value" value="report"/>
+                        </bean>
+                    </property>
+                    <property name="map">
+                        <map>
+                            <entry key="Autre" value="0"/>
+                            <entry key="Travaux universitaires" value="1"/>
+                            <entry key="Contrat" value="2"/>
+                            <entry key="Interne" value="3"/>
+                            <entry key="Rapport Technique" value="4"/>
+                            <entry key="Stage" value="5"/>
+                            <entry key="Rapport de recherche" value="6"/>
+                        </map>
+                    </property>
+                </bean>
+                <!-- Label: Type de la publication (for type OTHER) -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:otherType&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMappedMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value="hal.type.other"/>
+                    <property name="attributename" value="n"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="other"/>
+                            </bean>
+                        </list>
+                    </property>
+                    <property name="map">
+                        <map>
+                            <entry key="Article de blog" value="1"/>
+                            <entry key="Compte-rendu d'ouvrage ou Note de Lecture" value="2"/>
+                            <entry key="Notice d'encyclopédie ou de dictionnaire" value="3"/>
+                            <entry key="Traduction" value="4"/>
+                        </map>
+                    </property>
+                </bean>
+                <!-- Label: imageType -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:imageType&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMultiAttributeMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value=""/>
+                    <property name="attributename" value="n"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="image"/>
+                            </bean>
+
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: lectureType -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:lectureType&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMultiAttributeMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <property name="metadataField" value="hal.course.level"/>
+                    <property name="attributename" value="n"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="lecture"/>
+                            </bean>
+
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: List can be found here, depends on the value sent: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:pastel_thematique&fl=*&wt=xml-->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:pastel_thematique&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMultiAttributeMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <!--<property name="metadataField" value=""/>-->
+                    <property name="attributename" value="n"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="pastel_thematique"/>
+                            </bean>
+
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: List can be found here, depends on the value sent: https://api-preprod.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:pastel_library&fl=*&wt=xml -->
+                <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:pastel_library&fl=*&wt=xml -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMultiAttributeMetadataFieldGenerator">
+                    <property name="elementName" value="note"/>
+                    <!--<property name="metadataField" value=""/>-->
+                    <property name="attributename" value="n"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="pastel_library"/>
+                            </bean>
+
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="profileDesc"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="profileDesc"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <!-- Label: Langue du document -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                    <property name="elementName" value="langUsage"/>
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MetadataValueAsAttributeGenerator">
+                                <property name="elementName" value="language"/>
+                                <property name="metadataField" value="dc.language.iso"/>
+                                <property name="attributeName" value="ident"/>
+                                <property name="defaultValue" value="fr"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                    <property name="elementName" value="textClass"/>
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <!-- Label: Mots-clés -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                                <property name="elementName" value="keywords"/>
+                                <property name="bodyElementGenerators">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                            <property name="elementName" value="term"/>
+                                            <property name="metadataField" value="dc.subject"/>
+                                            <property name="attributes">
+                                                <list>
+                                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+
+                                                        <property name="name" value="xml:lang"/>
+                                                        <property name="value" value="fr"/>
+                                                    </bean>
+                                                </list>
+                                            </property>
+                                        </bean>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                            <property name="elementName" value="term"/>
+                                            <property name="metadataField" value="dc.subject.en"/>
+                                            <property name="attributes">
+                                                <list>
+                                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+
+                                                        <property name="name" value="xml:lang"/>
+                                                        <property name="value" value="en"/>
+                                                    </bean>
+                                                </list>
+                                            </property>
+                                        </bean>
+                                    </list>
+                                </property>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="scheme"/>
+                                            <property name="value" value="author"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+
+                            <!-- Label: Classification -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="classCode"/>
+                                <property name="metadataField" value="hal.classification"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="scheme"/>
+                                        <property name="value" value="classification"/>
+                                    </bean>
+                                </property>
+                            </bean>
+
+                            <!-- Label: Classification ACM 1998 -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="classCode"/>
+                                <property name="metadataField" value="hal.classification.acm"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="scheme"/>
+                                        <property name="value" value="acm"/>
+                                    </bean>
+                                </property>
+                            </bean>
+
+                            <!-- Label: Renseignez des mots-clés issus du MeSH -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="classCode"/>
+                                <property name="metadataField" value="dc.subject.mesh"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="scheme"/>
+                                        <property name="value" value="mesh"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                            <!-- Label: JEL -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="classCode"/>
+                                <property name="metadataField" value="dc.subject.jel"/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="scheme"/>
+                                            <property name="value" value="jel"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                            <!-- Label: Domaine -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MultiValueMappedAttributeMetadataFieldGenerator">
+                                <property name="elementName" value="classCode"/>
+                                <property name="metadataField" value="dc.subject.hal"/>
+                                <property name="attributeName" value="n"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="scheme"/>
+                                        <property name="value" value="halDomain"/>
+                                    </bean>
+                                </property>
+                                <property name="map">
+                                    <map>
+                                    </map>
+                                </property>
+                            </bean>
+                            <!-- Label: Type de document -->
+                            <bean id="classCodehalTypology"
+                                  class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MultiValueMappedAttributeMetadataFieldGenerator">
+                                <property name="elementName" value="classCode"/>
+                                <property name="metadataField" value="dc.type"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="scheme"/>
+                                        <property name="value" value="halTypology"/>
+                                    </bean>
+                                </property>
+                                <property name="map">
+                                    <map>
+                                        <entry key="Article dans une revue" value="ART"/>
+                                        <entry key="Communication dans un congrès" value="COMM"/>
+                                        <entry key="Poster" value="POSTER"/>
+                                        <entry key="Ouvrage (y compris édition critique et traduction)" value="OUV"/>
+                                        <entry key="Chapitre d'ouvrage" value="COUV"/>
+                                        <entry key="Direction d'ouvrage, Proceedings, Dossier" value="DOUV"/>
+                                        <entry key="Brevet" value="PATENT"/>
+                                        <entry key="Autre publication" value="OTHER"/>
+                                        <entry key="Pré-publication, Document de travail" value="UNDEFINED"/>
+                                        <entry key="Vidéo" value="VIDEO"/>
+                                        <entry key="Son" value="SON"/>
+                                        <entry key="Carte" value="MAP"/>
+                                        <entry key="Rapport" value="REPORT"/>
+                                        <entry key="Thèse" value="THESE"/>
+                                        <entry key="HDR" value="HDR"/>
+                                        <entry key="Cours" value="LECTURE"/>
+                                        <entry key="Image" value="IMG"/>
+                                        <entry key="Image" value="IMG"/>
+                                    </map>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+
+                <!-- Label: Résumé -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="abstract"/>
+                    <property name="metadataField" value="dc.description.abstract"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="xml:lang"/>
+                                <property name="value" value="fr"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Résumé -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="abstract"/>
+                    <property name="metadataField" value="dc.description.abstractEn"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="xml:lang"/>
+                                <property name="value" value="en"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                    <property name="elementName" value="particDesc"/>
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <!-- Label: Collaboration/Projet -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="org"/>
+                                <property name="metadataField" value="hal.consortium"/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="type"/>
+                                            <property name="value" value="consortium"/>
+                                        </bean>
+
+                                    </list>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+
+            </list>
+        </property>
+
+    </bean>
+    <bean id="sourceDesc"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="sourceDesc"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                    <property name="elementName" value="biblStruct"/>
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                                <property name="elementName" value="analytic"/>
+                                <property name="bodyElementGenerators">
+                                    <list>
+                                        <!-- Label: Titre-->
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                            <property name="elementName" value="title"/>
+                                            <property name="metadataField" value="dc.title"/>
+                                            <property name="attributes">
+                                                <list>
+                                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                                        <property name="name" value="xml:lang"/>
+                                                        <property name="value" value="fr"/>
+                                                    </bean>
+                                                </list>
+                                            </property>
+                                            <property name="shouldBeIngested" value="false"/>
+                                        </bean>
+                                        <!-- Label: Title-->
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                            <property name="elementName" value="title"/>
+                                            <property name="metadataField" value="dc.title.en"/>
+                                            <property name="attributes">
+                                                <list>
+                                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                                        <property name="name" value="xml:lang"/>
+                                                        <property name="value" value="en"/>
+                                                    </bean>
+                                                </list>
+                                            </property>
+                                            <property name="shouldBeIngested" value="false"/>
+                                        </bean>
+                                        <!-- Label: Sous-Titre -->
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                            <property name="elementName" value="title"/>
+                                            <property name="metadataField" value="dc.title.alternative"/>
+                                            <property name="attributes">
+                                                <list>
+                                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                                        <property name="name" value="type"/>
+                                                        <property name="value" value="sub"/>
+                                                    </bean>
+                                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                                        <property name="name" value="xml:lang"/>
+                                                        <property name="value" value="fr"/>
+                                                    </bean>
+                                                </list>
+                                            </property>
+                                        </bean>
+                                        <!-- Label: Sub-Title -->
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                            <property name="elementName" value="title"/>
+                                            <property name="metadataField" value=""/>
+                                            <property name="attributes">
+                                                <list>
+                                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                                        <property name="name" value="xml:lang"/>
+                                                        <property name="value" value="en"/>
+                                                    </bean>
+                                                </list>
+                                            </property>
+                                            <property name="shouldBeIngested" value="false"/>
+                                        </bean>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MetadataValueAsAttributeGenerator">
+                                            <property name="elementName" value="author"/>
+                                            <!--<property name="metadataField" value=""/>-->
+                                            <property name="attributeName" value="role"/>
+                                        </bean>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueAuthorGenerator">
+                                            <property name="elementName" value="author"/>
+                                            <property name="metadataField" value="dc.contributor.author"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                            <ref bean="monogr"/>
+                            <ref bean="series"/>
+
+
+                            <!-- Label: Identifiants (DOI)-->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="idno"/>
+                                <property name="metadataField" value=""/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="type"/>
+                                        <property name="value" value="doi"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                            <!-- Label: Identifiants (arXiv)-->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="idno"/>
+                                <property name="metadataField" value=""/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="type"/>
+                                        <property name="value" value="arxiv"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                            <!-- Label: Identifiants (PubMed)-->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="idno"/>
+                                <property name="metadataField" value=""/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="type"/>
+                                        <property name="value" value="pubmed"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                            <!-- Label: Identifiants (ADS)-->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="idno"/>
+                                <property name="metadataField" value=""/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="type"/>
+                                        <property name="value" value="ads"/>
+                                    </bean>
+                                </property>
+                            </bean>
+
+                            <!-- Label: Voir aussi -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="ref"/>
+                                <property name="metadataField" value="dc.identifier.other"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="type"/>
+                                        <property name="value" value="seeAlso"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                            <!-- Label: URL éditeur -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="ref"/>
+                                <property name="metadataField" value="hal.publisher.url"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="type"/>
+                                        <property name="value" value="publisher"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
+
+                </bean>
+                <ref bean="recordingStmt"/>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="recordingStmt"
+          class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="recordingStmt"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                    <property name="elementName" value="recording"/>
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <!-- Label: Durée -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
+                                <property name="elementName" value="measure"/>
+                                <property name="metadataField" value="hal.recording.duration"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="type"/>
+                                        <property name="value" value="duration"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                            <!-- Label: Fréquence -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
+                                <property name="elementName" value="measure"/>
+                                <property name="metadataField" value="hal.recording.frequence"/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="type"/>
+                                            <property name="value" value="frequence"/>
+                                        </bean>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="unit"/>
+                                            <property name="value" value="Hz"/>
+                                        </bean>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="quantity"/>
+                                            <property name="value" value="frequence"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="monogr" class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="monogr"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <!-- Label: Numéro National (NNT)-->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="idno"/>
+                    <property name="metadataField" value="hal.identifier.nnt"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="nnt"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: ISBN -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="idno"/>
+                    <property name="metadataField" value="dc.identifier.isbn"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="isbn"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: N° de brevet -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="idno"/>
+                    <property name="metadataField" value="hal.identifier.patent"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="patentNumber"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: N° du rapport -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="idno"/>
+                    <!--<property name="metadataField" value=""/>-->
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="reportNumber"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Référence interne -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="idno"/>
+                    <property name="metadataField" value="hal.identifier.local"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="localRef"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="idno"/>
+                    <property name="metadataField" value=""/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="halJournalId"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: ISSN -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="idno"/>
+                    <property name="metadataField" value="dc.identifier.issn"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="issn"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: EISSN -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="idno"/>
+                    <!--<property name="metadataField" value=""/>-->
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="eissn"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Nom de la revue -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.PreferentialHalSwordDataElementGenerator">
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueJournalAuthorityMetadataFieldGenerator">
+                                <property name="elementName" value="idno"/>
+                                <property name="metadataField" value="hal.journal.title"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="type"/>
+                                        <property name="value" value="halJournalId"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
+                                <property name="elementName" value="title"/>
+                                <property name="metadataField" value="hal.journal.title"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="level"/>
+                                        <property name="value" value="j"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Titre de l'ouvrage / Source (label "Source" only for type COMM) -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="title"/>
+                    <property name="metadataField" value="hal.source.title"/>
+                    <property name="attributes">
+                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                            <property name="name" value="level"/>
+                            <property name="value" value="m"/>
+                        </bean>
+                    </property>
+                </bean>
+
+
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                    <property name="elementName" value="meeting"/>
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <!-- Label: Titre du congrès -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="title"/>
+                                <property name="metadataField" value="hal.conference.name"/>
+                            </bean>
+                            <!-- Label: Date début congrès -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="date"/>
+                                <property name="metadataField" value="hal.conference.start"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="type"/>
+                                        <property name="value" value="start"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                            <!-- Label: Date fin congrès -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="date"/>
+                                <property name="metadataField" value="hal.conference.end"/>
+                                <property name="attributes">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                        <property name="name" value="type"/>
+                                        <property name="value" value="end"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                            <!-- Label: Ville (type not in PATENT,IMG,MAP,LECTURE) -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
+                                <property name="elementName" value="settlement"/>
+                                <property name="metadataField" value="hal.conference.city"/>
+                            </bean>
+                            <!-- Label: Pays (type not in PATENT,IMG,MAP,LECTURE) -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MetadataValueAsAttributeGenerator">
+                                <property name="elementName" value="country"/>
+                                <property name="metadataField" value="hal.conference.country"/>
+                                <property name="attributeName" value="key"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                    <property name="elementName" value="respStmt"/>
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <!-- Label: Organisateur du congrès -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
+                                <property name="elementName" value="resp"/>
+                                <property name="defaultValue" value="conferenceOrganizer"/>
+                                <property name="condition">
+                                    <bean class="com.atmire.dspace.hal.xmlgenerating.config.MetadataExistsCondition">
+                                        <property name="metadataField" value="hal.conference.organizer"/>
+                                    </bean>
+                                </property>
+                            </bean>
+                            <!-- Label: Organisateur du congrès -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="name"/>
+                                <property name="metadataField" value="hal.conference.organizer"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Ville (type in PATENT,IMG,MAP,LECTURE) -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="settlement"/>
+                    <!--<property name="metadataField" value=""/>-->
+                </bean>
+                <!-- Label: Pays (type in PATENT,IMG,MAP,LECTURE) -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MetadataValueAsAttributeGenerator">
+                    <property name="elementName" value="country"/>
+                    <property name="metadataField" value="hal.conference.country"/>
+                    <property name="attributeName" value="key"/>
+                </bean>
+                <!-- Label: Éditeur scientifique -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="editor"/>
+                    <property name="metadataField" value="hal.editor.scientific"/>
+                </bean>
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+                    <property name="elementName" value="imprint"/>
+                    <property name="bodyElementGenerators">
+                        <list>
+                            <!-- Label: Éditeur commercial -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="publisher"/>
+                                <property name="metadataField" value="dc.publisher"/>
+                            </bean>
+                            <!-- Label: Titre du volume -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="biblScope"/>
+                                <property name="metadataField" value="hal.volume.title"/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="unit"/>
+                                            <property name="value" value="serie"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                            <!-- Label: Volume -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="biblScope"/>
+                                <property name="metadataField" value="hal.volume"/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="unit"/>
+                                            <property name="value" value="volume"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                            <!-- Label: Numéro -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="biblScope"/>
+                                <property name="metadataField" value="hal.issue"/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="unit"/>
+                                            <property name="value" value="issue"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                            <!-- Label: Page/Identifiant -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="biblScope"/>
+                                <property name="metadataField" value="hal.page.number"/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="unit"/>
+                                            <property name="value" value="pp"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                            <!-- Label: Date de soutenance -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="date"/>
+                                <!--<property name="metadataField" value=""/>-->
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="type"/>
+                                            <property name="value" value="dateDefended"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                            <!-- Label: Date de publication électronique -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="date"/>
+                                <property name="metadataField" value="hal.date.electronic"/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="type"/>
+                                            <property name="value" value="dateEpub"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Organisme de délivrance -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="authority"/>
+                    <property name="metadataField" value="hal.institution"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="institution"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: École doctorale -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
+                    <property name="elementName" value="authority"/>
+                    <property name="metadataField" value="hal.school"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="school"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Directeur de thèse -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="authority"/>
+                    <property name="metadataField" value="hal.contributor.supervisor"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="supervisor"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+                <!-- Label: Membre du jury -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="authority"/>
+                    <property name="metadataField" value="hal.jury"/>
+                    <property name="attributes">
+                        <list>
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                <property name="name" value="type"/>
+                                <property name="value" value="jury"/>
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+
+            </list>
+        </property>
+    </bean>
+
+    <bean id="series" class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
+        <property name="elementName" value="series"/>
+        <property name="bodyElementGenerators">
+            <list>
+                <!-- Label: Directeur de collection -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="editor"/>
+                    <property name="metadataField" value="hal.editor.series"/>
+                </bean>
+                <!-- Label: Nom du cours -->
+                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                    <property name="elementName" value="title"/>
+                    <property name="metadataField" value="hal.course.name"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+
+
+
+
+    <util:map id="mappedFunctionAbbreviations" value-type="java.lang.String" key-type="java.lang.String">
+        <entry key="aut" value="Auteur"/>
+        <entry key="crp" value="Auteur correspondant"/>
+        <entry key="edt" value="Directeur de publication"/>
+        <entry key="sad" value="Directeur scientifique"/>
+        <entry key="ctb" value="Collaborateur"/>
+        <entry key="wam" value="Auteur du matériel d'accompagnement"/>
+        <entry key="pht" value="Photographe"/>
+        <entry key="ann" value="Annoteur"/>
+        <entry key="trl" value="Traducteur"/>
+        <entry key="cwt" value="Commentateur"/>
+        <entry key="ill" value="Illustrateur"/>
+        <entry key="stm" value="Metteur en scène"/>
+        <entry key="pro" value="Monteur"/>
+        <entry key="ard" value="Directeur artistique"/>
+        <entry key="sds" value="Ingénieur du son"/>
+        <entry key="ctg" value="Cartographe"/>
+        <entry key="oth" value="Autre"/>
+        <entry key="spk" value="Orateur"/>
+    </util:map>
+</beans>

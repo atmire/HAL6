@@ -5,44 +5,84 @@
  *
  * http://www.dspace.org/license/
  */
+
+
+window.DSpace.authority_fields = ['hal_journal_title', 'hal_domain', 'hal_funder_europe', 'hal_funder_anr', 'dc_contributor_author'];
+
+window.DSpace.authority_fields['hal_journal_title']={addButtonTextValue:"Add this journal", titleValue:"Journal look up", nameValue:"Title", noSelectionValue:"Please select a journal or series title on the left.", notFoundValue:"No journal found", peopleValue:"Journals", searchTextValue:"Search for a journal or series title:" };
+window.DSpace.authority_fields['hal_domain']={addButtonTextValue:"Add this domain", titleValue:"Domain look up", nameValue:"Title", noSelectionValue:"Please select a domain on the left.", notFoundValue:"No domain found", peopleValue:"domains", searchTextValue:"Search for a domain" };
+window.DSpace.authority_fields['hal_funder_europe']={addButtonTextValue:"Add this european project", titleValue:"European project look up", nameValue:"Title", noSelectionValue:"Please select a european project on the left.", notFoundValue:"No european projects found", peopleValue:"european projects", searchTextValue:"Search for a european project" };
+window.DSpace.authority_fields['hal_funder_anr']={addButtonTextValue:"Add this anr project", titleValue:"Anr project look up", nameValue:"Title", noSelectionValue:"Please select an anr project on the left.", notFoundValue:"No anr projects found", peopleValue:"anr projects", searchTextValue:"Search for an anr project" };
+window.DSpace.authority_fields['dc_contributor_author']={addButtonTextValue:"Add this author", titleValue:"Author look up", nameValue:"Name", noSelectionValue:"Please select an author on the left.", notFoundValue:"No author found", peopleValue:"authors", searchTextValue:"Search for an author" };
+
+
 function AuthorLookup(url, authorityInput, collectionID) {
+    var itemsInRepo = '<label>Items in this repository:&nbsp;</label>';
+
+    var authorityType;
+    for (i = 0; i < window.DSpace.authority_fields.length; i++) {
+        if(url.indexOf(window.DSpace.authority_fields[i])!=-1){
+            authorityType=window.DSpace.authority_fields[i];
+        }
+    }
+
+    var addButtonText = 'Add this person';
+    var titleText = 'Person look up';
+    var nameText = 'Name';
+    var noselectionText = 'Please select an author/creator on the left.';
+    var notFoundText = 'No people found';
+    var peopleText = 'people';
+    var searchText = 'Search for an author/creator:';
+
+    if(authorityType !=undefined){
+
+        addButtonText = window.DSpace.authority_fields[authorityType].addButtonTextValue;
+        titleText = window.DSpace.authority_fields[authorityType].titleValue;
+        nameText = window.DSpace.authority_fields[authorityType].nameValue;
+        noselectionText = window.DSpace.authority_fields[authorityType].noSelectionValue;
+        notFoundText = window.DSpace.authority_fields[authorityType].notFoundValue;
+        peopleText = window.DSpace.authority_fields[authorityType].peopleValue;
+        searchText = window.DSpace.authority_fields[authorityType].searchTextValue;
+    }
+
+
 //    TODO i18n
     $(".authorlookup").remove();
-    var content =   $(
-                    '<div class="authorlookup modal fade" tabindex="-1" role="dialog" aria-labelledby="personLookupLabel" aria-hidden="true">' +
-                        '<div class="modal-dialog">'+
-                            '<div class="modal-content">'+
-                                '<div class="modal-header">'+
-                                    '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>'+
-                                    '<h4 class="modal-title" id="personLookupLabel">Person lookup</h4>'+
-                                '</div>'+
-                                '<div class="modal-body">'+
-                                    '<div title="Person Lookup">' +
-                                        '<table class="dttable col-xs-4">' +
-                                            '<thead>' +
-                                                '<th>Name</th>' +
-                                            '</thead>' +
-                                            '<tbody>' +
-                                                '<tr><td>Loading...<td></tr>' +
-                                            '</tbody>' +
-                                        '</table>' +
-                                        '<span class="no-vcard-selected">There\'s no one selected</span>' +
-                                        '<ul class="vcard list-unstyled" style="display: none;">' +
-                                            '<li><ul class="variable"/></li>'+
-                                            '<li class="vcard-insolr">' +
-                                                '<label>Items in this repository:&nbsp;</label>' +
-                                                '<span/>' +
-                                            '</li>' +
-                                            '<li class="vcard-add">' +
-                                                '<input class="ds-button-field btn btn-default" value="Add This Person" type="button"/>' +
-                                            '</li>' +
-                                        '</ul>' +
-                                    '</div>'+
-                                '</div>'+
-                            '</div>'+
-                        '</div>'+
-                    '</div>'
-                    );
+    var content = $(
+        '<div class="authorlookup modal fade" tabindex="-1" role="dialog" aria-labelledby="personLookupLabel" aria-hidden="true">' +
+        '<div class="modal-dialog">' +
+        '<div class="modal-content">' +
+        '<div class="modal-header">' +
+        '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' +
+        '<h4 class="modal-title" id="personLookupLabel">' + titleText + '</h4>' +
+        '</div>' +
+        '<div class="modal-body">' +
+        '<div title="' + titleText + '">' +
+        '<table class="dttable col-xs-4">' +
+        '<thead>' +
+        '<th>' + nameText + '</th>' +
+        '</thead>' +
+        '<tbody class="break-all">' +
+        '<tr><td>Loading...<td></tr>' +
+        '</tbody>' +
+        '</table>' +
+        '<span class="no-vcard-selected">' + noselectionText + '</span>' +
+        '<ul class="vcard list-unstyled" style="display: none;">' +
+        '<li><ul class="variable"/></li>' +
+        '<li class="vcard-insolr">' +
+        itemsInRepo +
+        '<span/>' +
+        '</li>' +
+        '<li class="vcard-add">' +
+        '<input class="ds-button-field btn btn-default" value="' + addButtonText + '" type="button"/>' +
+        '</li>' +
+        '</ul>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+    );
 
     var moreButton = '<button id="lookup-more-button" class="btn btn-default">show more</button>';
     var lessButton = '<button id="lookup-less-button" class="btn btn-default">show less</button>';
@@ -62,11 +102,12 @@ function AuthorLookup(url, authorityInput, collectionID) {
             }
         ],
         "oLanguage": {
-            "sInfo": 'Showing _START_ to _END_ of _TOTAL_ people',
-            "sInfoEmpty": 'Showing 0 to 0 of 0 people',
-            "sInfoFiltered": '(filtered from _MAX_ total people)',
+            "sInfo": 'Showing _START_ to _END_ of _TOTAL_ ' + peopleText,
+            "sInfoEmpty": 'Showing 0 to 0 of 0 ' + peopleText,
+            "sInfoFiltered": '(filtered from _MAX_ total ' + peopleText + ')',
             "sLengthMenu": '_MENU_ people/page',
-            "sZeroRecords": 'No people found'
+            "sSearch":'<p class="searchTextLeftFloat">'+searchText+'</p>',
+            "sZeroRecords": notFoundText
         },
         "bAutoWidth": false,
         "bJQueryUI": true,
@@ -82,7 +123,9 @@ function AuthorLookup(url, authorityInput, collectionID) {
             content.find("div.vcard-wrapper").append(content.find('.no-vcard-selected')).append(content.find('ul.vcard'));
             content.modal();
 
-            content.find('.dataTables_wrapper').parent().attr('style', 'width: auto; min-height: 121px; height: auto;');
+            content.find('.dataTables_wrapper')
+                .parent()
+                .attr('style', 'width: auto; min-height: 121px; height: auto;');
             var searchFilter = content.find('.dataTables_filter input');
             var initialInput = "";
             if (authorityInput.indexOf('value_') != -1) { // edit item
@@ -98,15 +141,15 @@ function AuthorLookup(url, authorityInput, collectionID) {
             searchFilter.val(initialInput);
             setTimeout(function () {
                 searchFilter.trigger($.Event("keyup", { keyCode: 13 }));
-            }, 50);
-            searchFilter.trigger($.Event("keyup", { keyCode: 13 }));
+            },50);
+            searchFilter.trigger($.Event("keyup", {keyCode: 13}));
             searchFilter.addClass('form-control');
             content.find('.ui-corner-tr').removeClass('.ui-corner-tr');
             content.find('.ui-corner-tl').removeClass('.ui-corner-tl');
 
         },
         "fnInfoCallback": function( oSettings, iStart, iEnd, iMax, iTotal, sPre ) {
-          return "Showing "+ iEnd + " results. "+button;
+            return "Showing "+ iEnd + " results. "+button;
         },
         "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
             aData = aData[1];
@@ -133,7 +176,7 @@ function AuthorLookup(url, authorityInput, collectionID) {
                 vcard.data('name', aData['value']);
 
                 var notDisplayed = ['insolr','value','authority'];
-                var predefinedOrder = ['last-name','first-name'];
+                var predefinedOrder = ['title', 'last-name','first-name'];
                 var variable = vcard.find('.variable');
                 variable.empty();
                 predefinedOrder.forEach(function (entry) {
@@ -141,34 +184,41 @@ function AuthorLookup(url, authorityInput, collectionID) {
                 });
 
                 for (var key in aData) {
-                    if (aData.hasOwnProperty(key) && notDisplayed.indexOf(key) < 0 && predefinedOrder.indexOf(key) < 0) {
+                    if (predefinedOrder.indexOf(key) < 0) {
                         variableItem(aData, key, variable);
                     }
                 }
 
                 function variableItem(aData, key, variable) {
-                    var label = key.replace(/-/g, ' ');
-                    var dataString = '';
-                    dataString += '<li class="vcard-' + key + '">' +
-                        '<label>' + label + ': </label>';
+                    if (aData.hasOwnProperty(key) && notDisplayed.indexOf(key) < 0) {
+                        var label = key.replace(/-/g, ' ');
+                        var dataString = '';
+                        dataString += '<li class="vcard-' + key + '">' +
+                            '<label>' + label + ': </label>';
 
-                    if(key == 'orcid'){
-                        dataString +='<span><a target="_blank" href="http://orcid.org/' + aData[key] + '">' + aData[key] + '</a></span>';
-                    } else {
-                        dataString += '<span>' + aData[key] + '</span>';
+                        if(key == 'orcid'){
+                            var orcidURL =window.DSpace.orcidConnectorURL;
+                            dataString += '<span><a target="_blank" href="'+orcidURL+ aData[key] + '">' + aData[key] + '</a></span>';
+                        } else {
+                            dataString += '<span>' + aData[key] + '</span>';
+                        }
+                        dataString += '</li>';
+
+                        variable.append(dataString);
+                        return label;
                     }
-                    dataString += '</li>';
-
-                    variable.append(dataString);
-                    return label;
                 }
-                
+
                 if(aData['insolr']!="false"){
                     var discoverLink = window.DSpace.context_path + "/discover?filtertype=author&filter_relational_operator=authority&filter=" + aData['insolr'];
-                    vcard.find('.vcard-insolr span').empty().append('<a href="'+ discoverLink+'" target="_new">view items</a>');
+                    vcard.find('.vcard-insolr span')
+                        .empty()
+                        .append('<a href="' + discoverLink + '" target="_new">view items</a>');
+
                 }else{
                     vcard.find('.vcard-insolr span').text("0");
                 }
+
                 vcard.find('.vcard-add input').click(function() {
                     if (authorityInput.indexOf('value_') != -1) {
                         // edit item
@@ -176,6 +226,7 @@ function AuthorLookup(url, authorityInput, collectionID) {
                         var oldAuthority = $('input[name=' + authorityInput + '_authority]');
                         oldAuthority.val(vcard.data('authorityID'));
                         $('textarea[name='+ authorityInput+']').val(vcard.data('name'));
+
                     } else {
                         // submission
                         var lastName = $('input[name=' + authorityInput + '_last]');

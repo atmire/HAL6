@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node id="JEL" label="">
+    <isComposedBy>
+        <node id="A" label="A - General Economics and Teaching">
+            <isComposedBy>
+                <node id="A1" label="A1 - General Economics">
+                    <isComposedBy>
+                        <node id="A10" label="A10 - General"/>
+                        <node id="A11" label="A11 - Role of Economics; Role of Economists; Market for Economists"/>
+                        <node id="A12" label="A12 - Relation of Economics to Other Disciplines"/>
+                        <node id="A13" label="A13 - Relation of Economics to Social Values"/>
+                        <node id="A14" label="A14 - Sociology of Economics"/>
+                        <node id="A19" label="A19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="A2" label="A2 - Economic Education and Teaching of Economics">
+                    <isComposedBy>
+                        <node id="A20" label="A20 - General"/>
+                        <node id="A21" label="A21 - Pre-college"/>
+                        <node id="A22" label="A22 - Undergraduate"/>
+                        <node id="A23" label="A23 - Graduate"/>
+                        <node id="A29" label="A29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="A3" label="A3 - Collective Works">
+                    <isComposedBy>
+                        <node id="A30" label="A30 - General"/>
+                        <node id="A31" label="A31 - Collected Writings of Individuals"/>
+                        <node id="A32" label="A32 - Collective Volumes"/>
+                        <node id="A33" label="A33 - Handbooks"/>
+                        <node id="A39" label="A39 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="B" label="B - History of Economic Thought, Methodology, and Heterodox Approaches">
+            <isComposedBy>
+                <node id="B0" label="B0 - General">
+                    <isComposedBy>
+                        <node id="B00" label="B00 - General"/>
+                    </isComposedBy>
+                </node>
+                <node id="B1" label="B1 - History of Economic Thought through 1925">
+                    <isComposedBy>
+                        <node id="B10" label="B10 - General"/>
+                        <node id="B11" label="B11 - Preclassical (Ancient, Medieval, Mercantilist, Physiocratic)"/>
+                        <node id="B12" label="B12 - Classical (includes Adam Smith)"/>
+                        <node id="B13" label="B13 - Neoclassical through 1925 (Austrian, Marshallian, Walrasian, Stockholm School)"/>
+                        <node id="B14" label="B14 - Socialist; Marxist"/>
+                        <node id="B15" label="B15 - Historical; Institutional; Evolutionary"/>
+                        <node id="B16" label="B16 - Quantitative and Mathematical"/>
+                        <node id="B19" label="B19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="B2" label="B2 - History of Economic Thought since 1925">
+                    <isComposedBy>
+                        <node id="B20" label="B20 - General"/>
+                        <node id="B21" label="B21 - Microeconomics"/>
+                        <node id="B22" label="B22 - Macroeconomics"/>
+                        <node id="B23" label="B23 - Econometrics; Quantitative and Mathematical Studies"/>
+                        <node id="B24" label="B24 - Socialist; Marxist; Sraffian"/>
+                        <node id="B25" label="B25 - Historical; Institutional; Evolutionary; Austrian"/>
+                        <node id="B26" label="B26 - Financial Economics"/>
+                        <node id="B29" label="B29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="B3" label="B3 - History of Economic Thought: Individuals">
+                    <isComposedBy>
+                        <node id="B30" label="B30 - General"/>
+                        <node id="B31" label="B31 - Individuals"/>
+                        <node id="B32" label="B32 - Obituaries"/>
+                    </isComposedBy>
+                </node>
+                <node id="B4" label="B4 - Economic Methodology">
+                    <isComposedBy>
+                        <node id="B40" label="B40 - General"/>
+                        <node id="B41" label="B41 - Economic Methodology"/>
+                        <node id="B49" label="B49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="B5" label="B5 - Current Heterodox Approaches">
+                    <isComposedBy>
+                        <node id="B50" label="B50 - General"/>
+                        <node id="B51" label="B51 - Socialist; Marxian; Sraffian"/>
+                        <node id="B52" label="B52 - Institutional; Evolutionary"/>
+                        <node id="B53" label="B53 - Austrian"/>
+                        <node id="B54" label="B54 - Feminist Economics"/>
+                        <node id="B59" label="B59 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="C" label="C - Mathematical and Quantitative Methods">
+            <isComposedBy>
+                <node id="C0" label="C0 - General">
+                    <isComposedBy>
+                        <node id="C00" label="C00 - General"/>
+                        <node id="C01" label="C01 - Econometrics"/>
+                        <node id="C02" label="C02 - Mathematical Methods"/>
+                    </isComposedBy>
+                </node>
+                <node id="C1" label="C1 - Econometric and Statistical Methods and Methodology: General">
+                    <isComposedBy>
+                        <node id="C10" label="C10 - General"/>
+                        <node id="C11" label="C11 - Bayesian Analysis: General"/>
+                        <node id="C12" label="C12 - Hypothesis Testing: General"/>
+                        <node id="C13" label="C13 - Estimation: General"/>
+                        <node id="C14" label="C14 - Semiparametric and Nonparametric Methods: General"/>
+                        <node id="C15" label="C15 - Statistical Simulation Methods: General"/>
+                        <node id="C18" label="C18 - Methodological Issues: General"/>
+                        <node id="C19" label="C19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="C2" label="C2 - Single Equation Models; Single Variables">
+                    <isComposedBy>
+                        <node id="C20" label="C20 - General"/>
+                        <node id="C21" label="C21 - Cross-Sectional Models; Spatial Models; Treatment Effect Models; Quantile Regressions"/>
+                        <node id="C22" label="C22 - Time-Series Models; Dynamic Quantile Regressions; Dynamic Treatment Effect Models; Diffusion Processes"/>
+                        <node id="C23" label="C23 - Panel Data Models; Spatio-temporal Models"/>
+                        <node id="C24" label="C24 - Truncated and Censored Models; Switching Regression Models; Threshold Regression Models"/>
+                        <node id="C25" label="C25 - Discrete Regression and Qualitative Choice Models; Discrete Regressors; Proportions; Probabilities"/>
+                        <node id="C26" label="C26 - Instrumental Variables (IV) Estimation"/>
+                        <node id="C29" label="C29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="C3" label="C3 - Multiple or Simultaneous Equation Models; Multiple Variables">
+                    <isComposedBy>
+                        <node id="C30" label="C30 - General"/>
+                        <node id="C31" label="C31 - Cross-Sectional Models; Spatial Models; Treatment Effect Models; Quantile Regressions; Social Interaction Models"/>
+                        <node id="C32" label="C32 - Time-Series Models; Dynamic Quantile Regressions; Dynamic Treatment Effect Models; Diffusion Processes; State Space Models"/>
+                        <node id="C33" label="C33 - Panel Data Models; Spatio-temporal Models"/>
+                        <node id="C34" label="C34 - Truncated and Censored Models; Switching Regression Models"/>
+                        <node id="C35" label="C35 - Discrete Regression and Qualitative Choice Models; Discrete Regressors; Proportions"/>
+                        <node id="C36" label="C36 - Instrumental Variables (IV) Estimation"/>
+                        <node id="C38" label="C38 - Classification Methods; Cluster Analysis; Principal Components; Factor Models"/>
+                        <node id="C39" label="C39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="C4" label="C4 - Econometric and Statistical Methods: Special Topics">
+                    <isComposedBy>
+                        <node id="C40" label="C40 - General"/>
+                        <node id="C41" label="C41 - Duration Analysis; Optimal Timing Strategies"/>
+                        <node id="C43" label="C43 - Index Numbers and Aggregation"/>
+                        <node id="C44" label="C44 - Operations Research; Statistical Decision Theory"/>
+                        <node id="C45" label="C45 - Neural Networks and Related Topics"/>
+                        <node id="C46" label="C46 - Specific Distributions; Specific Statistics"/>
+                        <node id="C49" label="C49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="C5" label="C5 - Econometric Modeling">
+                    <isComposedBy>
+                        <node id="C50" label="C50 - General"/>
+                        <node id="C51" label="C51 - Model Construction and Estimation"/>
+                        <node id="C52" label="C52 - Model Evaluation, Validation, and Selection"/>
+                        <node id="C53" label="C53 - Forecasting and Prediction Methods; Simulation Methods"/>
+                        <node id="C54" label="C54 - Quantitative Policy Modeling"/>
+                        <node id="C55" label="C55 - Large Data Sets: Modeling and Analysis"/>
+                        <node id="C57" label="C57 - Econometrics of Games and Auctions"/>
+                        <node id="C58" label="C58 - Financial Econometrics"/>
+                        <node id="C59" label="C59 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="C6" label="C6 - Mathematical Methods; Programming Models; Mathematical and Simulation Modeling">
+                    <isComposedBy>
+                        <node id="C60" label="C60 - General"/>
+                        <node id="C61" label="C61 - Optimization Techniques; Programming Models; Dynamic Analysis"/>
+                        <node id="C62" label="C62 - Existence and Stability Conditions of Equilibrium"/>
+                        <node id="C63" label="C63 - Computational Techniques; Simulation Modeling"/>
+                        <node id="C65" label="C65 - Miscellaneous Mathematical Tools"/>
+                        <node id="C67" label="C67 - Input&amp;ndash;Output Models"/>
+                        <node id="C68" label="C68 - Computable General Equilibrium Models"/>
+                        <node id="C69" label="C69 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="C7" label="C7 - Game Theory and Bargaining Theory">
+                    <isComposedBy>
+                        <node id="C70" label="C70 - General"/>
+                        <node id="C71" label="C71 - Cooperative Games"/>
+                        <node id="C72" label="C72 - Noncooperative Games"/>
+                        <node id="C73" label="C73 - Stochastic and Dynamic Games; Evolutionary Games; Repeated Games"/>
+                        <node id="C78" label="C78 - Bargaining Theory; Matching Theory"/>
+                        <node id="C79" label="C79 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="C8" label="C8 - Data Collection and Data Estimation Methodology; Computer Programs">
+                    <isComposedBy>
+                        <node id="C80" label="C80 - General"/>
+                        <node id="C81" label="C81 - Methodology for Collecting, Estimating, and Organizing Microeconomic Data; Data Access"/>
+                        <node id="C82" label="C82 - Methodology for Collecting, Estimating, and Organizing Macroeconomic Data; Data Access"/>
+                        <node id="C83" label="C83 - Survey Methods; Sampling Methods"/>
+                        <node id="C87" label="C87 - Econometric Software"/>
+                        <node id="C88" label="C88 - Other Computer Software"/>
+                        <node id="C89" label="C89 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="C9" label="C9 - Design of Experiments">
+                    <isComposedBy>
+                        <node id="C90" label="C90 - General"/>
+                        <node id="C91" label="C91 - Laboratory, Individual Behavior"/>
+                        <node id="C92" label="C92 - Laboratory, Group Behavior"/>
+                        <node id="C93" label="C93 - Field Experiments"/>
+                        <node id="C99" label="C99 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="D" label="D - Microeconomics">
+            <isComposedBy>
+                <node id="D0" label="D0 - General">
+                    <isComposedBy>
+                        <node id="D00" label="D00 - General"/>
+                        <node id="D01" label="D01 - Microeconomic Behavior: Underlying Principles"/>
+                        <node id="D02" label="D02 - Institutions: Design, Formation, Operations, and Impact"/>
+                        <node id="D03" label="D03 - Behavioral Microeconomics: Underlying Principles"/>
+                        <node id="D04" label="D04 - Microeconomic Policy: Formulation, Implementation, and Evaluation"/>
+                    </isComposedBy>
+                </node>
+                <node id="D1" label="D1 - Household Behavior and Family Economics">
+                    <isComposedBy>
+                        <node id="D10" label="D10 - General"/>
+                        <node id="D11" label="D11 - Consumer Economics: Theory"/>
+                        <node id="D12" label="D12 - Consumer Economics: Empirical Analysis"/>
+                        <node id="D13" label="D13 - Household Production and Intrahousehold Allocation"/>
+                        <node id="D14" label="D14 - Household Saving; Personal Finance"/>
+                        <node id="D18" label="D18 - Consumer Protection"/>
+                        <node id="D19" label="D19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="D2" label="D2 - Production and Organizations">
+                    <isComposedBy>
+                        <node id="D20" label="D20 - General"/>
+                        <node id="D21" label="D21 - Firm Behavior: Theory"/>
+                        <node id="D22" label="D22 - Firm Behavior: Empirical Analysis"/>
+                        <node id="D23" label="D23 - Organizational Behavior; Transaction Costs; Property Rights"/>
+                        <node id="D24" label="D24 - Production; Cost; Capital; Capital, Total Factor, and Multifactor Productivity; Capacity"/>
+                        <node id="D29" label="D29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="D3" label="D3 - Distribution">
+                    <isComposedBy>
+                        <node id="D30" label="D30 - General"/>
+                        <node id="D31" label="D31 - Personal Income, Wealth, and Their Distributions"/>
+                        <node id="D33" label="D33 - Factor Income Distribution"/>
+                        <node id="D39" label="D39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="D4" label="D4 - Market Structure, Pricing, and Design">
+                    <isComposedBy>
+                        <node id="D40" label="D40 - General"/>
+                        <node id="D41" label="D41 - Perfect Competition"/>
+                        <node id="D42" label="D42 - Monopoly"/>
+                        <node id="D43" label="D43 - Oligopoly and Other Forms of Market Imperfection"/>
+                        <node id="D44" label="D44 - Auctions"/>
+                        <node id="D45" label="D45 - Rationing; Licensing"/>
+                        <node id="D46" label="D46 - Value Theory"/>
+                        <node id="D47" label="D47 - Market Design"/>
+                        <node id="D49" label="D49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="D5" label="D5 - General Equilibrium and Disequilibrium">
+                    <isComposedBy>
+                        <node id="D50" label="D50 - General"/>
+                        <node id="D51" label="D51 - Exchange and Production Economies"/>
+                        <node id="D52" label="D52 - Incomplete Markets"/>
+                        <node id="D53" label="D53 - Financial Markets"/>
+                        <node id="D57" label="D57 - Input&amp;ndash;Output Tables and Analysis"/>
+                        <node id="D58" label="D58 - Computable and Other Applied General Equilibrium Models"/>
+                        <node id="D59" label="D59 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="D6" label="D6 - Welfare Economics">
+                    <isComposedBy>
+                        <node id="D60" label="D60 - General"/>
+                        <node id="D61" label="D61 - Allocative Efficiency; Cost&amp;ndash;Benefit Analysis"/>
+                        <node id="D62" label="D62 - Externalities"/>
+                        <node id="D63" label="D63 - Equity, Justice, Inequality, and Other Normative Criteria and Measurement"/>
+                        <node id="D64" label="D64 - Altruism; Philanthropy; Intergenerational Transfers"/>
+                        <node id="D69" label="D69 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="D7" label="D7 - Analysis of Collective Decision-Making">
+                    <isComposedBy>
+                        <node id="D70" label="D70 - General"/>
+                        <node id="D71" label="D71 - Social Choice; Clubs; Committees; Associations"/>
+                        <node id="D72" label="D72 - Political Processes: Rent-Seeking, Lobbying, Elections, Legislatures, and Voting Behavior"/>
+                        <node id="D73" label="D73 - Bureaucracy; Administrative Processes in Public Organizations; Corruption"/>
+                        <node id="D74" label="D74 - Conflict; Conflict Resolution; Alliances; Revolutions"/>
+                        <node id="D78" label="D78 - Positive Analysis of Policy Formulation and Implementation"/>
+                        <node id="D79" label="D79 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="D8" label="D8 - Information, Knowledge, and Uncertainty">
+                    <isComposedBy>
+                        <node id="D80" label="D80 - General"/>
+                        <node id="D81" label="D81 - Criteria for Decision-Making under Risk and Uncertainty"/>
+                        <node id="D82" label="D82 - Asymmetric and Private Information; Mechanism Design"/>
+                        <node id="D83" label="D83 - Search; Learning; Information and Knowledge; Communication; Belief; Unawareness"/>
+                        <node id="D84" label="D84 - Expectations; Speculations"/>
+                        <node id="D85" label="D85 - Network Formation and Analysis: Theory"/>
+                        <node id="D86" label="D86 - Economics of Contract: Theory"/>
+                        <node id="D87" label="D87 - Neuroeconomics"/>
+                        <node id="D89" label="D89 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="D9" label="D9 - Intertemporal Choice">
+                    <isComposedBy>
+                        <node id="D90" label="D90 - General"/>
+                        <node id="D91" label="D91 - Intertemporal Household Choice; Life Cycle Models and Saving"/>
+                        <node id="D92" label="D92 - Intertemporal Firm Choice, Investment, Capacity, and Financing"/>
+                        <node id="D99" label="D99 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="E" label="E - Macroeconomics and Monetary Economics">
+            <isComposedBy>
+                <node id="E0" label="E0 - General">
+                    <isComposedBy>
+                        <node id="E00" label="E00 - General"/>
+                        <node id="E01" label="E01 - Measurement and Data on National Income and Product Accounts and Wealth; Environmental Accounts"/>
+                        <node id="E02" label="E02 - Institutions and the Macroeconomy"/>
+                        <node id="E03" label="E03 - Behavioral Macroeconomics"/>
+                    </isComposedBy>
+                </node>
+                <node id="E1" label="E1 - General Aggregative Models">
+                    <isComposedBy>
+                        <node id="E10" label="E10 - General"/>
+                        <node id="E11" label="E11 - Marxian; Sraffian; Kaleckian"/>
+                        <node id="E12" label="E12 - Keynes; Keynesian; Post-Keynesian"/>
+                        <node id="E14" label="E14 - Austrian; Evolutionary; Institutional"/>
+                        <node id="E13" label="E13 - Neoclassical"/>
+                        <node id="E16" label="E16 - Social Accounting Matrix"/>
+                        <node id="E17" label="E17 - Forecasting and Simulation: Models and Applications"/>
+                        <node id="E19" label="E19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="E2" label="E2 - Consumption, Saving, Production, Investment, Labor Markets, and Informal Economy">
+                    <isComposedBy>
+                        <node id="E20" label="E20 - General"/>
+                        <node id="E21" label="E21 - Consumption; Saving; Wealth"/>
+                        <node id="E22" label="E22 - Investment; Capital; Intangible Capital; Capacity"/>
+                        <node id="E23" label="E23 - Production"/>
+                        <node id="E24" label="E24 - Employment; Unemployment; Wages; Intergenerational Income Distribution; Aggregate Human Capital; Aggregate Labor Productivity"/>
+                        <node id="E25" label="E25 - Aggregate Factor Income Distribution"/>
+                        <node id="E26" label="E26 - Informal Economy; Underground Economy"/>
+                        <node id="E27" label="E27 - Forecasting and Simulation: Models and Applications"/>
+                        <node id="E29" label="E29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="E3" label="E3 - Prices, Business Fluctuations, and Cycles">
+                    <isComposedBy>
+                        <node id="E30" label="E30 - General"/>
+                        <node id="E31" label="E31 - Price Level; Inflation; Deflation"/>
+                        <node id="E32" label="E32 - Business Fluctuations; Cycles"/>
+                        <node id="E37" label="E37 - Forecasting and Simulation: Models and Applications"/>
+                        <node id="E39" label="E39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="E4" label="E4 - Money and Interest Rates">
+                    <isComposedBy>
+                        <node id="E40" label="E40 - General"/>
+                        <node id="E41" label="E41 - Demand for Money"/>
+                        <node id="E42" label="E42 - Monetary Systems; Standards; Regimes; Government and the Monetary System; Payment Systems"/>
+                        <node id="E43" label="E43 - Interest Rates: Determination, Term Structure, and Effects"/>
+                        <node id="E44" label="E44 - Financial Markets and the Macroeconomy"/>
+                        <node id="E47" label="E47 - Forecasting and Simulation: Models and Applications"/>
+                        <node id="E49" label="E49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="E5" label="E5 - Monetary Policy, Central Banking, and the Supply of Money and Credit">
+                    <isComposedBy>
+                        <node id="E50" label="E50 - General"/>
+                        <node id="E51" label="E51 - Money Supply; Credit; Money Multipliers"/>
+                        <node id="E52" label="E52 - Monetary Policy"/>
+                        <node id="E58" label="E58 - Central Banks and Their Policies"/>
+                        <node id="E59" label="E59 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="E6" label="E6 - Macroeconomic Policy, Macroeconomic Aspects of Public Finance, and General Outlook">
+                    <isComposedBy>
+                        <node id="E60" label="E60 - General"/>
+                        <node id="E61" label="E61 - Policy Objectives; Policy Designs and Consistency; Policy Coordination"/>
+                        <node id="E62" label="E62 - Fiscal Policy"/>
+                        <node id="E63" label="E63 - Comparative or Joint Analysis of Fiscal and Monetary Policy; Stabilization; Treasury Policy"/>
+                        <node id="E64" label="E64 - Incomes Policy; Price Policy"/>
+                        <node id="E65" label="E65 - Studies of Particular Policy Episodes"/>
+                        <node id="E66" label="E66 - General Outlook and Conditions"/>
+                        <node id="E69" label="E69 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="F" label="F - International Economics">
+            <isComposedBy>
+                <node id="F0" label="F0 - General">
+                    <isComposedBy>
+                        <node id="F00" label="F00 - General"/>
+                        <node id="F01" label="F01 - Global Outlook"/>
+                        <node id="F02" label="F02 - International Economic Order and Integration"/>
+                    </isComposedBy>
+                </node>
+                <node id="F1" label="F1 - Trade">
+                    <isComposedBy>
+                        <node id="F10" label="F10 - General"/>
+                        <node id="F11" label="F11 - Neoclassical Models of Trade"/>
+                        <node id="F12" label="F12 - Models of Trade with Imperfect Competition and Scale Economies; Fragmentation"/>
+                        <node id="F13" label="F13 - Trade Policy; International Trade Organizations"/>
+                        <node id="F14" label="F14 - Empirical Studies of Trade"/>
+                        <node id="F15" label="F15 - Economic Integration"/>
+                        <node id="F16" label="F16 - Trade and Labor Market Interactions"/>
+                        <node id="F17" label="F17 - Trade Forecasting and Simulation"/>
+                        <node id="F18" label="F18 - Trade and Environment"/>
+                        <node id="F19" label="F19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="F2" label="F2 - International Factor Movements and International Business">
+                    <isComposedBy>
+                        <node id="F20" label="F20 - General"/>
+                        <node id="F21" label="F21 - International Investment; Long-Term Capital Movements"/>
+                        <node id="F22" label="F22 - International Migration"/>
+                        <node id="F23" label="F23 - Multinational Firms; International Business"/>
+                        <node id="F24" label="F24 - Remittances"/>
+                        <node id="F29" label="F29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="F3" label="F3 - International Finance">
+                    <isComposedBy>
+                        <node id="F30" label="F30 - General"/>
+                        <node id="F31" label="F31 - Foreign Exchange"/>
+                        <node id="F32" label="F32 - Current Account Adjustment; Short-Term Capital Movements"/>
+                        <node id="F33" label="F33 - International Monetary Arrangements and Institutions"/>
+                        <node id="F34" label="F34 - International Lending and Debt Problems"/>
+                        <node id="F35" label="F35 - Foreign Aid"/>
+                        <node id="F36" label="F36 - Financial Aspects of Economic Integration"/>
+                        <node id="F37" label="F37 - International Finance Forecasting and Simulation: Models and Applications"/>
+                        <node id="F38" label="F38 - International Financial Policy: Financial Transactions Tax; Capital Controls"/>
+                        <node id="F39" label="F39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="F4" label="F4 - Macroeconomic Aspects of International Trade and Finance">
+                    <isComposedBy>
+                        <node id="F40" label="F40 - General"/>
+                        <node id="F41" label="F41 - Open Economy Macroeconomics"/>
+                        <node id="F42" label="F42 - International Policy Coordination and Transmission"/>
+                        <node id="F43" label="F43 - Economic Growth of Open Economies"/>
+                        <node id="F44" label="F44 - International Business Cycles"/>
+                        <node id="F45" label="F45 - Macroeconomic Issues of Monetary Unions"/>
+                        <node id="F47" label="F47 - Forecasting and Simulation: Models and Applications"/>
+                        <node id="F49" label="F49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="F5" label="F5 - International Relations, National Security, and International Political Economy">
+                    <isComposedBy>
+                        <node id="F50" label="F50 - General"/>
+                        <node id="F51" label="F51 - International Conflicts; Negotiations; Sanctions"/>
+                        <node id="F52" label="F52 - National Security; Economic Nationalism"/>
+                        <node id="F53" label="F53 - International Agreements and Observance; International Organizations"/>
+                        <node id="F54" label="F54 - Colonialism; Imperialism; Postcolonialism"/>
+                        <node id="F55" label="F55 - International Institutional Arrangements"/>
+                        <node id="F59" label="F59 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="F6" label="F6 - Economic Impacts of Globalization">
+                    <isComposedBy>
+                        <node id="F60" label="F60 - General"/>
+                        <node id="F61" label="F61 - Microeconomic Impacts"/>
+                        <node id="F62" label="F62 - Macroeconomic Impacts"/>
+                        <node id="F63" label="F63 - Economic Development"/>
+                        <node id="F64" label="F64 - Environment"/>
+                        <node id="F65" label="F65 - Finance"/>
+                        <node id="F66" label="F66 - Labor"/>
+                        <node id="F68" label="F68 - Policy"/>
+                        <node id="F69" label="F69 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="G" label="G - Financial Economics">
+            <isComposedBy>
+                <node id="G0" label="G0 - General">
+                    <isComposedBy>
+                        <node id="G00" label="G00 - General"/>
+                        <node id="G01" label="G01 - Financial Crises"/>
+                        <node id="G02" label="G02 - Behavioral Finance: Underlying Principles"/>
+                    </isComposedBy>
+                </node>
+                <node id="G1" label="G1 - General Financial Markets">
+                    <isComposedBy>
+                        <node id="G10" label="G10 - General"/>
+                        <node id="G11" label="G11 - Portfolio Choice; Investment Decisions"/>
+                        <node id="G12" label="G12 - Asset Pricing; Trading Volume; Bond Interest Rates"/>
+                        <node id="G13" label="G13 - Contingent Pricing; Futures Pricing"/>
+                        <node id="G14" label="G14 - Information and Market Efficiency; Event Studies; Insider Trading"/>
+                        <node id="G15" label="G15 - International Financial Markets"/>
+                        <node id="G17" label="G17 - Financial Forecasting and Simulation"/>
+                        <node id="G18" label="G18 - Government Policy and Regulation"/>
+                        <node id="G19" label="G19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="G2" label="G2 - Financial Institutions and Services">
+                    <isComposedBy>
+                        <node id="G20" label="G20 - General"/>
+                        <node id="G21" label="G21 - Banks; Depository Institutions; Micro Finance Institutions; Mortgages"/>
+                        <node id="G22" label="G22 - Insurance; Insurance Companies; Actuarial Studies"/>
+                        <node id="G23" label="G23 - Non-bank Financial Institutions; Financial Instruments; Institutional Investors"/>
+                        <node id="G24" label="G24 - Investment Banking; Venture Capital; Brokerage; Ratings and Ratings Agencies"/>
+                        <node id="G28" label="G28 - Government Policy and Regulation"/>
+                        <node id="G29" label="G29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="G3" label="G3 - Corporate Finance and Governance">
+                    <isComposedBy>
+                        <node id="G30" label="G30 - General"/>
+                        <node id="G31" label="G31 - Capital Budgeting; Fixed Investment and Inventory Studies; Capacity"/>
+                        <node id="G32" label="G32 - Financing Policy; Financial Risk and Risk Management; Capital and Ownership Structure; Value of Firms; Goodwill"/>
+                        <node id="G33" label="G33 - Bankruptcy; Liquidation"/>
+                        <node id="G34" label="G34 - Mergers; Acquisitions; Restructuring; Corporate Governance"/>
+                        <node id="G35" label="G35 - Payout Policy"/>
+                        <node id="G38" label="G38 - Government Policy and Regulation"/>
+                        <node id="G39" label="G39 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="H" label="H - Public Economics">
+            <isComposedBy>
+                <node id="H0" label="H0 - General">
+                    <isComposedBy>
+                        <node id="H00" label="H00 - General"/>
+                    </isComposedBy>
+                </node>
+                <node id="H1" label="H1 - Structure and Scope of Government">
+                    <isComposedBy>
+                        <node id="H10" label="H10 - General"/>
+                        <node id="H11" label="H11 - Structure, Scope, and Performance of Government"/>
+                        <node id="H12" label="H12 - Crisis Management"/>
+                        <node id="H13" label="H13 - Economics of Eminent Domain; Expropriation; Nationalization"/>
+                        <node id="H19" label="H19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="H2" label="H2 - Taxation, Subsidies, and Revenue">
+                    <isComposedBy>
+                        <node id="H20" label="H20 - General"/>
+                        <node id="H21" label="H21 - Efficiency; Optimal Taxation"/>
+                        <node id="H22" label="H22 - Incidence"/>
+                        <node id="H23" label="H23 - Externalities; Redistributive Effects; Environmental Taxes and Subsidies"/>
+                        <node id="H24" label="H24 - Personal Income and Other Nonbusiness Taxes and Subsidies"/>
+                        <node id="H25" label="H25 - Business Taxes and Subsidies"/>
+                        <node id="H26" label="H26 - Tax Evasion and Avoidance"/>
+                        <node id="H27" label="H27 - Other Sources of Revenue"/>
+                        <node id="H29" label="H29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="H3" label="H3 - Fiscal Policies and Behavior of Economic Agents">
+                    <isComposedBy>
+                        <node id="H30" label="H30 - General"/>
+                        <node id="H31" label="H31 - Household"/>
+                        <node id="H32" label="H32 - Firm"/>
+                        <node id="H39" label="H39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="H4" label="H4 - Publicly Provided Goods">
+                    <isComposedBy>
+                        <node id="H40" label="H40 - General"/>
+                        <node id="H41" label="H41 - Public Goods"/>
+                        <node id="H42" label="H42 - Publicly Provided Private Goods"/>
+                        <node id="H43" label="H43 - Project Evaluation; Social Discount Rate"/>
+                        <node id="H44" label="H44 - Publicly Provided Goods: Mixed Markets"/>
+                        <node id="H49" label="H49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="H5" label="H5 - National Government Expenditures and Related Policies">
+                    <isComposedBy>
+                        <node id="H50" label="H50 - General"/>
+                        <node id="H51" label="H51 - Government Expenditures and Health"/>
+                        <node id="H52" label="H52 - Government Expenditures and Education"/>
+                        <node id="H53" label="H53 - Government Expenditures and Welfare Programs"/>
+                        <node id="H54" label="H54 - Infrastructures; Other Public Investment and Capital Stock"/>
+                        <node id="H55" label="H55 - Social Security and Public Pensions"/>
+                        <node id="H56" label="H56 - National Security and War"/>
+                        <node id="H57" label="H57 - Procurement"/>
+                        <node id="H59" label="H59 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="H6" label="H6 - National Budget, Deficit, and Debt">
+                    <isComposedBy>
+                        <node id="H60" label="H60 - General"/>
+                        <node id="H61" label="H61 - Budget; Budget Systems"/>
+                        <node id="H62" label="H62 - Deficit; Surplus"/>
+                        <node id="H63" label="H63 - Debt; Debt Management; Sovereign Debt"/>
+                        <node id="H68" label="H68 - Forecasts of Budgets, Deficits, and Debt"/>
+                        <node id="H69" label="H69 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="H7" label="H7 - State and Local Government; Intergovernmental Relations">
+                    <isComposedBy>
+                        <node id="H70" label="H70 - General"/>
+                        <node id="H71" label="H71 - State and Local Taxation, Subsidies, and Revenue"/>
+                        <node id="H72" label="H72 - State and Local Budget and Expenditures"/>
+                        <node id="H73" label="H73 - Interjurisdictional Differentials and Their Effects"/>
+                        <node id="H74" label="H74 - State and Local Borrowing"/>
+                        <node id="H75" label="H75 - State and Local Government: Health; Education; Welfare; Public Pensions"/>
+                        <node id="H76" label="H76 - State and Local Government: Other Expenditure Categories"/>
+                        <node id="H77" label="H77 - Intergovernmental Relations; Federalism; Secession"/>
+                        <node id="H79" label="H79 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="H8" label="H8 - Miscellaneous Issues">
+                    <isComposedBy>
+                        <node id="H80" label="H80 - General"/>
+                        <node id="H81" label="H81 - Governmental Loans; Loan Guarantees; Credits; Grants; Bailouts"/>
+                        <node id="H82" label="H82 - Governmental Property"/>
+                        <node id="H83" label="H83 - Public Administration; Public Sector Accounting and Audits"/>
+                        <node id="H84" label="H84 - Disaster Aid"/>
+                        <node id="H87" label="H87 - International Fiscal Issues; International Public Goods"/>
+                        <node id="H89" label="H89 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="I" label="I - Health, Education, and Welfare">
+            <isComposedBy>
+                <node id="I0" label="I0 - General">
+                    <isComposedBy>
+                        <node id="I00" label="I00 - General"/>
+                    </isComposedBy>
+                </node>
+                <node id="I1" label="I1 - Health">
+                    <isComposedBy>
+                        <node id="I10" label="I10 - General"/>
+                        <node id="I11" label="I11 - Analysis of Health Care Markets"/>
+                        <node id="I12" label="I12 - Health Behavior"/>
+                        <node id="I13" label="I13 - Health Insurance, Public and Private"/>
+                        <node id="I14" label="I14 - Health and Inequality"/>
+                        <node id="I15" label="I15 - Health and Economic Development"/>
+                        <node id="I18" label="I18 - Government Policy; Regulation; Public Health"/>
+                        <node id="I19" label="I19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="I2" label="I2 - Education and Research Institutions">
+                    <isComposedBy>
+                        <node id="I20" label="I20 - General"/>
+                        <node id="I21" label="I21 - Analysis of Education"/>
+                        <node id="I22" label="I22 - Educational Finance; Financial Aid"/>
+                        <node id="I23" label="I23 - Higher Education; Research Institutions"/>
+                        <node id="I24" label="I24 - Education and Inequality"/>
+                        <node id="I25" label="I25 - Education and Economic Development"/>
+                        <node id="I26" label="I26 - Returns to Education"/>
+                        <node id="I28" label="I28 - Government Policy"/>
+                        <node id="I29" label="I29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="I3" label="I3 - Welfare, Well-Being, and Poverty">
+                    <isComposedBy>
+                        <node id="I30" label="I30 - General"/>
+                        <node id="I31" label="I31 - General Welfare, Well-Being"/>
+                        <node id="I32" label="I32 - Measurement and Analysis of Poverty"/>
+                        <node id="I38" label="I38 - Government Policy; Provision and Effects of Welfare Programs"/>
+                        <node id="I39" label="I39 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="J" label="J - Labor and Demographic Economics">
+            <isComposedBy>
+                <node id="J0" label="J0 - General">
+                    <isComposedBy>
+                        <node id="J00" label="J00 - General"/>
+                        <node id="J01" label="J01 - Labor Economics: General"/>
+                        <node id="J08" label="J08 - Labor Economics Policies"/>
+                    </isComposedBy>
+                </node>
+                <node id="J1" label="J1 - Demographic Economics">
+                    <isComposedBy>
+                        <node id="J10" label="J10 - General"/>
+                        <node id="J11" label="J11 - Demographic Trends, Macroeconomic Effects, and Forecasts"/>
+                        <node id="J12" label="J12 - Marriage; Marital Dissolution; Family Structure; Domestic Abuse"/>
+                        <node id="J13" label="J13 - Fertility; Family Planning; Child Care; Children; Youth"/>
+                        <node id="J14" label="J14 - Economics of the Elderly; Economics of the Handicapped; Non-Labor Market Discrimination"/>
+                        <node id="J15" label="J15 - Economics of Minorities, Races, Indigenous Peoples, and Immigrants; Non-labor Discrimination"/>
+                        <node id="J16" label="J16 - Economics of Gender; Non-labor Discrimination"/>
+                        <node id="J17" label="J17 - Value of Life; Forgone Income"/>
+                        <node id="J18" label="J18 - Public Policy"/>
+                        <node id="J19" label="J19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="J2" label="J2 - Demand and Supply of Labor">
+                    <isComposedBy>
+                        <node id="J20" label="J20 - General"/>
+                        <node id="J21" label="J21 - Labor Force and Employment, Size, and Structure"/>
+                        <node id="J22" label="J22 - Time Allocation and Labor Supply"/>
+                        <node id="J23" label="J23 - Labor Demand"/>
+                        <node id="J24" label="J24 - Human Capital; Skills; Occupational Choice; Labor Productivity"/>
+                        <node id="J26" label="J26 - Retirement; Retirement Policies"/>
+                        <node id="J28" label="J28 - Safety; Job Satisfaction; Related Public Policy"/>
+                        <node id="J29" label="J29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="J3" label="J3 - Wages, Compensation, and Labor Costs">
+                    <isComposedBy>
+                        <node id="J30" label="J30 - General"/>
+                        <node id="J31" label="J31 - Wage Level and Structure; Wage Differentials"/>
+                        <node id="J32" label="J32 - Nonwage Labor Costs and Benefits; Retirement Plans; Private Pensions"/>
+                        <node id="J33" label="J33 - Compensation Packages; Payment Methods"/>
+                        <node id="J38" label="J38 - Public Policy"/>
+                        <node id="J39" label="J39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="J4" label="J4 - Particular Labor Markets">
+                    <isComposedBy>
+                        <node id="J40" label="J40 - General"/>
+                        <node id="J41" label="J41 - Labor Contracts"/>
+                        <node id="J42" label="J42 - Monopsony; Segmented Labor Markets"/>
+                        <node id="J43" label="J43 - Agricultural Labor Markets"/>
+                        <node id="J44" label="J44 - Professional Labor Markets; Occupational Licensing"/>
+                        <node id="J45" label="J45 - Public Sector Labor Markets"/>
+                        <node id="J46" label="J46 - Informal Labor Markets"/>
+                        <node id="J47" label="J47 - Coercive Labor Markets"/>
+                        <node id="J48" label="J48 - Public Policy"/>
+                        <node id="J49" label="J49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="J5" label="J5 - Labor&amp;ndash;Management Relations, Trade Unions, and Collective Bargaining">
+                    <isComposedBy>
+                        <node id="J50" label="J50 - General"/>
+                        <node id="J51" label="J51 - Trade Unions: Objectives, Structure, and Effects"/>
+                        <node id="J52" label="J52 - Dispute Resolution: Strikes, Arbitration, and Mediation; Collective Bargaining"/>
+                        <node id="J53" label="J53 - Labor&amp;ndash;Management Relations; Industrial Jurisprudence"/>
+                        <node id="J54" label="J54 - Producer Cooperatives; Labor Managed Firms; Employee Ownership"/>
+                        <node id="J58" label="J58 - Public Policy"/>
+                        <node id="J59" label="J59 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="J6" label="J6 - Mobility, Unemployment, Vacancies, and Immigrant Workers">
+                    <isComposedBy>
+                        <node id="J60" label="J60 - General"/>
+                        <node id="J61" label="J61 - Geographic Labor Mobility; Immigrant Workers"/>
+                        <node id="J62" label="J62 - Job, Occupational, and Intergenerational Mobility"/>
+                        <node id="J63" label="J63 - Turnover; Vacancies; Layoffs"/>
+                        <node id="J64" label="J64 - Unemployment: Models, Duration, Incidence, and Job Search"/>
+                        <node id="J65" label="J65 - Unemployment Insurance; Severance Pay; Plant Closings"/>
+                        <node id="J68" label="J68 - Public Policy"/>
+                        <node id="J69" label="J69 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="J7" label="J7 - Labor Discrimination">
+                    <isComposedBy>
+                        <node id="J70" label="J70 - General"/>
+                        <node id="J71" label="J71 - Discrimination"/>
+                        <node id="J78" label="J78 - Public Policy"/>
+                        <node id="J79" label="J79 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="J8" label="J8 - Labor Standards: National and International">
+                    <isComposedBy>
+                        <node id="J80" label="J80 - General"/>
+                        <node id="J81" label="J81 - Working Conditions"/>
+                        <node id="J82" label="J82 - Labor Force Composition"/>
+                        <node id="J83" label="J83 - Workers' Rights"/>
+                        <node id="J88" label="J88 - Public Policy"/>
+                        <node id="J89" label="J89 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="K" label="K - Law and Economics">
+            <isComposedBy>
+                <node id="K0" label="K0 - General">
+                    <isComposedBy>
+                        <node id="K00" label="K00 - General"/>
+                    </isComposedBy>
+                </node>
+                <node id="K1" label="K1 - Basic Areas of Law">
+                    <isComposedBy>
+                        <node id="K10" label="K10 - General"/>
+                        <node id="K11" label="K11 - Property Law"/>
+                        <node id="K12" label="K12 - Contract Law"/>
+                        <node id="K13" label="K13 - Tort Law and Product Liability; Forensic Economics"/>
+                        <node id="K14" label="K14 - Criminal Law"/>
+                        <node id="K19" label="K19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="K2" label="K2 - Regulation and Business Law">
+                    <isComposedBy>
+                        <node id="K20" label="K20 - General"/>
+                        <node id="K21" label="K21 - Antitrust Law"/>
+                        <node id="K22" label="K22 - Business and Securities Law"/>
+                        <node id="K23" label="K23 - Regulated Industries and Administrative Law"/>
+                        <node id="K29" label="K29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="K3" label="K3 - Other Substantive Areas of Law">
+                    <isComposedBy>
+                        <node id="K30" label="K30 - General"/>
+                        <node id="K31" label="K31 - Labor Law"/>
+                        <node id="K32" label="K32 - Environmental, Health, and Safety Law"/>
+                        <node id="K33" label="K33 - International Law"/>
+                        <node id="K34" label="K34 - Tax Law"/>
+                        <node id="K35" label="K35 - Personal Bankruptcy Law"/>
+                        <node id="K36" label="K36 - Family and Personal Law"/>
+                        <node id="K37" label="K37 - Immigration Law"/>
+                        <node id="K39" label="K39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="K4" label="K4 - Legal Procedure, the Legal System, and Illegal Behavior">
+                    <isComposedBy>
+                        <node id="K40" label="K40 - General"/>
+                        <node id="K41" label="K41 - Litigation Process"/>
+                        <node id="K42" label="K42 - Illegal Behavior and the Enforcement of Law"/>
+                        <node id="K49" label="K49 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="L" label="L - Industrial Organization">
+            <isComposedBy>
+                <node id="L0" label="L0 - General">
+                    <isComposedBy>
+                        <node id="L00" label="L00 - General"/>
+                    </isComposedBy>
+                </node>
+                <node id="L1" label="L1 - Market Structure, Firm Strategy, and Market Performance">
+                    <isComposedBy>
+                        <node id="L10" label="L10 - General"/>
+                        <node id="L11" label="L11 - Production, Pricing, and Market Structure; Size Distribution of Firms"/>
+                        <node id="L12" label="L12 - Monopoly; Monopolization Strategies"/>
+                        <node id="L13" label="L13 - Oligopoly and Other Imperfect Markets"/>
+                        <node id="L14" label="L14 - Transactional Relationships; Contracts and Reputation; Networks"/>
+                        <node id="L15" label="L15 - Information and Product Quality; Standardization and Compatibility"/>
+                        <node id="L16" label="L16 - Industrial Organization and Macroeconomics: Industrial Structure and Structural Change; Industrial Price Indices"/>
+                        <node id="L17" label="L17 - Open Source Products and Markets"/>
+                        <node id="L19" label="L19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="L2" label="L2 - Firm Objectives, Organization, and Behavior">
+                    <isComposedBy>
+                        <node id="L20" label="L20 - General"/>
+                        <node id="L21" label="L21 - Business Objectives of the Firm"/>
+                        <node id="L22" label="L22 - Firm Organization and Market Structure"/>
+                        <node id="L23" label="L23 - Organization of Production"/>
+                        <node id="L24" label="L24 - Contracting Out; Joint Ventures; Technology Licensing"/>
+                        <node id="L25" label="L25 - Firm Performance: Size, Diversification, and Scope"/>
+                        <node id="L26" label="L26 - Entrepreneurship"/>
+                        <node id="L29" label="L29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="L3" label="L3 - Nonprofit Organizations and Public Enterprise">
+                    <isComposedBy>
+                        <node id="L30" label="L30 - General"/>
+                        <node id="L31" label="L31 - Nonprofit Institutions; NGOs; Social Entrepreneurship"/>
+                        <node id="L32" label="L32 - Public Enterprises; Public-Private Enterprises"/>
+                        <node id="L33" label="L33 - Comparison of Public and Private Enterprises and Nonprofit Institutions; Privatization; Contracting Out"/>
+                        <node id="L38" label="L38 - Public Policy"/>
+                        <node id="L39" label="L39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="L4" label="L4 - Antitrust Issues and Policies">
+                    <isComposedBy>
+                        <node id="L40" label="L40 - General"/>
+                        <node id="L41" label="L41 - Monopolization; Horizontal Anticompetitive Practices"/>
+                        <node id="L42" label="L42 - Vertical Restraints; Resale Price Maintenance; Quantity Discounts"/>
+                        <node id="L43" label="L43 - Legal Monopolies and Regulation or Deregulation"/>
+                        <node id="L44" label="L44 - Antitrust Policy and Public Enterprises, Nonprofit Institutions, and Professional Organizations"/>
+                        <node id="L49" label="L49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="L5" label="L5 - Regulation and Industrial Policy">
+                    <isComposedBy>
+                        <node id="L50" label="L50 - General"/>
+                        <node id="L51" label="L51 - Economics of Regulation"/>
+                        <node id="L52" label="L52 - Industrial Policy; Sectoral Planning Methods"/>
+                        <node id="L53" label="L53 - Enterprise Policy"/>
+                        <node id="L59" label="L59 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="L6" label="L6 - Industry Studies: Manufacturing">
+                    <isComposedBy>
+                        <node id="L60" label="L60 - General"/>
+                        <node id="L61" label="L61 - Metals and Metal Products; Cement; Glass; Ceramics"/>
+                        <node id="L62" label="L62 - Automobiles; Other Transportation Equipment; Related Parts and Equipment"/>
+                        <node id="L63" label="L63 - Microelectronics; Computers; Communications Equipment"/>
+                        <node id="L64" label="L64 - Other Machinery; Business Equipment; Armaments"/>
+                        <node id="L65" label="L65 - Chemicals; Rubber; Drugs; Biotechnology"/>
+                        <node id="L66" label="L66 - Food; Beverages; Cosmetics; Tobacco; Wine and Spirits"/>
+                        <node id="L67" label="L67 - Other Consumer Nondurables: Clothing, Textiles, Shoes, and Leather Goods; Household Goods; Sports Equipment"/>
+                        <node id="L68" label="L68 - Appliances; Furniture; Other Consumer Durables"/>
+                        <node id="L69" label="L69 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="L7" label="L7 - Industry Studies: Primary Products and Construction">
+                    <isComposedBy>
+                        <node id="L70" label="L70 - General"/>
+                        <node id="L71" label="L71 - Mining, Extraction, and Refining: Hydrocarbon Fuels"/>
+                        <node id="L72" label="L72 - Mining, Extraction, and Refining: Other Nonrenewable Resources"/>
+                        <node id="L73" label="L73 - Forest Products"/>
+                        <node id="L74" label="L74 - Construction"/>
+                        <node id="L78" label="L78 - Government Policy"/>
+                        <node id="L79" label="L79 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="L8" label="L8 - Industry Studies: Services">
+                    <isComposedBy>
+                        <node id="L80" label="L80 - General"/>
+                        <node id="L81" label="L81 - Retail and Wholesale Trade; e-Commerce"/>
+                        <node id="L82" label="L82 - Entertainment; Media"/>
+                        <node id="L83" label="L83 - Sports; Gambling; Restaurants; Recreation; Tourism"/>
+                        <node id="L84" label="L84 - Personal, Professional, and Business Services"/>
+                        <node id="L85" label="L85 - Real Estate Services"/>
+                        <node id="L86" label="L86 - Information and Internet Services; Computer Software"/>
+                        <node id="L87" label="L87 - Postal and Delivery Services"/>
+                        <node id="L88" label="L88 - Government Policy"/>
+                        <node id="L89" label="L89 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="L9" label="L9 - Industry Studies: Transportation and Utilities">
+                    <isComposedBy>
+                        <node id="L90" label="L90 - General"/>
+                        <node id="L91" label="L91 - Transportation: General"/>
+                        <node id="L92" label="L92 - Railroads and Other Surface Transportation"/>
+                        <node id="L93" label="L93 - Air Transportation"/>
+                        <node id="L94" label="L94 - Electric Utilities"/>
+                        <node id="L95" label="L95 - Gas Utilities; Pipelines; Water Utilities"/>
+                        <node id="L96" label="L96 - Telecommunications"/>
+                        <node id="L97" label="L97 - Utilities: General"/>
+                        <node id="L98" label="L98 - Government Policy"/>
+                        <node id="L99" label="L99 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="M" label="M - Business Administration and Business Economics; Marketing; Accounting; Personnel Economics">
+            <isComposedBy>
+                <node id="M0" label="M0 - General">
+                    <isComposedBy>
+                        <node id="M00" label="M00 - General"/>
+                    </isComposedBy>
+                </node>
+                <node id="M1" label="M1 - Business Administration">
+                    <isComposedBy>
+                        <node id="M10" label="M10 - General"/>
+                        <node id="M11" label="M11 - Production Management"/>
+                        <node id="M12" label="M12 - Personnel Management; Executives; Executive Compensation"/>
+                        <node id="M13" label="M13 - New Firms; Startups"/>
+                        <node id="M14" label="M14 - Corporate Culture; Diversity; Social Responsibility"/>
+                        <node id="M15" label="M15 - IT Management"/>
+                        <node id="M16" label="M16 - International Business Administration"/>
+                        <node id="M19" label="M19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="M2" label="M2 - Business Economics">
+                    <isComposedBy>
+                        <node id="M20" label="M20 - General"/>
+                        <node id="M21" label="M21 - Business Economics"/>
+                        <node id="M29" label="M29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="M3" label="M3 - Marketing and Advertising">
+                    <isComposedBy>
+                        <node id="M30" label="M30 - General"/>
+                        <node id="M31" label="M31 - Marketing"/>
+                        <node id="M37" label="M37 - Advertising"/>
+                        <node id="M38" label="M38 - Government Policy and Regulation"/>
+                        <node id="M39" label="M39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="M4" label="M4 - Accounting and Auditing">
+                    <isComposedBy>
+                        <node id="M40" label="M40 - General"/>
+                        <node id="M41" label="M41 - Accounting"/>
+                        <node id="M42" label="M42 - Auditing"/>
+                        <node id="M48" label="M48 - Government Policy and Regulation"/>
+                        <node id="M49" label="M49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="M5" label="M5 - Personnel Economics">
+                    <isComposedBy>
+                        <node id="M50" label="M50 - General"/>
+                        <node id="M51" label="M51 - Firm Employment Decisions; Promotions"/>
+                        <node id="M52" label="M52 - Compensation and Compensation Methods and Their Effects"/>
+                        <node id="M53" label="M53 - Training"/>
+                        <node id="M54" label="M54 - Labor Management"/>
+                        <node id="M55" label="M55 - Labor Contracting Devices"/>
+                        <node id="M59" label="M59 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="N" label="N - Economic History">
+            <isComposedBy>
+                <node id="N0" label="N0 - General">
+                    <isComposedBy>
+                        <node id="N00" label="N00 - General"/>
+                        <node id="N01" label="N01 - Development of the Discipline: Historiographical; Sources and Methods"/>
+                    </isComposedBy>
+                </node>
+                <node id="N1" label="N1 - Macroeconomics and Monetary Economics; Industrial Structure; Growth; Fluctuations">
+                    <isComposedBy>
+                        <node id="N10" label="N10 - General, International, or Comparative"/>
+                        <node id="N11" label="N11 - U.S.; Canada: Pre-1913"/>
+                        <node id="N12" label="N12 - U.S.; Canada: 1913&amp;ndash;"/>
+                        <node id="N13" label="N13 - Europe: Pre-1913"/>
+                        <node id="N14" label="N14 - Europe: 1913&amp;ndash;"/>
+                        <node id="N15" label="N15 - Asia including Middle East"/>
+                        <node id="N16" label="N16 - Latin America; Caribbean"/>
+                        <node id="N17" label="N17 - Africa; Oceania"/>
+                    </isComposedBy>
+                </node>
+                <node id="N2" label="N2 - Financial Markets and Institutions">
+                    <isComposedBy>
+                        <node id="N20" label="N20 - General, International, or Comparative"/>
+                        <node id="N21" label="N21 - U.S.; Canada: Pre-1913"/>
+                        <node id="N22" label="N22 - U.S.; Canada: 1913&amp;ndash;"/>
+                        <node id="N23" label="N23 - Europe: Pre-1913"/>
+                        <node id="N24" label="N24 - Europe: 1913&amp;ndash;"/>
+                        <node id="N25" label="N25 - Asia including Middle East"/>
+                        <node id="N26" label="N26 - Latin America; Caribbean"/>
+                        <node id="N27" label="N27 - Africa; Oceania"/>
+                    </isComposedBy>
+                </node>
+                <node id="N3" label="N3 - Labor and Consumers, Demography, Education, Health, Welfare, Income, Wealth, Religion, and Philanthropy">
+                    <isComposedBy>
+                        <node id="N30" label="N30 - General, International, or Comparative"/>
+                        <node id="N31" label="N31 - U.S.; Canada: Pre-1913"/>
+                        <node id="N32" label="N32 - U.S.; Canada: 1913-"/>
+                        <node id="N33" label="N33 - Europe: Pre-1913"/>
+                        <node id="N34" label="N34 - Europe: 1913-"/>
+                        <node id="N35" label="N35 - Asia including Middle East"/>
+                        <node id="N36" label="N36 - Latin America; Caribbean"/>
+                        <node id="N37" label="N37 - Africa; Oceania"/>
+                    </isComposedBy>
+                </node>
+                <node id="N4" label="N4 - Government, War, Law, International Relations, and Regulation">
+                    <isComposedBy>
+                        <node id="N40" label="N40 - General, International, or Comparative"/>
+                        <node id="N41" label="N41 - U.S.; Canada: Pre-1913"/>
+                        <node id="N42" label="N42 - U.S.; Canada: 1913&amp;ndash;"/>
+                        <node id="N43" label="N43 - Europe: Pre-1913"/>
+                        <node id="N44" label="N44 - Europe: 1913&amp;ndash;"/>
+                        <node id="N45" label="N45 - Asia including Middle East"/>
+                        <node id="N46" label="N46 - Latin America; Caribbean"/>
+                        <node id="N47" label="N47 - Africa; Oceania"/>
+                    </isComposedBy>
+                </node>
+                <node id="N5" label="N5 - Agriculture, Natural Resources, Environment, and Extractive Industries">
+                    <isComposedBy>
+                        <node id="N50" label="N50 - General, International, or Comparative"/>
+                        <node id="N51" label="N51 - U.S.; Canada: Pre-1913"/>
+                        <node id="N52" label="N52 - U.S.; Canada: 1913&amp;ndash;"/>
+                        <node id="N53" label="N53 - Europe: Pre-1913"/>
+                        <node id="N54" label="N54 - Europe: 1913&amp;ndash;"/>
+                        <node id="N55" label="N55 - Asia including Middle East"/>
+                        <node id="N56" label="N56 - Latin America; Caribbean"/>
+                        <node id="N57" label="N57 - Africa; Oceania"/>
+                    </isComposedBy>
+                </node>
+                <node id="N6" label="N6 - Manufacturing and Construction">
+                    <isComposedBy>
+                        <node id="N60" label="N60 - General, International, or Comparative"/>
+                        <node id="N61" label="N61 - U.S.; Canada: Pre-1913"/>
+                        <node id="N62" label="N62 - U.S.; Canada: 1913&amp;ndash;"/>
+                        <node id="N63" label="N63 - Europe: Pre-1913"/>
+                        <node id="N64" label="N64 - Europe: 1913&amp;ndash;"/>
+                        <node id="N65" label="N65 - Asia including Middle East"/>
+                        <node id="N66" label="N66 - Latin America; Caribbean"/>
+                        <node id="N67" label="N67 - Africa; Oceania"/>
+                    </isComposedBy>
+                </node>
+                <node id="N7" label="N7 - Transport, Trade, Energy, Technology, and Other Services">
+                    <isComposedBy>
+                        <node id="N70" label="N70 - General, International, or Comparative"/>
+                        <node id="N71" label="N71 - U.S.; Canada: Pre-1913"/>
+                        <node id="N72" label="N72 - U.S.; Canada: 1913&amp;ndash;"/>
+                        <node id="N73" label="N73 - Europe: Pre-1913"/>
+                        <node id="N74" label="N74 - Europe: 1913&amp;ndash;"/>
+                        <node id="N75" label="N75 - Asia including Middle East"/>
+                        <node id="N76" label="N76 - Latin America; Caribbean"/>
+                        <node id="N77" label="N77 - Africa; Oceania"/>
+                    </isComposedBy>
+                </node>
+                <node id="N8" label="N8 - Micro-Business History">
+                    <isComposedBy>
+                        <node id="N80" label="N80 - General, International, or Comparative"/>
+                        <node id="N81" label="N81 - U.S.; Canada: Pre-1913"/>
+                        <node id="N82" label="N82 - U.S.; Canada: 1913&amp;ndash;"/>
+                        <node id="N83" label="N83 - Europe: Pre-1913"/>
+                        <node id="N84" label="N84 - Europe: 1913&amp;ndash;"/>
+                        <node id="N85" label="N85 - Asia including Middle East"/>
+                        <node id="N86" label="N86 - Latin America; Caribbean"/>
+                        <node id="N87" label="N87 - Africa; Oceania"/>
+                    </isComposedBy>
+                </node>
+                <node id="N9" label="N9 - Regional and Urban History">
+                    <isComposedBy>
+                        <node id="N90" label="N90 - General, International, or Comparative"/>
+                        <node id="N91" label="N91 - U.S.; Canada: Pre-1913"/>
+                        <node id="N92" label="N92 - U.S.; Canada: 1913&amp;ndash;"/>
+                        <node id="N93" label="N93 - Europe: Pre-1913"/>
+                        <node id="N94" label="N94 - Europe: 1913&amp;ndash;"/>
+                        <node id="N95" label="N95 - Asia including Middle East"/>
+                        <node id="N96" label="N96 - Latin America; Caribbean"/>
+                        <node id="N97" label="N97 - Africa; Oceania"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="O" label="O - Economic Development, Innovation, Technological Change, and Growth">
+            <isComposedBy>
+                <node id="O1" label="O1 - Economic Development">
+                    <isComposedBy>
+                        <node id="O10" label="O10 - General"/>
+                        <node id="O11" label="O11 - Macroeconomic Analyses of Economic Development"/>
+                        <node id="O12" label="O12 - Microeconomic Analyses of Economic Development"/>
+                        <node id="O13" label="O13 - Agriculture; Natural Resources; Energy; Environment; Other Primary Products"/>
+                        <node id="O14" label="O14 - Industrialization; Manufacturing and Service Industries; Choice of Technology"/>
+                        <node id="O15" label="O15 - Human Resources; Human Development; Income Distribution; Migration"/>
+                        <node id="O16" label="O16 - Financial Markets; Saving and Capital Investment; Corporate Finance and Governance"/>
+                        <node id="O17" label="O17 - Formal and Informal Sectors; Shadow Economy; Institutional Arrangements"/>
+                        <node id="O18" label="O18 - Urban, Rural, Regional, and Transportation Analysis; Housing; Infrastructure"/>
+                        <node id="O19" label="O19 - International Linkages to Development; Role of International Organizations"/>
+                    </isComposedBy>
+                </node>
+                <node id="O2" label="O2 - Development Planning and Policy">
+                    <isComposedBy>
+                        <node id="O20" label="O20 - General"/>
+                        <node id="O21" label="O21 - Planning Models; Planning Policy"/>
+                        <node id="O22" label="O22 - Project Analysis"/>
+                        <node id="O23" label="O23 - Fiscal and Monetary Policy in Development"/>
+                        <node id="O24" label="O24 - Trade Policy; Factor Movement Policy; Foreign Exchange Policy"/>
+                        <node id="O25" label="O25 - Industrial Policy"/>
+                        <node id="O29" label="O29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="O3" label="O3 - Innovation; Research and Development; Technological Change; Intellectual Property Rights">
+                    <isComposedBy>
+                        <node id="O30" label="O30 - General"/>
+                        <node id="O31" label="O31 - Innovation and Invention: Processes and Incentives"/>
+                        <node id="O32" label="O32 - Management of Technological Innovation and R&amp;D"/>
+                        <node id="O33" label="O33 - Technological Change: Choices and Consequences; Diffusion Processes"/>
+                        <node id="O34" label="O34 - Intellectual Property and Intellectual Capital"/>
+                        <node id="O35" label="O35 - Social Innovation"/>
+                        <node id="O38" label="O38 - Government Policy"/>
+                        <node id="O39" label="O39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="O4" label="O4 - Economic Growth and Aggregate Productivity">
+                    <isComposedBy>
+                        <node id="O40" label="O40 - General"/>
+                        <node id="O41" label="O41 - One, Two, and Multisector Growth Models"/>
+                        <node id="O42" label="O42 - Monetary Growth Models"/>
+                        <node id="O43" label="O43 - Institutions and Growth"/>
+                        <node id="O44" label="O44 - Environment and Growth"/>
+                        <node id="O47" label="O47 - Empirical Studies of Economic Growth; Aggregate Productivity; Cross-Country Output Convergence"/>
+                        <node id="O49" label="O49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="O5" label="O5 - Economywide Country Studies">
+                    <isComposedBy>
+                        <node id="O50" label="O50 - General"/>
+                        <node id="O51" label="O51 - U.S.; Canada"/>
+                        <node id="O52" label="O52 - Europe"/>
+                        <node id="O53" label="O53 - Asia including Middle East"/>
+                        <node id="O54" label="O54 - Latin America; Caribbean"/>
+                        <node id="O55" label="O55 - Africa"/>
+                        <node id="O56" label="O56 - Oceania"/>
+                        <node id="O57" label="O57 - Comparative Studies of Countries"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="P" label="P - Economic Systems">
+            <isComposedBy>
+                <node id="P0" label="P0 - General">
+                    <isComposedBy>
+                        <node id="P00" label="P00 - General"/>
+                    </isComposedBy>
+                </node>
+                <node id="P1" label="P1 - Capitalist Systems">
+                    <isComposedBy>
+                        <node id="P10" label="P10 - General"/>
+                        <node id="P11" label="P11 - Planning, Coordination, and Reform"/>
+                        <node id="P12" label="P12 - Capitalist Enterprises"/>
+                        <node id="P13" label="P13 - Cooperative Enterprises"/>
+                        <node id="P14" label="P14 - Property Rights"/>
+                        <node id="P16" label="P16 - Political Economy"/>
+                        <node id="P17" label="P17 - Performance and Prospects"/>
+                        <node id="P18" label="P18 - Energy; Environment"/>
+                        <node id="P19" label="P19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="P2" label="P2 - Socialist Systems and Transitional Economies">
+                    <isComposedBy>
+                        <node id="P20" label="P20 - General"/>
+                        <node id="P21" label="P21 - Planning, Coordination, and Reform"/>
+                        <node id="P22" label="P22 - Prices"/>
+                        <node id="P23" label="P23 - Factor and Product Markets; Industry Studies; Population"/>
+                        <node id="P24" label="P24 - National Income, Product, and Expenditure; Money; Inflation"/>
+                        <node id="P25" label="P25 - Urban, Rural, and Regional Economics"/>
+                        <node id="P26" label="P26 - Political Economy; Property Rights"/>
+                        <node id="P27" label="P27 - Performance and Prospects"/>
+                        <node id="P28" label="P28 - Natural Resources; Energy; Environment"/>
+                        <node id="P29" label="P29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="P3" label="P3 - Socialist Institutions and Their Transitions">
+                    <isComposedBy>
+                        <node id="P30" label="P30 - General"/>
+                        <node id="P31" label="P31 - Socialist Enterprises and Their Transitions"/>
+                        <node id="P32" label="P32 - Collectives; Communes; Agriculture"/>
+                        <node id="P33" label="P33 - International Trade, Finance, Investment, Relations, and Aid"/>
+                        <node id="P34" label="P34 - Financial Economics"/>
+                        <node id="P35" label="P35 - Public Economics"/>
+                        <node id="P36" label="P36 - Consumer Economics; Health; Education and Training; Welfare, Income, Wealth, and Poverty"/>
+                        <node id="P37" label="P37 - Legal Institutions; Illegal Behavior"/>
+                        <node id="P39" label="P39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="P4" label="P4 - Other Economic Systems">
+                    <isComposedBy>
+                        <node id="P40" label="P40 - General"/>
+                        <node id="P41" label="P41 - Planning, Coordination, and Reform"/>
+                        <node id="P42" label="P42 - Productive Enterprises; Factor and Product Markets; Prices; Population"/>
+                        <node id="P43" label="P43 - Public Economics; Financial Economics"/>
+                        <node id="P44" label="P44 - National Income, Product, and Expenditure; Money; Inflation"/>
+                        <node id="P45" label="P45 - International Trade, Finance, Investment, and Aid"/>
+                        <node id="P46" label="P46 - Consumer Economics; Health; Education and Training; Welfare, Income, Wealth, and Poverty"/>
+                        <node id="P47" label="P47 - Performance and Prospects"/>
+                        <node id="P48" label="P48 - Political Economy; Legal Institutions; Property Rights; Natural Resources; Energy; Environment; Regional Studies"/>
+                        <node id="P49" label="P49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="P5" label="P5 - Comparative Economic Systems">
+                    <isComposedBy>
+                        <node id="P50" label="P50 - General"/>
+                        <node id="P51" label="P51 - Comparative Analysis of Economic Systems"/>
+                        <node id="P52" label="P52 - Comparative Studies of Particular Economies"/>
+                        <node id="P59" label="P59 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="Q" label="Q - Agricultural and Natural Resource Economics; Environmental and Ecological Economics">
+            <isComposedBy>
+                <node id="Q0" label="Q0 - General">
+                    <isComposedBy>
+                        <node id="Q00" label="Q00 - General"/>
+                        <node id="Q01" label="Q01 - Sustainable Development"/>
+                        <node id="Q02" label="Q02 - Commodity Markets"/>
+                    </isComposedBy>
+                </node>
+                <node id="Q1" label="Q1 - Agriculture">
+                    <isComposedBy>
+                        <node id="Q10" label="Q10 - General"/>
+                        <node id="Q11" label="Q11 - Aggregate Supply and Demand Analysis; Prices"/>
+                        <node id="Q12" label="Q12 - Micro Analysis of Farm Firms, Farm Households, and Farm Input Markets"/>
+                        <node id="Q13" label="Q13 - Agricultural Markets and Marketing; Cooperatives; Agribusiness"/>
+                        <node id="Q14" label="Q14 - Agricultural Finance"/>
+                        <node id="Q15" label="Q15 - Land Ownership and Tenure; Land Reform; Land Use; Irrigation; Agriculture and Environment"/>
+                        <node id="Q16" label="Q16 - R&amp;D; Agricultural Technology; Biofuels; Agricultural Extension Services"/>
+                        <node id="Q17" label="Q17 - Agriculture in International Trade"/>
+                        <node id="Q18" label="Q18 - Agricultural Policy; Food Policy"/>
+                        <node id="Q19" label="Q19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="Q2" label="Q2 - Renewable Resources and Conservation">
+                    <isComposedBy>
+                        <node id="Q20" label="Q20 - General"/>
+                        <node id="Q21" label="Q21 - Demand and Supply; Prices"/>
+                        <node id="Q22" label="Q22 - Fishery; Aquaculture"/>
+                        <node id="Q23" label="Q23 - Forestry"/>
+                        <node id="Q24" label="Q24 - Land"/>
+                        <node id="Q25" label="Q25 - Water"/>
+                        <node id="Q26" label="Q26 - Recreational Aspects of Natural Resources"/>
+                        <node id="Q27" label="Q27 - Issues in International Trade"/>
+                        <node id="Q28" label="Q28 - Government Policy"/>
+                        <node id="Q29" label="Q29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="Q3" label="Q3 - Nonrenewable Resources and Conservation">
+                    <isComposedBy>
+                        <node id="Q30" label="Q30 - General"/>
+                        <node id="Q31" label="Q31 - Demand and Supply; Prices"/>
+                        <node id="Q32" label="Q32 - Exhaustible Resources and Economic Development"/>
+                        <node id="Q33" label="Q33 - Resource Booms"/>
+                        <node id="Q34" label="Q34 - Natural Resources and Domestic and International Conflicts"/>
+                        <node id="Q35" label="Q35 - Hydrocarbon Resources"/>
+                        <node id="Q37" label="Q37 - Issues in International Trade"/>
+                        <node id="Q38" label="Q38 - Government Policy"/>
+                        <node id="Q39" label="Q39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="Q4" label="Q4 - Energy">
+                    <isComposedBy>
+                        <node id="Q40" label="Q40 - General"/>
+                        <node id="Q41" label="Q41 - Demand and Supply; Prices"/>
+                        <node id="Q42" label="Q42 - Alternative Energy Sources"/>
+                        <node id="Q43" label="Q43 - Energy and the Macroeconomy"/>
+                        <node id="Q47" label="Q47 - Energy Forecasting"/>
+                        <node id="Q48" label="Q48 - Government Policy"/>
+                        <node id="Q49" label="Q49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="Q5" label="Q5 - Environmental Economics">
+                    <isComposedBy>
+                        <node id="Q50" label="Q50 - General"/>
+                        <node id="Q51" label="Q51 - Valuation of Environmental Effects"/>
+                        <node id="Q52" label="Q52 - Pollution Control Adoption and Costs; Distributional Effects; Employment Effects"/>
+                        <node id="Q53" label="Q53 - Air Pollution; Water Pollution; Noise; Hazardous Waste; Solid Waste; Recycling"/>
+                        <node id="Q54" label="Q54 - Climate; Natural Disasters and Their Management; Global Warming"/>
+                        <node id="Q55" label="Q55 - Technological Innovation"/>
+                        <node id="Q56" label="Q56 - Environment and Development; Environment and Trade; Sustainability; Environmental Accounts and Accounting; Environmental Equity; Population Growth"/>
+                        <node id="Q57" label="Q57 - Ecological Economics: Ecosystem Services; Biodiversity Conservation; Bioeconomics; Industrial Ecology"/>
+                        <node id="Q58" label="Q58 - Government Policy"/>
+                        <node id="Q59" label="Q59 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="R" label="R - Urban, Rural, Regional, Real Estate, and Transportation Economics">
+            <isComposedBy>
+                <node id="R0" label="R0 - General">
+                    <isComposedBy>
+                        <node id="R00" label="R00 - General"/>
+                    </isComposedBy>
+                </node>
+                <node id="R1" label="R1 - General Regional Economics">
+                    <isComposedBy>
+                        <node id="R10" label="R10 - General"/>
+                        <node id="R11" label="R11 - Regional Economic Activity: Growth, Development, Environmental Issues, and Changes"/>
+                        <node id="R12" label="R12 - Size and Spatial Distributions of Regional Economic Activity"/>
+                        <node id="R13" label="R13 - General Equilibrium and Welfare Economic Analysis of Regional Economies"/>
+                        <node id="R14" label="R14 - Land Use Patterns"/>
+                        <node id="R15" label="R15 - Econometric and Input&amp;ndash;Output Models; Other Models"/>
+                        <node id="R19" label="R19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="R2" label="R2 - Household Analysis">
+                    <isComposedBy>
+                        <node id="R20" label="R20 - General"/>
+                        <node id="R21" label="R21 - Housing Demand"/>
+                        <node id="R22" label="R22 - Other Demand"/>
+                        <node id="R23" label="R23 - Regional Migration; Regional Labor Markets; Population; Neighborhood Characteristics"/>
+                        <node id="R28" label="R28 - Government Policy"/>
+                        <node id="R29" label="R29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="R3" label="R3 - Real Estate Markets, Spatial Production Analysis, and Firm Location">
+                    <isComposedBy>
+                        <node id="R30" label="R30 - General"/>
+                        <node id="R31" label="R31 - Housing Supply and Markets"/>
+                        <node id="R32" label="R32 - Other Spatial Production and Pricing Analysis"/>
+                        <node id="R33" label="R33 - Nonagricultural and Nonresidential Real Estate Markets"/>
+                        <node id="R38" label="R38 - Government Policy"/>
+                        <node id="R39" label="R39 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="R4" label="R4 - Transportation Economics">
+                    <isComposedBy>
+                        <node id="R40" label="R40 - General"/>
+                        <node id="R41" label="R41 - Transportation: Demand, Supply, and Congestion; Travel Time; Safety and Accidents; Transportation Noise"/>
+                        <node id="R42" label="R42 - Government and Private Investment Analysis; Road Maintenance; Transportation Planning"/>
+                        <node id="R48" label="R48 - Government Pricing and Policy"/>
+                        <node id="R49" label="R49 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="R5" label="R5 - Regional Government Analysis">
+                    <isComposedBy>
+                        <node id="R50" label="R50 - General"/>
+                        <node id="R51" label="R51 - Finance in Urban and Rural Economies"/>
+                        <node id="R52" label="R52 - Land Use and Other Regulations"/>
+                        <node id="R53" label="R53 - Public Facility Location Analysis; Public Investment and Capital Stock"/>
+                        <node id="R58" label="R58 - Regional Development Planning and Policy"/>
+                        <node id="R59" label="R59 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="Y" label="Y - Miscellaneous Categories">
+            <isComposedBy>
+                <node id="Y1" label="Y1 - Data: Tables and Charts">
+                    <isComposedBy>
+                        <node id="Y10" label="Y10 - Data: Tables and Charts"/>
+                    </isComposedBy>
+                </node>
+                <node id="Y2" label="Y2 - Introductory Material">
+                    <isComposedBy>
+                        <node id="Y20" label="Y20 - Introductory Material"/>
+                    </isComposedBy>
+                </node>
+                <node id="Y3" label="Y3 - Book Reviews (unclassified)">
+                    <isComposedBy>
+                        <node id="Y30" label="Y30 - Book Reviews (unclassified)"/>
+                    </isComposedBy>
+                </node>
+                <node id="Y4" label="Y4 - Dissertations (unclassified)">
+                    <isComposedBy>
+                        <node id="Y40" label="Y40 - Dissertations (unclassified)"/>
+                    </isComposedBy>
+                </node>
+                <node id="Y5" label="Y5 - Further Reading (unclassified)">
+                    <isComposedBy>
+                        <node id="Y50" label="Y50 - Further Reading (unclassified)"/>
+                    </isComposedBy>
+                </node>
+                <node id="Y6" label="Y6 - Excerpts">
+                    <isComposedBy>
+                        <node id="Y60" label="Y60 - Excerpts"/>
+                    </isComposedBy>
+                </node>
+                <node id="Y7" label="Y7 - No Author General Discussions">
+                    <isComposedBy>
+                        <node id="Y70" label="Y70 - No Author General Discussions"/>
+                    </isComposedBy>
+                </node>
+                <node id="Y8" label="Y8 - Related Disciplines">
+                    <isComposedBy>
+                        <node id="Y80" label="Y80 - Related Disciplines"/>
+                    </isComposedBy>
+                </node>
+                <node id="Y9" label="Y9 - Other">
+                    <isComposedBy>
+                        <node id="Y90" label="Y90 - Other"/>
+                        <node id="Y91" label="Y91 - Pictures and Maps"/>
+                        <node id="Y92" label="Y92 - Novels, Self-Help Books, etc."/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="Z" label="Z - Other Special Topics">
+            <isComposedBy>
+                <node id="Z0" label="Z0 - General">
+                    <isComposedBy>
+                        <node id="Z00" label="Z00 - General"/>
+                    </isComposedBy>
+                </node>
+                <node id="Z1" label="Z1 - Cultural Economics; Economic Sociology; Economic Anthropology">
+                    <isComposedBy>
+                        <node id="Z10" label="Z10 - General"/>
+                        <node id="Z11" label="Z11 - Economics of the Arts and Literature"/>
+                        <node id="Z12" label="Z12 - Religion"/>
+                        <node id="Z13" label="Z13 - Economic Sociology; Economic Anthropology; Social and Economic Stratification"/>
+                        <node id="Z18" label="Z18 - Public Policy"/>
+                        <node id="Z19" label="Z19 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="Z2" label="Z2 - Sports Economics">
+                    <isComposedBy>
+                        <node id="Z20" label="Z20 - General"/>
+                        <node id="Z21" label="Z21 - Industry Studies"/>
+                        <node id="Z22" label="Z22 - Labor Issues"/>
+                        <node id="Z23" label="Z23 - Finance"/>
+                        <node id="Z28" label="Z28 - Policy"/>
+                        <node id="Z29" label="Z29 - Other"/>
+                    </isComposedBy>
+                </node>
+                <node id="Z3" label="Z3 - Tourism Economics">
+                    <isComposedBy>
+                        <node id="Z30" label="Z30 - General"/>
+                        <node id="Z31" label="Z31 - Industry Studies"/>
+                        <node id="Z32" label="Z32 - Tourism and Development"/>
+                        <node id="Z33" label="Z33 - Marketing and Finance"/>
+                        <node id="Z38" label="Z38 - Policy"/>
+                        <node id="Z39" label="Z39 - Other"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+    </isComposedBy>
+</node>

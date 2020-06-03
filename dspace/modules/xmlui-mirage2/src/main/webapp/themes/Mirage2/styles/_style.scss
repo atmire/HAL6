@@ -16,7 +16,9 @@
     ::-moz-selection { @content; }
     ::selection { @content; }
 }
-
+@import "compliance/style";
+$fa-font-path: "../vendor/fontawesome/fonts";
+@import "../vendor/fontawesome/scss/font-awesome";
 @include selection {
     color: white;
     background: hotpink;
@@ -58,4 +60,63 @@
   #aspect_submission_StepTransformer_item_publication-title{
     margin-bottom:5px;
   }
+}
+
+.searchTextLeftFloat {
+    float: left;
+    margin-top: 14px;
+    margin-left: 8px;
+    font-size: larger;
+}
+
+.modal {
+  overflow-y: scroll;
+}
+.modal.hal-status-modal {
+  width: 35%;
+  margin: auto;
+  top: 15%;
+}
+.modal.hal-status-modal.error {
+  width: 70%;
+}
+td.table-label {
+  font-weight: bold;
+}
+
+.floatRight{
+  float:right;
+}
+
+.preWrapWhiteSpace{
+  white-space: pre-wrap;
+}
+
+button.structuresToExistingAuthors{
+  display: block;
+  margin: 10px 0px 10px 25px;
+}
+
+.ds-previous-values span.ds-interpreted-field {
+  white-space: pre-wrap;
+  display:inline-block;
+}
+
+button#updateAuthorFunction,
+button#cancelAuthorFunction{
+  margin-top: 20px;
+}
+
+.update-function{
+  top:20%;
+}
+.structureValueDiv {
+  margin-left: 5%;
+}
+div#saveAndCancelButtons {
+  margin-top: 25px;
+}
+
+.btn-group {
+  white-space: normal !important;
 }

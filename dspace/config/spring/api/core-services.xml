@@ -42,10 +42,10 @@
     <bean class="org.dspace.content.BundleServiceImpl"/>
     <bean class="org.dspace.content.CommunityServiceImpl"/>
     <bean class="org.dspace.content.InstallItemServiceImpl"/>
-    <bean class="org.dspace.content.ItemServiceImpl"/>
+    <bean class="com.atmire.dspace.content.AtmireItemServiceImpl"/>
     <bean class="org.dspace.content.MetadataFieldServiceImpl"/>
     <bean class="org.dspace.content.MetadataSchemaServiceImpl"/>
-    <bean class="org.dspace.content.MetadataValueServiceImpl"/>
+    <bean class="com.atmire.dspace.content.AtmireMetadataValueServiceImpl"/>
     <bean class="org.dspace.content.SiteServiceImpl"/>
     <bean class="org.dspace.content.SupervisedItemServiceImpl"/>
     <bean class="org.dspace.content.WorkspaceItemServiceImpl"/>
@@ -116,4 +116,31 @@
     <bean class="org.dspace.xmlworkflow.WorkflowRequirementsServiceImpl"/>
     <bean class="org.dspace.xmlworkflow.XmlWorkflowFactoryImpl"/>-->
 
+    <!-- HAL specific services-->
+    <bean class="com.atmire.dspace.hal.HALDepositServiceImpl">
+        <property name="serviceDocumentUrl" value="${hal.v3.sword.deposit.url}"/>
+        <property name="user" value="${hal.login.user}"/>
+        <property name="pass" value="${hal.login.pass}"/>
+    </bean>
+
+    <bean class="com.atmire.dspace.hal.HALRetrievalServiceImpl"/>
+
+    <bean id="UnvalidatedStructureStructure" class="com.atmire.dspace.hal.v3.UnvalidatedStructureStructure" autowire-candidate="true">
+        <property name="solrUrl" value="${hal.v3.solr.server}"/>
+    </bean>
+
+    <bean id="StructureStructure" class="com.atmire.dspace.hal.v3.StructureStructure" autowire-candidate="true">
+        <property name="solrUrl" value="${hal.v3.solr.server}"/>
+    </bean>
+    <bean id="AuthorStructure" class="com.atmire.dspace.hal.v3.AuthorStructure" autowire-candidate="true">
+        <property name="solrUrl" value="${hal.v3.solr.server.authors}"/>
+    </bean>
+
+    <bean class="com.atmire.dspace.hal.HALValidityCheckerServiceImpl">
+        <property name="embargo2YearBlock" value="true"/>
+    </bean>
+    <bean class="com.atmire.dspace.hal.receipt.ReceiptProcessingServiceImpl"/>
+    <bean class="com.atmire.dspace.hal.HALStatusServiceImpl"/>
+
+    <bean class="com.atmire.dspace.hal.HALOnBehalfOfRetrievalServiceDummyImpl"/>
 </beans>

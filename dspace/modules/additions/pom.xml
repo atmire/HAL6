@@ -72,7 +72,11 @@
             </exclusion>
          </exclusions>
       </dependency>
-
+      <dependency>
+         <groupId>com.atmire</groupId>
+         <artifactId>atmire-api-hal</artifactId>
+         <version>6.x-1.1.0</version>
+      </dependency>
    </dependencies>
 
 </project>

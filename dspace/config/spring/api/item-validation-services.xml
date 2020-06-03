@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2002-2010, DuraSpace.  All rights reserved
+    Licensed under the DuraSpace License.
+
+    A copy of the DuraSpace License has been included in this
+    distribution and is available at: http://www.dspace.org/license
+
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+    <context:annotation-config /> <!-- allows us to use spring annotations in beans -->
+
+    <!-- HAL Compliance check service -->
+    <bean class="com.atmire.compliance.service.ComplianceCheckServiceBean" id="halComplianceCheckService" autowire-candidate="true">
+        <property name="rulesFactory" ref="halComplianceCategoryRulesFactoryBean"/>
+        <property name="identifier" value="ref"/>
+    </bean>
+
+    <!-- HAL Compliance rules factory -->
+    <bean class="com.atmire.compliance.rules.factory.ComplianceCategoryRulesFactoryBean" id="halComplianceCategoryRulesFactoryBean" autowire-candidate="true">
+        <property name="builderMap" ref="builderMap"/>
+        <!-- minutes to wait between category set updates -->
+        <property name="minutesBetweentCategorySetupdate" value="30"/>
+        <property name="ruleDefinitionFile" value="hal-validation-rules.xml"/>
+    </bean>
+
+    <util:map id="builderMap">
+        <entry key="value">
+            <bean class="com.atmire.compliance.rules.factory.ValueRuleBuilder"/>
+        </entry>
+        <entry key="countGreaterThan">
+            <bean class="com.atmire.compliance.rules.factory.CountGreaterThanRuleBuilder"/>
+        </entry>
+        <entry key="atLeastOneAuthorWithStructure">
+            <bean class="com.atmire.compliance.rules.factory.CountAuthorsWithStructuresRuleBuilder"/>
+        </entry>
+        <entry key="embargoShorterThanMonths">
+            <bean class="com.atmire.compliance.rules.factory.EmbargoShorterThanMonthsRuleBuilder"/>
+        </entry>
+        <entry key="uniqueBitstreamNames">
+            <bean class="com.atmire.compliance.rules.factory.BitstreamNamesUniqueRuleBuilder"/>
+        </entry>
+        <!--<entry key="dateSmallerThan">-->
+            <!--<bean class="com.atmire.compliance.rules.factory.DateSmallerThanRuleBuilder"/>-->
+        <!--</entry>-->
+        <!--<entry key="dateGreaterThanOrEqual">-->
+            <!--<bean class="com.atmire.compliance.rules.factory.DateGreaterThanOrEqualRuleBuilder"/>-->
+        <!--</entry>-->
+        <!--<entry key="atLeastOneNotBlank">-->
+            <!--<bean class="com.atmire.compliance.rules.factory.AtLeastOneNotBlankRuleBuilder"/>-->
+        <!--</entry>-->
+    </util:map>
+</beans>

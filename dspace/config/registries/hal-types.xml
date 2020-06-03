@@ -1,0 +1,512 @@
+<dspace-dc-types>
+
+    <dspace-header>
+        <title>DSpace hal</title>
+    </dspace-header>
+
+    <dc-schema>
+        <name>hal</name>
+        <namespace>http://dspace.org/hal</namespace>
+    </dc-schema>
+
+
+    <!-- Metadatafields containing information about the HAL deposit -->
+    <dc-type>
+        <schema>hal</schema>
+        <element>description</element>
+        <qualifier>error</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>identifier</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>password</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>version</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>date</element>
+        <qualifier>transferred</qualifier>
+    </dc-type>
+    <!--End metadatafields used for hal deposit -->
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>title</element>
+        <qualifier>translated</qualifier>
+    </dc-type>
+    <dc-type>
+  	<schema>hal</schema>
+      <element>description</element>
+      <qualifier>abstractTranslated</qualifier>
+      <scope_note>Abstract or summary.</scope_note>
+    </dc-type>
+    <!-- Used by system: do not remove -->
+    <dc-type>
+  	<schema>hal</schema>
+      <element>subject</element>
+      <qualifier>translated</qualifier>
+      <scope_note>Uncontrolled index term.</scope_note>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>structure</element>
+        <qualifier>identifier</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>partidesc</element>
+        <qualifier>consortium</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>consortium</element>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>recording</element>
+        <qualifier>duration</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>recording</element>
+        <qualifier>frequence</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>series</element>
+        <qualifier>editor</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>series</element>
+        <qualifier>title</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>invited</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>proceedings</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>note</element>
+        <qualifier>invited</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>note</element>
+        <qualifier>popular</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>note</element>
+        <qualifier>proceedings</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>note</element>
+        <qualifier>image</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>note</element>
+        <qualifier>lecture</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>note</element>
+        <qualifier>pastelthema</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>note</element>
+        <qualifier>pastellib</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>school</element>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>jury</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>meeting</element>
+        <qualifier>enddate</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>meeting</element>
+        <qualifier>enddate</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>identifier</element>
+        <qualifier>patent</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>identifier</element>
+        <qualifier>report</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>identifier</element>
+        <qualifier>local</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>identifier</element>
+        <qualifier>journal</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>identifier</element>
+        <qualifier>doi</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>identifier</element>
+        <qualifier>arxiv</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>identifier</element>
+        <qualifier>nnt</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>date</element>
+        <qualifier>defended</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>date</element>
+        <qualifier>writing</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>date</element>
+        <qualifier>electronic</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>conference</element>
+        <qualifier>name</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>conference</element>
+        <qualifier>organizer</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>conference</element>
+        <qualifier>start</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>conference</element>
+        <qualifier>end</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>conference</element>
+        <qualifier>city</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>conference</element>
+        <qualifier>country</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>settlement</element>
+        <qualifier>city</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>settlement</element>
+        <qualifier>country</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>editor</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>editor</element>
+        <qualifier>series</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>editor</element>
+        <qualifier>scientific</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>domain</element>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>subject</element>
+        <qualifier>jem</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>subject</element>
+        <qualifier>jel</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>journal</element>
+        <qualifier>title</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>popular</element>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>peerReviewed</element>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>audience</element>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>volume</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>volume</element>
+        <qualifier>title</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>issue</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>page</element>
+        <qualifier>number</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>publisher</element>
+        <qualifier>url</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>publisher</element>
+        <qualifier>location</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>classification</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>classification</element>
+        <qualifier>acm</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>classification</element>
+        <qualifier>local</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>comment</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>funder</element>
+        <qualifier>anr</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>funder</element>
+        <qualifier>europe</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>source</element>
+        <qualifier>title</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>book</element>
+        <qualifier>title</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>type</element>
+        <qualifier>other</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>type</element>
+        <qualifier>rapport</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>institution</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>course</element>
+        <qualifier>level</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>course</element>
+        <qualifier>name</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>credit</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>latitude</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>longitude</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>height</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>width</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>watermark</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>projection</element>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>contributor</element>
+        <qualifier>supervisor</qualifier>
+    </dc-type>
+    <dc-type>
+        <schema>hal</schema>
+        <element>date</element>
+        <qualifier>approximative</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>journal</element>
+        <qualifier>title</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>export</element>
+        <qualifier>arxiv</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>export</element>
+        <qualifier>pmc</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>hide</element>
+        <qualifier>repec</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>hide</element>
+        <qualifier>oai</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>description</element>
+        <qualifier>provenance</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>update</element>
+        <qualifier>status</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>update-error</element>
+        <qualifier>status</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>author</element>
+        <qualifier>function</qualifier>
+    </dc-type>
+
+    <dc-type>
+        <schema>hal</schema>
+        <element>publication</element>
+        <qualifier>status</qualifier>
+    </dc-type>
+
+
+</dspace-dc-types>

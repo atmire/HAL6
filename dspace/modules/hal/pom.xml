@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>hal</artifactId>
+    <groupId>com.atmire</groupId>
+    <packaging>pom</packaging>
+    <version>6.x-1.1.0</version>
+
+    <parent>
+        <groupId>org.dspace</groupId>
+        <artifactId>modules</artifactId>
+        <version>6.2</version>
+    </parent>
+
+    <repositories>
+        <repository>
+            <id>maven.dspace.org-snapshot</id>
+            <name>DSpace Maven Snapshot Repository</name>
+            <url>http://maven.dspace.org/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>atmire.com-releases</id>
+            <name>atmire.com-releases</name>
+            <url>https://atmire.com/artifactory/atmire.com-releases</url>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>atmire.com-snapshots</id>
+            <name>atmire.com-snapshots</name>
+            <url>https://atmire.com/artifactory/atmire.com-snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!--
+       Distribution Management is currently used by the Continuum server
+       to update snapshots it generates. This will also be used on
+       release to deploy release versions to the repository by the
+       release manager.
+    -->
+    <distributionManagement>
+        <repository>
+            <id>atmire.com-document-streaming-releases</id>
+            <name>atmire.com-document-streaming-releases</name>
+            <url>https://atmire.com/artifactory/atmire.com-document-streaming-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>atmire.com-document-streaming-snapshots</id>
+            <name>atmire.com-document-streaming-snapshots</name>
+            <url>https://atmire.com/artifactory/atmire.com-document-streaming-snapshots</url>
+        </snapshotRepository>
+        <!--
+           site> <id>website</id> <url>
+           scp://projects.dspace.org/var/www/projects.dspace.org/htdocs
+           </url> </site
+        -->
+    </distributionManagement>
+
+    <build>
+        <!-- Plugin below is used to turn of the license checking plugin -->
+        <plugins>
+            <plugin>
+                <groupId>com.mycila.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+                <configuration>
+                    <!--Exclude license check for XMLUI files which don't need it-->
+                    <excludes>
+                        <exclude>**</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>api-hal</module>
+        <module>hal-xmlui-api</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>api-hal</id>
+            <activation>
+                <file>
+                    <exists>api-hal/pom.xml</exists>
+                </file>
+            </activation>
+            <modules>
+                <module>api-hal</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>hal-xmlui-api</id>
+            <activation>
+                <file>
+                    <exists>hal-xmlui-api/pom.xml</exists>
+                </file>
+            </activation>
+            <modules>
+                <module>hal-xmlui-api</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.dspace</groupId>
+                <artifactId>dspace-api</artifactId>
+                <version>6.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.atmire</groupId>
+                <artifactId>atmire-authority</artifactId>
+                <version>6.2-1.0.0-0</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.dspace</groupId>
+                <artifactId>dspace-xmlui</artifactId>
+                <classifier>classes</classifier>
+                <version>6.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dspace</groupId>
+                <artifactId>dspace-xmlui</artifactId>
+                <version>6.2</version>
+                <type>war</type>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+
+</project>

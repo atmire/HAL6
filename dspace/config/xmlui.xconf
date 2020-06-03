@@ -80,6 +80,7 @@
         <aspect name="Administration" path="resource://aspects/Administrative/" />
         <aspect name="E-Person" path="resource://aspects/EPerson/" />
         <aspect name="Submission and Workflow" path="resource://aspects/Submission/" />
+        <aspect name="Compliance" path="resource://aspects/Compliance/" />
 
         <!-- ========================
              Usage Statistics Engines
@@ -123,6 +124,8 @@
             It's accessible for admins in the XMLTest menu or via the /XMLTest/ URL.
         -->
         <!-- <aspect name="XML Tests" path="resource://aspects/XMLTest/"/> -->
+        <aspect name="Hal" path="resource://aspects/Hal/"/>
+
     </aspects>
 
     <!--
@@ -157,7 +160,7 @@
         <!-- <theme name="Test Theme 2" regex="community-list" path="theme2/"/> -->
 
         <!-- Mirage theme, @mire contributed theme, default since DSpace 3.0 -->
-        <theme name="Atmire Mirage Theme" regex=".*" path="Mirage/" />
+        <theme name="Atmire Mirage Theme" regex=".*" path="Mirage2/" />
 
         <!-- Reference theme, the default Manakin XMLUI layout up to DSpace 1.8 -->
         <!-- <theme name="Default Reference Theme" regex=".*" path="Reference/" /> -->

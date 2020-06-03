@@ -1,0 +1,2 @@
+ALTER TABLE MetadataValue ADD COLUMN parentMetadataValue integer REFERENCES MetadataValue(metadata_value_id);
+create index metadatavalue_parentmetadatavalue_idx ON metadatavalue(parentmetadatavalue);

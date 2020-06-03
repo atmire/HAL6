@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node id="JEL" label="">
+    <isComposedBy>
+        <node id="B" label="B - Hardware">
+            <isComposedBy>
+                <node id="1" label="1 - CONTROL STRUCTURES AND MICROPROGRAMMING">
+                    <isComposedBy>
+                        <node id="1" label="1 - Control Design Styles"/>
+                        <node id="2" label="2 - Control Structure Performance Analysis and Design Aids"/>
+                        <node id="3" label="3 - Control Structure Reliability, Testing, and Fault-Tolerance"/>
+                        <node id="4" label="4 - Microprogram Design Aids"/>
+                        <node id="5" label="5 - Microcode Applications"/>
+                    </isComposedBy>
+                </node>
+                <node id="2" label="2 - ARITHMETIC AND LOGIC STRUCTURES">
+                    <isComposedBy>
+                        <node id="1" label="1 - Design Styles"/>
+                        <node id="2" label="2 - Performance Analysis and Design Aids"/>
+                        <node id="3" label="3 - Reliability, Testing, and Fault-Tolerance"/>
+                        <node id="4" label="4 - High-Speed Arithmetic"/>
+                    </isComposedBy>
+                </node>
+                <node id="3" label="3 - MEMORY STRUCTURES">
+                    <isComposedBy>
+                        <node id="1" label="1 - Semiconductor Memories"/>
+                        <node id="2" label="2 - Design Styles"/>
+                        <node id="3" label="3 - Performance Analysis and Design Aids"/>
+                        <node id="4" label="4 - Reliability, Testing, and Fault-Tolerance"/>
+                    </isComposedBy>
+                </node>
+                <node id="4" label="4 - INPUT/OUTPUT AND DATA COMMUNICATIONS">
+                    <isComposedBy>
+                        <node id="1" label="1 - Data Communications Devices"/>
+                        <node id="2" label="2 - Input/Output Devices"/>
+                        <node id="3" label="3 - Interconnections (Subsystems)"/>
+                        <node id="4" label="4 - Performance Analysis and Design Aids"/>
+                        <node id="5" label="5 - Reliability, Testing, and Fault-Tolerance"/>
+                    </isComposedBy>
+                </node>
+                <node id="5" label="5 - REGISTER-TRANSFER-LEVEL IMPLEMENTATION">
+                    <isComposedBy>
+                        <node id="1" label="1 - Design"/>
+                        <node id="2" label="2 - Design Aids"/>
+                        <node id="3" label="3 - Reliability and Testing"/>
+                    </isComposedBy>
+                </node>
+                <node id="6" label="6 - LOGIC DESIGN">
+                    <isComposedBy>
+                        <node id="1" label="1 - Design Styles"/>
+                        <node id="2" label="2 - Reliability and Testing"/>
+                        <node id="3" label="3 - Design Aids"/>
+                    </isComposedBy>
+                </node>
+                <node id="7" label="7 - INTEGRATED CIRCUITS">
+                    <isComposedBy>
+                        <node id="1" label="1 - Types and Design Styles"/>
+                        <node id="2" label="2 - Design Aids"/>
+                        <node id="3" label="3 - Reliability and Testing"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="C" label="C - Computer Systems Organization">
+            <isComposedBy>
+                <node id="1" label="1 - PROCESSOR ARCHITECTURES">
+                    <isComposedBy>
+                        <node id="1" label="1 - Single Data Stream Architecture"/>
+                        <node id="2" label="2 - Multiple Data Stream Architectures (Multiprocessors)"/>
+                        <node id="3" label="3 - Other Architecture Styles"/>
+                        <node id="4" label="4 - Parallel Architectures"/>
+                    </isComposedBy>
+                </node>
+                <node id="2" label="2 - GENERAL">
+                    <isComposedBy>
+                        <node id="0" label="0 - General"/>
+                        <node id="1" label="1 - Network Architecture and Design"/>
+                        <node id="2" label="2 - Network Protocols"/>
+                        <node id="3" label="3 - Network Operations"/>
+                        <node id="4" label="4 - Distributed Systems"/>
+                        <node id="5" label="5 - Local and Wide-Area Networks"/>
+                        <node id="6" label="6 - Internetworking"/>
+                    </isComposedBy>
+                </node>
+                <node id="5" label="5 - COMPUTER SYSTEM IMPLEMENTATION">
+                    <isComposedBy>
+                        <node id="1" label="1 - Large and Medium ('Mainframe') Computers"/>
+                        <node id="3" label="3 - Microcomputers"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="D" label="D - Software">
+            <isComposedBy>
+                <node id="1" label="1 - PROGRAMMING TECHNIQUES">
+                    <isComposedBy>
+                        <node id="3" label="3 - Concurrent Programming"/>
+                    </isComposedBy>
+                </node>
+                <node id="2" label="2 - SOFTWARE ENGINEERING">
+                    <isComposedBy>
+                        <node id="0" label="0 - General"/>
+                        <node id="1" label="1 - Requirements/Specifications"/>
+                        <node id="2" label="2 - Design Tools and Techniques"/>
+                        <node id="3" label="3 - Coding Tools and Techniques"/>
+                        <node id="4" label="4 - Software/Program Verification"/>
+                        <node id="5" label="5 - Testing and Debugging"/>
+                        <node id="6" label="6 - Programming Environments"/>
+                        <node id="7" label="7 - Distribution, Maintenance, and Enhancement"/>
+                        <node id="8" label="8 - Metrics"/>
+                        <node id="9" label="9 - Management"/>
+                        <node id="10" label="10 - Design"/>
+                        <node id="11" label="11 - Software Architectures"/>
+                        <node id="12" label="12 - Interoperability"/>
+                        <node id="13" label="13 - Reusable Software"/>
+                    </isComposedBy>
+                </node>
+                <node id="3" label="3 - PROGRAMMING LANGUAGES">
+                    <isComposedBy>
+                        <node id="0" label="0 - General"/>
+                        <node id="1" label="1 - Formal Definitions and Theory"/>
+                        <node id="2" label="2 - Language Classifications"/>
+                        <node id="3" label="3 - Language Constructs and Features"/>
+                        <node id="4" label="4 - Processors"/>
+                    </isComposedBy>
+                </node>
+                <node id="4" label="4 - OPERATING SYSTEMS">
+                    <isComposedBy>
+                        <node id="1" label="1 - Process Management"/>
+                        <node id="2" label="2 - Storage Management"/>
+                        <node id="3" label="3 - File Systems Management"/>
+                        <node id="4" label="4 - Communications Management"/>
+                        <node id="5" label="5 - Reliability"/>
+                        <node id="6" label="6 - Security and Protection"/>
+                        <node id="7" label="7 - Organization and Design"/>
+                        <node id="8" label="8 - Performance"/>
+                        <node id="9" label="9 - Systems Programs and Utilities"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="F" label="F - Theory of Computation">
+            <isComposedBy>
+                <node id="1" label="1 - COMPUTATION BY ABSTRACT DEVICES">
+                    <isComposedBy>
+                        <node id="1" label="1 - Models of Computation"/>
+                        <node id="2" label="2 - Modes of Computation"/>
+                        <node id="3" label="3 - Complexity Measures and Classes"/>
+                    </isComposedBy>
+                </node>
+                <node id="2" label="2 - ANALYSIS OF ALGORITHMS AND PROBLEM COMPLEXITY">
+                    <isComposedBy>
+                        <node id="1" label="1 - Numerical Algorithms and Problems"/>
+                        <node id="2" label="2 - Nonnumerical Algorithms and Problems"/>
+                    </isComposedBy>
+                </node>
+                <node id="3" label="3 - LOGICS AND MEANINGS OF PROGRAMS">
+                    <isComposedBy>
+                        <node id="1" label="1 - Specifying and Verifying and Reasoning about Programs"/>
+                        <node id="2" label="2 - Semantics of Programming Languages"/>
+                        <node id="3" label="3 - Studies of Program Constructs"/>
+                    </isComposedBy>
+                </node>
+                <node id="4" label="4 - MATHEMATICAL LOGIC AND FORMAL LANGUAGES">
+                    <isComposedBy>
+                        <node id="1" label="1 - Mathematical Logic"/>
+                        <node id="2" label="2 - Grammars and Other Rewriting Systems"/>
+                        <node id="3" label="3 - Formal Languages"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="G" label="G - Mathematics of Computing">
+            <isComposedBy>
+                <node id="1" label="1 - NUMERICAL ANALYSIS">
+                    <isComposedBy>
+                        <node id="0" label="0 - General"/>
+                        <node id="1" label="1 - Interpolation"/>
+                        <node id="2" label="2 - Approximation"/>
+                        <node id="3" label="3 - Numerical Linear Algebra"/>
+                        <node id="4" label="4 - Quadrature and Numerical Differentiation"/>
+                        <node id="5" label="5 - Roots of Nonlinear Equations"/>
+                        <node id="6" label="6 - Optimization"/>
+                        <node id="7" label="7 - Ordinary Differential Equations"/>
+                        <node id="8" label="8 - Partial Differential Equations"/>
+                        <node id="9" label="9 - Integral Equations"/>
+                    </isComposedBy>
+                </node>
+                <node id="2" label="2 - DISCRETE MATHEMATICS">
+                    <isComposedBy>
+                        <node id="1" label="1 - Combinatorics"/>
+                        <node id="2" label="2 - Graph Theory"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="H" label="H - Information Systems">
+            <isComposedBy>
+                <node id="1" label="1 - MODELS AND PRINCIPLES">
+                    <isComposedBy>
+                        <node id="1" label="1 - Systems and Information Theory"/>
+                        <node id="2" label="2 - User/Machine Systems"/>
+                    </isComposedBy>
+                </node>
+                <node id="2" label="2 - DATABASE MANAGEMENT">
+                    <isComposedBy>
+                        <node id="0" label="0 - General"/>
+                        <node id="1" label="1 - Logical Design"/>
+                        <node id="2" label="2 - Physical Design"/>
+                        <node id="3" label="3 - Languages"/>
+                        <node id="4" label="4 - Systems"/>
+                        <node id="5" label="5 - Heterogeneous Databases"/>
+                        <node id="6" label="6 - Database Machines"/>
+                        <node id="7" label="7 - Database Administration"/>
+                        <node id="8" label="8 - Database Applications"/>
+                    </isComposedBy>
+                </node>
+                <node id="3" label="3 - INFORMATION STORAGE AND RETRIEVAL">
+                    <isComposedBy>
+                        <node id="1" label="1 - Content Analysis and Indexing"/>
+                        <node id="2" label="2 - Information Storage"/>
+                        <node id="3" label="3 - Information Search and Retrieval"/>
+                        <node id="4" label="4 - Systems and Software"/>
+                        <node id="5" label="5 - Online Information Services"/>
+                        <node id="6" label="6 - Library Automation"/>
+                        <node id="7" label="7 - Digital Libraries"/>
+                    </isComposedBy>
+                </node>
+                <node id="4" label="4 - INFORMATION SYSTEMS APPLICATIONS">
+                    <isComposedBy>
+                        <node id="1" label="1 - Office Automation"/>
+                        <node id="2" label="2 - Types of Systems"/>
+                        <node id="3" label="3 - Communications Applications"/>
+                    </isComposedBy>
+                </node>
+                <node id="5" label="5 - INFORMATION INTERFACES AND PRESENTATION (e.g., HCI)">
+                    <isComposedBy>
+                        <node id="1" label="1 - Multimedia Information Systems"/>
+                        <node id="2" label="2 - User Interfaces"/>
+                        <node id="3" label="3 - Group and Organization Interfaces"/>
+                        <node id="4" label="4 - Hypertext/Hypermedia"/>
+                        <node id="5" label="5 - Sound and Music Computing"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="I" label="I - Computing Methodologies">
+            <isComposedBy>
+                <node id="1" label="1 - SYMBOLIC AND ALGEBRAIC MANIPULATION">
+                    <isComposedBy>
+                        <node id="11" label="11 - Expressions and Their Representation"/>
+                        <node id="12" label="12 - Algorithms"/>
+                        <node id="13" label="13 - Languages and Systems"/>
+                    </isComposedBy>
+                </node>
+                <node id="2" label="2 - ARTIFICIAL INTELLIGENCE">
+                    <isComposedBy>
+                        <node id="0" label="0 - General"/>
+                        <node id="1" label="1 - Applications and Expert Systems"/>
+                        <node id="2" label="2 - Automatic Programming"/>
+                        <node id="3" label="3 - Deduction and Theorem Proving"/>
+                        <node id="4" label="4 - Knowledge Representation Formalisms and Methods"/>
+                        <node id="5" label="5 - Programming Languages and Software"/>
+                        <node id="6" label="6 - Learning"/>
+                        <node id="7" label="7 - Natural Language Processing"/>
+                        <node id="8" label="8 - Problem Solving, Control Methods, and Search"/>
+                        <node id="9" label="9 - Robotics"/>
+                        <node id="10" label="10 - Vision and Scene Understanding"/>
+                        <node id="11" label="11 - Distributed Artificial Intelligence"/>
+                    </isComposedBy>
+                </node>
+                <node id="3" label="3 - COMPUTER GRAPHICS">
+                    <isComposedBy>
+                        <node id="1" label="1 - Hardware Architecture"/>
+                        <node id="2" label="2 - Graphics Systems"/>
+                        <node id="3" label="3 - Picture/Image Generation"/>
+                        <node id="4" label="4 - Graphics Utilities"/>
+                        <node id="5" label="5 - Computational Geometry and Object Modeling"/>
+                        <node id="6" label="6 - Methodology and Techniques"/>
+                        <node id="7" label="7 - Three-Dimensional Graphics and Realism"/>
+                    </isComposedBy>
+                </node>
+                <node id="4" label="4 - IMAGE PROCESSING AND COMPUTER VISION">
+                    <isComposedBy>
+                        <node id="0" label="0 - General"/>
+                        <node id="1" label="1 - Digitization and Image Capture"/>
+                        <node id="2" label="2 - Compression (Coding)"/>
+                        <node id="3" label="3 - Enhancement"/>
+                        <node id="4" label="4 - Restoration"/>
+                        <node id="5" label="5 - Reconstruction"/>
+                        <node id="6" label="6 - Segmentation"/>
+                        <node id="7" label="7 - Feature Measurement"/>
+                        <node id="8" label="8 - Scene Analysis"/>
+                        <node id="10" label="10 - Image Representation"/>
+                    </isComposedBy>
+                </node>
+                <node id="5" label="5 - PATTERN RECOGNITION">
+                    <isComposedBy>
+                        <node id="1" label="1 - Models"/>
+                        <node id="2" label="2 - Design Methodology"/>
+                        <node id="3" label="3 - Clustering"/>
+                        <node id="4" label="4 - Applications"/>
+                        <node id="5" label="5 - Implementation"/>
+                    </isComposedBy>
+                </node>
+                <node id="6" label="6 - SIMULATION AND MODELING">
+                    <isComposedBy>
+                        <node id="0" label="0 - General"/>
+                        <node id="1" label="1 - Simulation Theory"/>
+                        <node id="2" label="2 - Simulation Languages"/>
+                        <node id="3" label="3 - Applications"/>
+                        <node id="4" label="4 - Model Validation and Analysis"/>
+                        <node id="5" label="5 - Model Development"/>
+                        <node id="6" label="6 - Simulation Output Analysis"/>
+                        <node id="7" label="7 - Simulation Support Systems"/>
+                        <node id="8" label="8 - Types of Simulation"/>
+                        <node id="m" label="m - Miscellaneous"/>
+                    </isComposedBy>
+                </node>
+                <node id="7" label="7 - DOCUMENT AND TEXT PROCESSING">
+                    <isComposedBy>
+                        <node id="1" label="1 - Document and Text Editing"/>
+                        <node id="2" label="2 - Document Preparation"/>
+                        <node id="5" label="5 - Document Capture"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+        <node id="K" label="K - Computing Milieux">
+            <isComposedBy>
+                <node id="3" label="3 - COMPUTERS AND EDUCATION">
+                    <isComposedBy>
+                        <node id="1" label="1 - Computer Uses in Education"/>
+                        <node id="2" label="2 -Computer and Information Science Education"/>
+                    </isComposedBy>
+                </node>
+                <node id="4" label="4 - COMPUTERS AND SOCIETY">
+                    <isComposedBy>
+                        <node id="1" label="1 - Public Policy Issues"/>
+                        <node id="2" label="2 - Social Issues"/>
+                        <node id="3" label="3 - Organizational Impacts"/>
+                        <node id="4" label="4 - Electronic Commerce"/>
+                    </isComposedBy>
+                </node>
+                <node id="5" label="5 - LEGAL ASPECTS OF COMPUTING">
+                    <isComposedBy>
+                        <node id="1" label="1 - Hardware/Software Protection"/>
+                        <node id="2" label="2 - Governmental Issues"/>
+                    </isComposedBy>
+                </node>
+                <node id="6" label="6 - MANAGEMENT OF COMPUTING AND INFORMATION SYSTEMS">
+                    <isComposedBy>
+                        <node id="0" label="0 - General"/>
+                        <node id="1" label="1 - Project and People Management"/>
+                        <node id="2" label="2 - Installation Management"/>
+                        <node id="3" label="3 - Software Management"/>
+                        <node id="4" label="4 - System Management"/>
+                        <node id="5" label="5 - System Management"/>
+                    </isComposedBy>
+                </node>
+                <node id="7" label="7 - THE COMPUTING PROFESSION">
+                    <isComposedBy>
+                        <node id="4" label="4 - Professional Ethics"/>
+                    </isComposedBy>
+                </node>
+                <node id="8" label="8 - PERSONAL COMPUTING">
+                    <isComposedBy>
+                        <node id="0" label="0 - General"/>
+                        <node id="1" label="1 - Application Packages"/>
+                    </isComposedBy>
+                </node>
+            </isComposedBy>
+        </node>
+    </isComposedBy>
+</node>
