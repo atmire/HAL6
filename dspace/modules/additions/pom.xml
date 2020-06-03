@@ -83,6 +83,17 @@
             </exclusion>
          </exclusions>
       </dependency>
+      <dependency>
+         <groupId>com.atmire</groupId>
+         <artifactId>atmire-authority</artifactId>
+         <version>6.2.1.2.0-0</version>
+         <exclusions>
+            <exclusion>
+               <groupId>org.json</groupId>
+               <artifactId>json</artifactId>
+            </exclusion>
+         </exclusions>
+      </dependency>
    </dependencies>
 
 </project>

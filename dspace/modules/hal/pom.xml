@@ -140,7 +140,7 @@
             <dependency>
                 <groupId>com.atmire</groupId>
                 <artifactId>atmire-authority</artifactId>
-                <version>6.2.1.2.0-0</version>
+                <version>6.2-1.1.0-0</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.ow2.asm</groupId>

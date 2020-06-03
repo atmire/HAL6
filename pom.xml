@@ -1435,11 +1435,6 @@
                 <artifactId>jackson-annotations</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.atmire</groupId>
-                <artifactId>atmire-authority</artifactId>
-                <version>6.2.1.2.0-0</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -1561,6 +1556,20 @@
 
     <!-- Enable access to artifacts in Sonatype's snapshot repo for Snapshots ONLY -->
     <repositories>
+        <repository>
+          <id>atmire.com-releases</id>
+          <name>atmire.com-releases</name>
+          <url>https://atmire.com/artifactory/atmire.com-releases</url>
+          <releases>
+            <enabled>true</enabled>
+            <checksumPolicy>fail</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </snapshots>
+        </repository>
         <repository>
           <id>maven-snapshots</id>
           <url>http://oss.sonatype.org/content/repositories/snapshots</url>
