@@ -76,6 +76,12 @@
          <groupId>com.atmire</groupId>
          <artifactId>atmire-api-hal</artifactId>
          <version>6.x-1.1.0</version>
+         <exclusions>
+            <exclusion>
+               <groupId>xom</groupId>
+               <artifactId>xom</artifactId>
+            </exclusion>
+         </exclusions>
       </dependency>
    </dependencies>
 

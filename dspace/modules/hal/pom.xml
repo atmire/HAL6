@@ -12,7 +12,7 @@
     <parent>
         <groupId>org.dspace</groupId>
         <artifactId>modules</artifactId>
-        <version>6.2</version>
+        <version>6.3</version>
     </parent>
 
     <repositories>
@@ -135,16 +135,20 @@
             <dependency>
                 <groupId>org.dspace</groupId>
                 <artifactId>dspace-api</artifactId>
-                <version>6.2</version>
+                <version>6.3</version>
             </dependency>
             <dependency>
                 <groupId>com.atmire</groupId>
                 <artifactId>atmire-authority</artifactId>
-                <version>6.2-1.0.0-0</version>
+                <version>6.2.1.2.0-0</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.ow2.asm</groupId>
                         <artifactId>asm</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.json</groupId>
+                        <artifactId>json</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -152,12 +156,12 @@
                 <groupId>org.dspace</groupId>
                 <artifactId>dspace-xmlui</artifactId>
                 <classifier>classes</classifier>
-                <version>6.2</version>
+                <version>6.3</version>
             </dependency>
             <dependency>
                 <groupId>org.dspace</groupId>
                 <artifactId>dspace-xmlui</artifactId>
-                <version>6.2</version>
+                <version>6.3</version>
                 <type>war</type>
             </dependency>
         </dependencies>
