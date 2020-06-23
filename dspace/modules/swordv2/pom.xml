@@ -116,6 +116,12 @@
       <dependency>
          <groupId>org.dspace.modules</groupId>
          <artifactId>additions</artifactId>
+         <exclusions>
+             <exclusion>
+                 <groupId>xom</groupId>
+                 <artifactId>xom</artifactId>
+             </exclusion>
+         </exclusions>
       </dependency>
 
       <!-- DSpace Custom SWORDv2 Web application -->

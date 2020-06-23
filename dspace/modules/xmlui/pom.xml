@@ -48,6 +48,23 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <attachClasses>true</attachClasses>
+                    <!-- In version 2.1-alpha-1, this was incorrectly named warSourceExcludes -->
+                    <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+                    <warSourceExcludes>WEB-INF/lib/*.jar</warSourceExcludes>
+                    <!-- Filter the web.xml (needed for IDE compatibility/debugging) -->
+                    <filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -225,6 +242,10 @@
                     <groupId>xml-apis</groupId>
                     <artifactId>xml-apis</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>org.swordapp</groupId>
+                    <artifactId>sword2-client</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
 
@@ -257,34 +278,10 @@
         </dependency>
 
         <dependency>
-            <groupId>com.atmire</groupId>
-            <artifactId>atmire-hal-xmlui-api</artifactId>
-            <version>6.x-1.1.0</version>
-            <type>war</type>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.dspace</groupId>
-                    <artifactId>dspace-xmlui</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>com.atmire</groupId>
-            <artifactId>atmire-hal-xmlui-api</artifactId>
-            <version>6.x-1.1.0</version>
-            <type>jar</type>
-            <classifier>classes</classifier>
-            <exclusions>
-                <exclusion>
-                    <groupId>xom</groupId>
-                    <artifactId>xom</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.dspace</groupId>
-                    <artifactId>dspace-xmlui</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
         </dependency>
 
     </dependencies>

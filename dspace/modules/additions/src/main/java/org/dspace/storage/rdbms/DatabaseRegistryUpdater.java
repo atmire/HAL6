@@ -159,7 +159,7 @@ public class DatabaseRegistryUpdater implements FlywayCallback
 
     @Override
     public void afterRepair(Connection connection) {
-
+        updateRegistries();
     }
 
     @Override
