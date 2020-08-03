@@ -67,6 +67,7 @@
          <hint>Enter the name of the item</hint>
          <required>Please fill in a title</required>
        </field>
+
        <field>
          <dc-schema>hal</dc-schema>
          <dc-element>title</dc-element>

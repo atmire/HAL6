@@ -243,8 +243,8 @@
                     <artifactId>xml-apis</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>org.swordapp</groupId>
-                    <artifactId>sword2-client</artifactId>
+                    <groupId>xom</groupId>
+                    <artifactId>xom</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
