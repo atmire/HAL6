@@ -7,6 +7,7 @@
  */
 package org.dspace.app.xmlui.aspect.submission.submit;
 
+import com.atmire.dspace.hal.Structure;
 import com.atmire.dspace.hal.factory.HALServiceFactory;
 import com.atmire.dspace.hal.service.HALRetrievalService;
 import com.atmire.dspace.hal.utils.HALConversionUtils;
@@ -396,7 +397,10 @@ public class DescribeStep extends AbstractSubmissionStep
                                 if(StringUtils.isNotBlank(structureString)){
                                     structureString+="\n";
                                 }
-                                structureString += "\t"+halRetrievalService.findStructureByID(Integer.valueOf(childValue.getValue())).getName();
+                                final Structure structureByID = halRetrievalService.findStructureByID(Integer.valueOf(childValue.getValue()));
+                                if(structureByID != null) {
+                                    structureString += "\t"+ structureByID.getName();
+                                }
                             }
                         }
                         if(StringUtils.isNotBlank(structureString)){
@@ -421,13 +425,13 @@ public class DescribeStep extends AbstractSubmissionStep
                             org.dspace.app.xmlui.wing.element.Item authItem =
                                     describeSection.addItem("submit-review-field-with-authority", "ds-authority-confidence cf-" + confidence);
                             authItem.addContent(displayValue);
-                            if(additionalValue!=null){
-                                describeSection.addItem("structureValues","").addContent(additionalValue);
-                            }
                         }
                         else
                         {
                             describeSection.addItem(displayValue);
+                        }
+                        if(additionalValue!=null){
+                            describeSection.addItem("structureValues","").addContent(additionalValue);
                         }
                     }
                 } // For each MetadataValue

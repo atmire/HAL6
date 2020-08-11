@@ -1314,57 +1314,42 @@ public class DescribeStep extends AbstractProcessingStep
                         itemService.addMetadata(context, item, schema, element, qualifier, null,
                                 value, authKey,
                                 confidence);
-                        MetadataValue authorMetadataValue = Iterables.getLast(itemService.getMetadata(item, schema, element, qualifier, null), null);
-
-                        if (currentNewValue) {
-                            // Only automatically search and add structures for new authors
-                            try{
-                                List<Structure> retrievedStructures = halRetrievalService.findStructuresByAuthor(l, f, null);
-                                if (CollectionUtils.isNotEmpty(retrievedStructures) && authorMetadataValue != null) {
-                                    for (Structure retrievedStructure : retrievedStructures) {
-                                        int structureId = retrievedStructure.getId();
-                                        if (structureId != 0) {
-                                            updateWithRelations(context, item, halMetadataField, authorMetadataValue, String.valueOf(structureId));
-                                        }
-                                    }
-                                }
-                                updateWithRelations(context, item, halFunctionMetadataField, authorMetadataValue, "aut");
-                            }catch (Exception e){
-                                addErrorField(request, metadataField+"_hal_lookup");
-                            }
-                        } else {
-                            // We just added the value above, but now we need the actual value, just retrieve the last one in the list
-                            if (CollectionUtils.isNotEmpty(IDs) && authorMetadataValue != null) {
-                                for (String id : IDs) {
-                                    if (!StringUtils.equals(id, "0")) {
-                                        updateWithRelations(context, item, halMetadataField, authorMetadataValue, id);
-                                    }
-                                }
-                            }
-                            if(StringUtils.isNotBlank(function)){
-                                updateWithRelations(context, item, halFunctionMetadataField, authorMetadataValue, function);
-                            }
-                        }
                     }
                 }
                 else
                 {
                     itemService.addMetadata(context, item, schema, element, qualifier, null,
                             value);
-                    Iterator<MetadataValue> values = itemService.getMetadata(item,schema,element,qualifier,null).iterator();
-                    MetadataValue authorMetadataValue=null;
-                    while (authorMetadataValue == null && values.hasNext()){
-                        MetadataValue next = values.next();
-                        if(StringUtils.equals(next.getValue(),value) ){
-                            authorMetadataValue = next;
+                }
+                MetadataValue authorMetadataValue = Iterables.getLast(itemService.getMetadata(item, schema, element, qualifier, null), null);
+                if (currentNewValue) {
+                    // Only automatically search and add structures for new authors
+                    try{
+                        List<Structure> retrievedStructures = halRetrievalService.findStructuresByAuthor(l, f, null);
+                        if (CollectionUtils.isNotEmpty(retrievedStructures) && authorMetadataValue != null) {
+                            for (Structure retrievedStructure : retrievedStructures) {
+                                int structureId = retrievedStructure.getId();
+                                if (structureId != 0) {
+                                    updateWithRelations(context, item, halMetadataField, authorMetadataValue, String.valueOf(structureId));
+                                }
+                            }
+                        }
+                        updateWithRelations(context, item, halFunctionMetadataField, authorMetadataValue, "aut");
+                    }catch (Exception e){
+                        addErrorField(request, metadataField+"_hal_lookup");
+                    }
+                } else {
+                    // We just added the value above, but now we need the actual value, just retrieve the last one in the list
+                    if (CollectionUtils.isNotEmpty(IDs) && authorMetadataValue != null) {
+                        for (String id : IDs) {
+                            if (!StringUtils.equals(id, "0")) {
+                                updateWithRelations(context, item, halMetadataField, authorMetadataValue, id);
+                            }
                         }
                     }
-                    if(CollectionUtils.isNotEmpty(IDs)){
-                        for(String id : IDs){
-                            updateWithRelations(context, item, halMetadataField, authorMetadataValue, id);
-                        }
+                    if(StringUtils.isNotBlank(function)){
+                        updateWithRelations(context, item, halFunctionMetadataField, authorMetadataValue, function);
                     }
-
                 }
             }
         }

@@ -155,7 +155,7 @@ public class HALSWORDClient extends SWORDClient {
         }
 
         if (resp != null) {
-                        int status = resp.getStatus();
+            int status = resp.getStatus();
             ResponseCodeManager rcm = new ResponseCodeManager();
             ResponseStatus rs = rcm.depositNew(status);
             if (rs.isCorrect() || rs.isIncorrectButAllowed()) {

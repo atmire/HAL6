@@ -658,19 +658,15 @@
                                 </property>
                             </bean>
                             <!-- Label: Domaine -->
-                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MultiValueMappedAttributeMetadataFieldGenerator">
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MetadataValueAsAttributeGenerator">
                                 <property name="elementName" value="classCode"/>
-                                <property name="metadataField" value="dc.subject.hal"/>
+                                <property name="metadataField" value="hal.domain"/>
                                 <property name="attributeName" value="n"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="scheme"/>
                                         <property name="value" value="halDomain"/>
                                     </bean>
-                                </property>
-                                <property name="map">
-                                    <map>
-                                    </map>
                                 </property>
                             </bean>
                             <!-- Label: Type de document -->
@@ -1263,6 +1259,31 @@
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                             <property name="name" value="unit"/>
                                             <property name="value" value="pp"/>
+                                        </bean>
+                                    </list>
+                                </property>
+                            </bean>
+                            <!-- Label: Date de publication	 -->
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
+                                <property name="elementName" value="date"/>
+                                <property name="metadataField" value="dc.date.issued"/>
+                                <property name="attributes">
+                                    <list>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+                                            <property name="name" value="type"/>
+                                            <property name="value" value="datePub"/>
+                                        </bean>
+                                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.prechecked.ConditionCheckingValueAsAttributeGenerator">
+                                            <property name="name" value="subtype"/>
+                                            <property name="value" value="inPress"/>
+                                            <property name="conditionsToMatch">
+                                                <list>
+                                                    <bean class="com.atmire.dspace.hal.xmlgenerating.config.MetadataValueEqualsCondition">
+                                                        <property name="metadataField" value="hal.inpress"/>
+                                                        <property name="valueToMatch" value="non"/>
+                                                    </bean>
+                                                </list>
+                                            </property>
                                         </bean>
                                     </list>
                                 </property>

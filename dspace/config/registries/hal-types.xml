@@ -508,5 +508,10 @@
         <qualifier>status</qualifier>
     </dc-type>
 
+    <dc-type>
+        <schema>hal</schema>
+        <element>inpress</element>
+    </dc-type>
+
 
 </dspace-dc-types>

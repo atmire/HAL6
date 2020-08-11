@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.dspace.content.MetadataValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,6 +26,9 @@ public class HALConversionUtils {
      * @return Id's, split as an Array of integers (e.g. {1234, 567, 8, 90})
      */
     public static List<String> splitStructureIdString(String string) {
+        if(StringUtils.equals("0", string)) {
+            return Collections.emptyList();
+        }
         String[] splitIDs = StringUtils.split(string, "\\$\\$\\$");
         List<String> IDs = new ArrayList<>();
         for (String splitID : splitIDs) {
