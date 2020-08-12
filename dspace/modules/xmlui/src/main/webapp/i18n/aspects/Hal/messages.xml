@@ -19,6 +19,7 @@
     <message key="xmlui.Submission.submit.input.dc_contributor_author.nostructures.error">There was an issue with the structures lookup, please try again.</message>
     <message key="xmlui.Submission.submit.input.dc_contributor_author.div.canadditional">You can add additional structures to this list by using "Add additional Structures" below.<br></br>Only the checked structures will be stored.</message>
     <message key="xmlui.Submission.submit.input.dc_contributor_author.div.enteredabove">Lookup structures linked to the author's name you entered above.</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.fieldset.additional.legend">Add Additional Structures</message>
     <message key="xmlui.Submission.submit.input.dc_contributor_author.fieldset.additional.legend1">Par défaut, l'affiliation la plus récente de l'auteur est sélectionnée lorsque cette information est disponible.
         Il vous est possible d'intervenir manuellement sur les affiliations dans le cas où plusieurs seraient nécessaires ou si la date de cette publication implique qu'une autre affiliation est d'application.
         Les autres affiliations connues de l'auteur dans LillOA sont proposées mais il vous est, par ailleurs, possible d'utiliser l'outil de recherche ci-dessous pour en ajouter d'autres.</message>
