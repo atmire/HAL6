@@ -158,11 +158,11 @@ public class HalAnrProjectAuthorityBuilder extends AbstractHalSolrAuthorityBuild
     public void afterPropertiesSet() throws Exception {
         HttpSolrServer server = null;
 
-        if (configurationService.getProperty("solr-hal-funder-anr") != null)
+        if (configurationService.getProperty("hal.solr-hal-funder-anr") != null)
         {
             try
             {
-                server = new HttpSolrServer(configurationService.getProperty("solr-hal-funder-anr"));
+                server = new HttpSolrServer(configurationService.getProperty("hal.solr-hal-funder-anr"));
                 server.setParser(new HalSolrXMLResponseParser());
             } catch (Exception e) {
                 log.error(e.getMessage(), e);

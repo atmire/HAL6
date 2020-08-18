@@ -85,11 +85,11 @@ public class HalJournalAuthorityBuilder extends AbstractHalSolrAuthorityBuilder<
     public void afterPropertiesSet() throws Exception {
         HttpSolrServer server = null;
 
-        if (configurationService.getProperty("solr-hal-journal") != null)
+        if (configurationService.getProperty("hal.solr-hal-journal") != null)
         {
             try
             {
-                server = new HttpSolrServer(configurationService.getProperty("solr-hal-journal"));
+                server = new HttpSolrServer(configurationService.getProperty("hal.solr-hal-journal"));
                 server.setParser(new HalSolrXMLResponseParser());
             } catch (Exception e) {
                 log.error(e.getMessage(), e);

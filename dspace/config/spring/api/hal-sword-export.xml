@@ -65,7 +65,7 @@
             <list>
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="org"/>
-                    <property name="metadataField" value="dc.contributor.author"/>
+                    <property name="metadataField" value="${hal.export.laboratory}"/>
                     <property name="attributes">
                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                             <property name="name" value="type"/>
@@ -91,7 +91,7 @@
                 <!-- Label: Titre -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="title"/>
-                    <property name="metadataField" value="dc.title"/>
+                    <property name="metadataField" value="${hal.export.title}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -104,7 +104,7 @@
                 <!-- Label: Title -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="title"/>
-                    <property name="metadataField" value="dc.title.en"/>
+                    <property name="metadataField" value="${hal.export.title.en}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -151,18 +151,18 @@
                 <!-- Label: Auteur -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueAuthorGenerator">
                     <property name="elementName" value="author"/>
-                    <property name="metadataField" value="dc.contributor.author"/>
+                    <property name="metadataField" value="${hal.export.auteur}"/>
                 </bean>
 
                 <!-- Financement -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="funder"/>
-                    <property name="metadataField" value="dc.description.sponsorship"/>
+                    <property name="metadataField" value="${hal.export.financement}"/>
                 </bean>
                 <!-- Projet(s) ANR -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="funder"/>
-                    <property name="metadataField" value="hal.funder.anr"/>
+                    <property name="metadataField" value="${hal.export.funder.anr}"/>
                     <property name="attributes">
                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.authority.CategorySpecificAuthorityAttributeGenerator">
                             <property name="name" value="ref"/>
@@ -173,7 +173,7 @@
                 <!-- Projet(s) Européen(s) -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="funder"/>
-                    <property name="metadataField" value="hal.funder.europe"/>
+                    <property name="metadataField" value="${hal.export.funder.europe}"/>
                     <property name="attributes">
                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.authority.CategorySpecificAuthorityAttributeGenerator">
                             <property name="name" value="ref"/>
@@ -273,7 +273,7 @@
                 <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:licence&fl=metaValue_s&wt=xml -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.CreativeCommonsAttributeGenerator">
                     <property name="elementName" value="licence"/>
-                    <property name="metadataField" value="dc.rights.uri"/>
+                    <property name="metadataField" value="${hal.export.licence}"/>
                     <property name="attributeName" value="target"/>
                 </bean>
             </list>
@@ -303,7 +303,7 @@
                 <!-- Label: Commentaire -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="note"/>
-                    <property name="metadataField" value="hal.comment"/>
+                    <property name="metadataField" value="${hal.export.commentaire}"/>
                     <property name="attributes">
                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                             <property name="name" value="type"/>
@@ -314,7 +314,7 @@
                 <!-- Label: Description -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
                     <property name="elementName" value="note"/>
-                    <property name="metadataField" value="dc.description"/>
+                    <property name="metadataField" value="${hal.export.description}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -329,7 +329,7 @@
                 <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:audience&fl=*&wt=xml -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.SingleValueMappedAttributeMetadataFieldGenerator">
                     <property name="elementName" value="note"/>
-                    <property name="metadataField" value="hal.audience"/>
+                    <property name="metadataField" value="${hal.export.audience}"/>
                     <property name="attributeName" value="n"/>
                     <property name="attributes">
                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -349,7 +349,7 @@
                 <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:invitedCommunication&fl=*&wt=xml -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMappedMetadataFieldGenerator">
                     <property name="elementName" value="note"/>
-                    <property name="metadataField" value="hal.invited"/>
+                    <property name="metadataField" value="${hal.export.invite}"/>
                     <property name="attributename" value="n"/>
                     <property name="attributes">
                         <list>
@@ -370,7 +370,7 @@
                 <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:popularLevel&fl=*&wt=xml -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMappedMetadataFieldGenerator">
                     <property name="elementName" value="note"/>
-                    <property name="metadataField" value="hal.popular"/>
+                    <property name="metadataField" value="${hal.export.vulgarisation}"/>
                     <property name="attributename" value="n"/>
                     <property name="attributes">
                         <list>
@@ -391,7 +391,7 @@
                 <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:peerReviewing&fl=*&wt=xml -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMappedMetadataFieldGenerator">
                     <property name="elementName" value="note"/>
-                    <property name="metadataField" value="hal.peerReviewed"/>
+                    <property name="metadataField" value="${hal.export.peerReviewed}"/>
                     <property name="attributename" value="n"/>
                     <property name="attributes">
                         <list>
@@ -412,7 +412,7 @@
                 <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:proceedings&fl=*&wt=xml -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMappedMetadataFieldGenerator">
                     <property name="elementName" value="note"/>
-                    <property name="metadataField" value="hal.proceedings"/>
+                    <property name="metadataField" value="${hal.export.actes}"/>
                     <property name="attributename" value="n"/>
                     <property name="attributes">
                         <list>
@@ -433,7 +433,7 @@
                 <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:reportType&fl=*&wt=xml -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MultiValueMappedAttributeMetadataFieldGenerator">
                     <property name="elementName" value="note"/>
-                    <property name="metadataField" value="hal.type.rapport"/>
+                    <property name="metadataField" value="${hal.export.type.rapport}"/>
                     <property name="attributes">
                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                             <property name="name" value="type"/>
@@ -456,7 +456,7 @@
                 <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:otherType&fl=*&wt=xml -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMappedMetadataFieldGenerator">
                     <property name="elementName" value="note"/>
-                    <property name="metadataField" value="hal.type.other"/>
+                    <property name="metadataField" value="${hal.export.type.other}"/>
                     <property name="attributename" value="n"/>
                     <property name="attributes">
                         <list>
@@ -495,7 +495,7 @@
                 <!-- Values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:lectureType&fl=*&wt=xml -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleLineMultiAttributeMetadataFieldGenerator">
                     <property name="elementName" value="note"/>
-                    <property name="metadataField" value="hal.course.level"/>
+                    <property name="metadataField" value="${hal.export.lectureType}"/>
                     <property name="attributename" value="n"/>
                     <property name="attributes">
                         <list>
@@ -555,7 +555,7 @@
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MetadataValueAsAttributeGenerator">
                                 <property name="elementName" value="language"/>
-                                <property name="metadataField" value="dc.language.iso"/>
+                                <property name="metadataField" value="${hal.export.langue.du.document}"/>
                                 <property name="attributeName" value="ident"/>
                                 <property name="defaultValue" value="fr"/>
                             </bean>
@@ -573,7 +573,7 @@
                                     <list>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                             <property name="elementName" value="term"/>
-                                            <property name="metadataField" value="dc.subject"/>
+                                            <property name="metadataField" value="${hal.export.subject}"/>
                                             <property name="attributes">
                                                 <list>
                                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -586,7 +586,7 @@
                                         </bean>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                             <property name="elementName" value="term"/>
-                                            <property name="metadataField" value="dc.subject.en"/>
+                                            <property name="metadataField" value="${hal.export.subject.en}"/>
                                             <property name="attributes">
                                                 <list>
                                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -612,7 +612,7 @@
                             <!-- Label: Classification -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="classCode"/>
-                                <property name="metadataField" value="hal.classification"/>
+                                <property name="metadataField" value="${hal.export.classification}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="scheme"/>
@@ -624,7 +624,7 @@
                             <!-- Label: Classification ACM 1998 -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="classCode"/>
-                                <property name="metadataField" value="hal.classification.acm"/>
+                                <property name="metadataField" value="${hal.export.classification.acm}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="scheme"/>
@@ -636,7 +636,7 @@
                             <!-- Label: Renseignez des mots-clés issus du MeSH -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="classCode"/>
-                                <property name="metadataField" value="dc.subject.mesh"/>
+                                <property name="metadataField" value="${hal.export.subject.mesh}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="scheme"/>
@@ -647,7 +647,7 @@
                             <!-- Label: JEL -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="classCode"/>
-                                <property name="metadataField" value="dc.subject.jel"/>
+                                <property name="metadataField" value="${hal.export.subject.jel}"/>
                                 <property name="attributes">
                                     <list>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -660,7 +660,7 @@
                             <!-- Label: Domaine -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MetadataValueAsAttributeGenerator">
                                 <property name="elementName" value="classCode"/>
-                                <property name="metadataField" value="hal.domain"/>
+                                <property name="metadataField" value="${hal.export.domain}"/>
                                 <property name="attributeName" value="n"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -673,7 +673,7 @@
                             <bean id="classCodehalTypology"
                                   class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MultiValueMappedAttributeMetadataFieldGenerator">
                                 <property name="elementName" value="classCode"/>
-                                <property name="metadataField" value="dc.type"/>
+                                <property name="metadataField" value="${hal.export.type}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="scheme"/>
@@ -710,7 +710,7 @@
                 <!-- Label: Résumé -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="abstract"/>
-                    <property name="metadataField" value="dc.description.abstract"/>
+                    <property name="metadataField" value="${hal.export.resume}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -723,7 +723,7 @@
                 <!-- Label: Résumé -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="abstract"/>
-                    <property name="metadataField" value="dc.description.abstractEn"/>
+                    <property name="metadataField" value="${hal.export.description.abstractEn}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -740,7 +740,7 @@
                             <!-- Label: Collaboration/Projet -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="org"/>
-                                <property name="metadataField" value="hal.consortium"/>
+                                <property name="metadataField" value="${hal.export.consortium}"/>
                                 <property name="attributes">
                                     <list>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -775,7 +775,7 @@
                                         <!-- Label: Titre-->
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                             <property name="elementName" value="title"/>
-                                            <property name="metadataField" value="dc.title"/>
+                                            <property name="metadataField" value="${hal.export.title}"/>
                                             <property name="attributes">
                                                 <list>
                                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -789,7 +789,7 @@
                                         <!-- Label: Title-->
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                             <property name="elementName" value="title"/>
-                                            <property name="metadataField" value="dc.title.en"/>
+                                            <property name="metadataField" value="${hal.export.title.en}"/>
                                             <property name="attributes">
                                                 <list>
                                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -803,7 +803,7 @@
                                         <!-- Label: Sous-Titre -->
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                             <property name="elementName" value="title"/>
-                                            <property name="metadataField" value="dc.title.alternative"/>
+                                            <property name="metadataField" value="${hal.export.title.alternative}"/>
                                             <property name="attributes">
                                                 <list>
                                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -838,7 +838,7 @@
                                         </bean>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueAuthorGenerator">
                                             <property name="elementName" value="author"/>
-                                            <property name="metadataField" value="dc.contributor.author"/>
+                                            <property name="metadataField" value="${hal.export.auteur}"/>
                                         </bean>
                                     </list>
                                 </property>
@@ -895,7 +895,7 @@
                             <!-- Label: Voir aussi -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="ref"/>
-                                <property name="metadataField" value="dc.identifier.other"/>
+                                <property name="metadataField" value="${hal.export.identifier.other}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="type"/>
@@ -906,7 +906,7 @@
                             <!-- Label: URL éditeur -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="ref"/>
-                                <property name="metadataField" value="hal.publisher.url"/>
+                                <property name="metadataField" value="${hal.export.hal.publisher.url}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="type"/>
@@ -936,7 +936,7 @@
                             <!-- Label: Durée -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
                                 <property name="elementName" value="measure"/>
-                                <property name="metadataField" value="hal.recording.duration"/>
+                                <property name="metadataField" value="${hal.export.recording.duration}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="type"/>
@@ -947,7 +947,7 @@
                             <!-- Label: Fréquence -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
                                 <property name="elementName" value="measure"/>
-                                <property name="metadataField" value="hal.recording.frequence"/>
+                                <property name="metadataField" value="${hal.export.recording.frequence}"/>
                                 <property name="attributes">
                                     <list>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -979,7 +979,7 @@
                 <!-- Label: Numéro National (NNT)-->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="idno"/>
-                    <property name="metadataField" value="hal.identifier.nnt"/>
+                    <property name="metadataField" value="${hal.export.identifier.nnt}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -992,7 +992,7 @@
                 <!-- Label: ISBN -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="idno"/>
-                    <property name="metadataField" value="dc.identifier.isbn"/>
+                    <property name="metadataField" value="${hal.export.identifier.isbn}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1005,7 +1005,7 @@
                 <!-- Label: N° de brevet -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="idno"/>
-                    <property name="metadataField" value="hal.identifier.patent"/>
+                    <property name="metadataField" value="${hal.export.identifier.patent}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1031,7 +1031,7 @@
                 <!-- Label: Référence interne -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="idno"/>
-                    <property name="metadataField" value="hal.identifier.local"/>
+                    <property name="metadataField" value="${hal.export.identifier.local}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1056,7 +1056,7 @@
                 <!-- Label: ISSN -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="idno"/>
-                    <property name="metadataField" value="dc.identifier.issn"/>
+                    <property name="metadataField" value="${hal.export.identifier.issn}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1085,7 +1085,7 @@
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueJournalAuthorityMetadataFieldGenerator">
                                 <property name="elementName" value="idno"/>
-                                <property name="metadataField" value="hal.journal.title"/>
+                                <property name="metadataField" value="${hal.export.journal.title}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="type"/>
@@ -1095,7 +1095,7 @@
                             </bean>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
                                 <property name="elementName" value="title"/>
-                                <property name="metadataField" value="hal.journal.title"/>
+                                <property name="metadataField" value="${hal.export.journal.title}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="level"/>
@@ -1109,7 +1109,7 @@
                 <!-- Label: Titre de l'ouvrage / Source (label "Source" only for type COMM) -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="title"/>
-                    <property name="metadataField" value="hal.source.title"/>
+                    <property name="metadataField" value="${hal.export.source.title}"/>
                     <property name="attributes">
                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                             <property name="name" value="level"/>
@@ -1126,12 +1126,12 @@
                             <!-- Label: Titre du congrès -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="title"/>
-                                <property name="metadataField" value="hal.conference.name"/>
+                                <property name="metadataField" value="${hal.export.conference.name}"/>
                             </bean>
                             <!-- Label: Date début congrès -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="date"/>
-                                <property name="metadataField" value="hal.conference.start"/>
+                                <property name="metadataField" value="${hal.export.conference.start}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="type"/>
@@ -1142,7 +1142,7 @@
                             <!-- Label: Date fin congrès -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="date"/>
-                                <property name="metadataField" value="hal.conference.end"/>
+                                <property name="metadataField" value="${hal.export.conference.end}"/>
                                 <property name="attributes">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
                                         <property name="name" value="type"/>
@@ -1153,12 +1153,12 @@
                             <!-- Label: Ville (type not in PATENT,IMG,MAP,LECTURE) -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
                                 <property name="elementName" value="settlement"/>
-                                <property name="metadataField" value="hal.conference.city"/>
+                                <property name="metadataField" value="${hal.export.conference.city}"/>
                             </bean>
                             <!-- Label: Pays (type not in PATENT,IMG,MAP,LECTURE) -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MetadataValueAsAttributeGenerator">
                                 <property name="elementName" value="country"/>
-                                <property name="metadataField" value="hal.conference.country"/>
+                                <property name="metadataField" value="${hal.export.conference.country}"/>
                                 <property name="attributeName" value="key"/>
                             </bean>
                         </list>
@@ -1174,14 +1174,14 @@
                                 <property name="defaultValue" value="conferenceOrganizer"/>
                                 <property name="condition">
                                     <bean class="com.atmire.dspace.hal.xmlgenerating.config.MetadataExistsCondition">
-                                        <property name="metadataField" value="hal.conference.organizer"/>
+                                        <property name="metadataField" value="${hal.export.conference.organizer}"/>
                                     </bean>
                                 </property>
                             </bean>
                             <!-- Label: Organisateur du congrès -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="name"/>
-                                <property name="metadataField" value="hal.conference.organizer"/>
+                                <property name="metadataField" value="${hal.export.conference.organizer}"/>
                             </bean>
                         </list>
                     </property>
@@ -1194,13 +1194,13 @@
                 <!-- Label: Pays (type in PATENT,IMG,MAP,LECTURE) -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.MetadataValueAsAttributeGenerator">
                     <property name="elementName" value="country"/>
-                    <property name="metadataField" value="hal.conference.country"/>
+                    <property name="metadataField" value="${hal.export.patent.conference.country}"/>
                     <property name="attributeName" value="key"/>
                 </bean>
                 <!-- Label: Éditeur scientifique -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="editor"/>
-                    <property name="metadataField" value="hal.editor.scientific"/>
+                    <property name="metadataField" value="${hal.export.editor.scientific}"/>
                 </bean>
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.ComboHalSwordDataElementGenerator">
                     <property name="elementName" value="imprint"/>
@@ -1209,12 +1209,12 @@
                             <!-- Label: Éditeur commercial -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="publisher"/>
-                                <property name="metadataField" value="dc.publisher"/>
+                                <property name="metadataField" value="${hal.export.publisher}"/>
                             </bean>
                             <!-- Label: Titre du volume -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="biblScope"/>
-                                <property name="metadataField" value="hal.volume.title"/>
+                                <property name="metadataField" value="${hal.export.volume.title}"/>
                                 <property name="attributes">
                                     <list>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1227,7 +1227,7 @@
                             <!-- Label: Volume -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="biblScope"/>
-                                <property name="metadataField" value="hal.volume"/>
+                                <property name="metadataField" value="${hal.export.volume}"/>
                                 <property name="attributes">
                                     <list>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1240,7 +1240,7 @@
                             <!-- Label: Numéro -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="biblScope"/>
-                                <property name="metadataField" value="hal.issue"/>
+                                <property name="metadataField" value="${hal.export.issue}"/>
                                 <property name="attributes">
                                     <list>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1253,7 +1253,7 @@
                             <!-- Label: Page/Identifiant -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="biblScope"/>
-                                <property name="metadataField" value="hal.page.number"/>
+                                <property name="metadataField" value="${hal.export.page.number}"/>
                                 <property name="attributes">
                                     <list>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1266,7 +1266,7 @@
                             <!-- Label: Date de publication	 -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="date"/>
-                                <property name="metadataField" value="dc.date.issued"/>
+                                <property name="metadataField" value="${hal.export.date.issued}"/>
                                 <property name="attributes">
                                     <list>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1304,7 +1304,7 @@
                             <!-- Label: Date de publication électronique -->
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                                 <property name="elementName" value="date"/>
-                                <property name="metadataField" value="hal.date.electronic"/>
+                                <property name="metadataField" value="${hal.export.date.electronic}"/>
                                 <property name="attributes">
                                     <list>
                                         <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1320,7 +1320,7 @@
                 <!-- Label: Organisme de délivrance -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="authority"/>
-                    <property name="metadataField" value="hal.institution"/>
+                    <property name="metadataField" value="${hal.export.institution}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1333,7 +1333,7 @@
                 <!-- Label: École doctorale -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
                     <property name="elementName" value="authority"/>
-                    <property name="metadataField" value="hal.school"/>
+                    <property name="metadataField" value="${hal.export.school}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1346,7 +1346,7 @@
                 <!-- Label: Directeur de thèse -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="authority"/>
-                    <property name="metadataField" value="hal.contributor.supervisor"/>
+                    <property name="metadataField" value="${hal.export.contributor.supervisor}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1359,7 +1359,7 @@
                 <!-- Label: Membre du jury -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="authority"/>
-                    <property name="metadataField" value="hal.jury"/>
+                    <property name="metadataField" value="${hal.export.jury}"/>
                     <property name="attributes">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
@@ -1381,12 +1381,12 @@
                 <!-- Label: Directeur de collection -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="editor"/>
-                    <property name="metadataField" value="hal.editor.series"/>
+                    <property name="metadataField" value="${hal.export.editor.series}"/>
                 </bean>
                 <!-- Label: Nom du cours -->
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
                     <property name="elementName" value="title"/>
-                    <property name="metadataField" value="hal.course.name"/>
+                    <property name="metadataField" value="${hal.export.course.name}"/>
                 </bean>
             </list>
         </property>

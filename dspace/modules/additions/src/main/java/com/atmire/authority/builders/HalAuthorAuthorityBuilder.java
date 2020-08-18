@@ -107,11 +107,11 @@ public class HalAuthorAuthorityBuilder extends AbstractHalSolrAuthorityBuilder<H
     public void afterPropertiesSet() throws Exception {
         HttpSolrServer server = null;
 
-        if (configurationService.getProperty("solr-dc-contributor-author") != null)
+        if (configurationService.getProperty("hal.solr-dc-contributor-author") != null)
         {
             try
             {
-                server = new HttpSolrServer(configurationService.getProperty("solr-dc-contributor-author"));
+                server = new HttpSolrServer(configurationService.getProperty("hal.solr-dc-contributor-author"));
                 server.setParser(new HalSolrXMLResponseParser());
             } catch (Exception e) {
                 log.error(e.getMessage(), e);

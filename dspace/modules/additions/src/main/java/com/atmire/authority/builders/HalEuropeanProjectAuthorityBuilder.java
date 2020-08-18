@@ -121,11 +121,11 @@ public class HalEuropeanProjectAuthorityBuilder extends AbstractHalSolrAuthority
     public void afterPropertiesSet() throws Exception {
         HttpSolrServer server = null;
 
-        if (configurationService.getProperty("solr-hal-funder-europe") != null)
+        if (configurationService.getProperty("hal.solr-hal-funder-europe") != null)
         {
             try
             {
-                server = new HttpSolrServer(configurationService.getProperty("solr-hal-funder-europe"));
+                server = new HttpSolrServer(configurationService.getProperty("hal.solr-hal-funder-europe"));
                 server.setParser(new HalSolrXMLResponseParser());
             } catch (Exception e) {
                 log.error(e.getMessage(), e);

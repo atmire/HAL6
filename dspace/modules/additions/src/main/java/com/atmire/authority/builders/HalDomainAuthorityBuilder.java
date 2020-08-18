@@ -89,11 +89,11 @@ public class HalDomainAuthorityBuilder  extends AbstractHalSolrAuthorityBuilder<
     public void afterPropertiesSet() throws Exception {
         HttpSolrServer server = null;
 
-        if (configurationService.getProperty("solr-hal-domain") != null)
+        if (configurationService.getProperty("hal.solr-hal-domain") != null)
         {
             try
             {
-                server = new HttpSolrServer(configurationService.getProperty("solr-hal-domain"));
+                server = new HttpSolrServer(configurationService.getProperty("hal.solr-hal-domain"));
                 server.setParser(new HalSolrXMLResponseParser());
             } catch (Exception e) {
                 log.error(e.getMessage(), e);

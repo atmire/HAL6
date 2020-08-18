@@ -236,8 +236,8 @@ public class EditItemMetadataForm extends AbstractDSpaceTransformer {
         header.addCell().addContent(T_column3);
         header.addCell().addContent(T_column4);
 
-        java.util.List<String> hiddenMetadataFields = Arrays.asList(configurationService.getArrayProperty("item-edit.hidden.metadatafields"));
-        java.util.List<String> managedMetadataFIeld = Arrays.asList(configurationService.getArrayProperty("item-edit.managed.metadatafields"));
+        java.util.List<String> hiddenMetadataFields = Arrays.asList(configurationService.getArrayProperty("hal.item-edit.hidden.metadatafields"));
+        java.util.List<String> managedMetadataFIeld = Arrays.asList(configurationService.getArrayProperty("hal.item-edit.managed.metadatafields"));
         MetadataField structureMetadataField = metadataFieldService.findByElement(context, "hal", "structure", "identifier");
         MetadataField halFunctionMetadataField = metadataFieldService.findByElement(context, "hal", "author", "function");
 
