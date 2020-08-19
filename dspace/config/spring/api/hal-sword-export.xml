@@ -159,28 +159,6 @@
                     <property name="elementName" value="funder"/>
                     <property name="metadataField" value="${hal.export.financement}"/>
                 </bean>
-                <!-- Projet(s) ANR -->
-                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
-                    <property name="elementName" value="funder"/>
-                    <property name="metadataField" value="${hal.export.funder.anr}"/>
-                    <property name="attributes">
-                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.authority.CategorySpecificAuthorityAttributeGenerator">
-                            <property name="name" value="ref"/>
-                            <property name="prefix" value="#projanr-"/>
-                        </bean>
-                    </property>
-                </bean>
-                <!-- Projet(s) Européen(s) -->
-                <bean class="com.atmire.dspace.hal.xmlgenerating.elements.multi.MultiValueMetadataFieldGenerator">
-                    <property name="elementName" value="funder"/>
-                    <property name="metadataField" value="${hal.export.funder.europe}"/>
-                    <property name="attributes">
-                        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.authority.CategorySpecificAuthorityAttributeGenerator">
-                            <property name="name" value="ref"/>
-                            <property name="prefix" value="#projeurop-"/>
-                        </bean>
-                    </property>
-                </bean>
             </list>
         </property>
     </bean>
@@ -1083,7 +1061,7 @@
                 <bean class="com.atmire.dspace.hal.xmlgenerating.elements.wrappers.PreferentialHalSwordDataElementGenerator">
                     <property name="bodyElementGenerators">
                         <list>
-                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueJournalAuthorityMetadataFieldGenerator">
+                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
                                 <property name="elementName" value="idno"/>
                                 <property name="metadataField" value="${hal.export.journal.title}"/>
                                 <property name="attributes">

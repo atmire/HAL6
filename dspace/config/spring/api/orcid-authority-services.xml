@@ -10,112 +10,41 @@
 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context
-           http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+           http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:annotation-config /> <!-- allows us to use spring annotations in beans -->
 
     <!-- Authority control -->
-    <bean id="authorityServiceFactory" class="org.dspace.authority.factory.AuthorityServiceFactoryImpl"/>
-    <bean class="org.dspace.authority.CachedAuthorityServiceImpl" />
     <bean class="org.dspace.authority.AuthoritySolrServiceImpl" id="org.dspace.authority.AuthoritySearchService"/>
     <alias name="org.dspace.authority.AuthoritySearchService" alias="org.dspace.authority.indexer.AuthorityIndexingService"/>
-    <util:list id="indexerList" >
-        <ref bean="dspace.DSpaceAuthorityIndexer"/>
-    </util:list>
+
     <bean id="dspace.DSpaceAuthorityIndexer" class="org.dspace.authority.indexer.DSpaceAuthorityIndexer"/>
 
-
-    <bean id="authorityValueFactory" class="org.dspace.authority.factory.AuthorityValueFactoryImpl">
-        <!--
-            Mapping between metadata field and the category.
-        -->
-        <property name="authorityValueFieldMapping">
-            <map>
-                <!--<entry key="dc_contributor_author" value="PERSON"/>-->
-                <!--<entry key="dc_contributor_editor" value="PERSON"/>-->
-                <entry key="hal_journal_title" value="JOURNAL"/>
-                <entry key="hal_domain" value="DOMAIN"/>
-                <entry key="hal_funder_europe" value="EUROPEAN_PROJECT"/>
-                <entry key="hal_funder_anr" value="ANR_PROJECT"/>
-                <entry key="dc_contributor_author" value="PERSON"/>
-            </map>
+    <bean name="AuthorityTypes" class="org.dspace.authority.AuthorityTypes">
+        <property name="types">
+            <list>
+                <bean class="org.dspace.authority.orcid.Orcidv2AuthorityValue"/>
+                <bean class="org.dspace.authority.PersonAuthorityValue"/>
+            </list>
         </property>
-        <!--
-            Default authority builders based on category, these are only used if no specific type is provided.
-            The use case here is that the end user is adding a value that shouldn't be linked to an external authority control.
-         -->
-        <property name="authorityCategoryBuilder">
+        <property name="fieldDefaults">
             <map>
-                <entry key="PERSON" value-ref="personAuthorityValueBuilder" />
-                <entry key="JOURNAL" value-ref="journalAuthorityValueBuilder" />
+                <entry key="dc_contributor_author">
+                    <bean class="org.dspace.authority.PersonAuthorityValue"/>
+                </entry>
             </map>
-        </property>
-        <!--
-            External source lookup configuration, contains a map with as key the category and as a value a list of
-            builders that have the external lookup interface as a parent.
-        -->
-        <property name="authorityExternalSource">
-            <util:map key-type="org.dspace.authority.AuthorityCategory" value-type="java.util.List">
-                <!--<entry key="PERSON">-->
-                <!--<util:list value-type="org.dspace.authority.factory.AuthorityValueBuilder">-->
-                <!--<ref bean="orcidAuthorityValueBuilder"/>-->
-                <!--</util:list>-->
-                <!--</entry>-->
-                <entry key="JOURNAL">
-                    <util:list value-type="com.atmire.authority.builders.HalJournalAuthorityBuilder">
-                        <ref bean="HalJournalAuthorityBuilder"/>
-                    </util:list>
-                </entry>
-                <entry key="DOMAIN">
-                    <util:list value-type="com.atmire.authority.builders.HalDomainAuthorityBuilder">
-                        <ref bean="HalDomainAuthorityBuilder"/>
-                    </util:list>
-                </entry>
-                <entry key="EUROPEAN_PROJECT">
-                    <util:list value-type="com.atmire.authority.builders.HalEuropeanProjectAuthorityBuilder">
-                        <ref bean="HalEuropeanProjectAuthorityBuilder"/>
-                    </util:list>
-                </entry>
-                <entry key="ANR_PROJECT">
-                    <util:list value-type="com.atmire.authority.builders.HalAnrProjectAuthorityBuilder">
-                        <ref bean="HalAnrProjectAuthorityBuilder"/>
-                    </util:list>
-                </entry>
-                <entry key="PERSON">
-                    <util:list value-type="com.atmire.authority.builders.HalAuthorAuthorityBuilder">
-                        <ref bean="HalAuthorAuthorityBuilder"/>
-                    </util:list>
-                </entry>
-            </util:map>
         </property>
     </bean>
 
 
-    <!--
-        Value builder beans
-    -->
-    <bean name="personAuthorityValueBuilder" class="org.dspace.authority.builders.PersonAuthorityValueBuilder"/>
-    <bean name="HalJournalAuthorityBuilder" class="com.atmire.authority.builders.HalJournalAuthorityBuilder"/>
-    <bean name="HalDomainAuthorityBuilder" class="com.atmire.authority.builders.HalDomainAuthorityBuilder"/>
-    <bean name="HalEuropeanProjectAuthorityBuilder" class="com.atmire.authority.builders.HalEuropeanProjectAuthorityBuilder"/>
-    <bean name="HalAnrProjectAuthorityBuilder" class="com.atmire.authority.builders.HalAnrProjectAuthorityBuilder"/>
-    <bean name="HalAuthorAuthorityBuilder" class="com.atmire.authority.builders.HalAuthorAuthorityBuilder"/>
-    <bean name="orcidAuthorityValueBuilder" class="org.dspace.authority.builders.OrcidAuthorityValueBuilder">
-        <property name="orcidConnector" ref="orcidConnector"/>
-    </bean>
-    <bean name="journalAuthorityValueBuilder" class="com.atmire.authority.builders.JournalAuthorityValueBuilder"/>
-
-
-    <bean name="OrcidConnector" id="orcidConnector" class="org.dspace.authority.orcid.OrcidConnector" init-method="init">
+    <alias name="OrcidSource" alias="AuthoritySource"/>
+    <bean name="OrcidSource" class="org.dspace.authority.orcid.Orcidv2" init-method="init">
         <constructor-arg value="${orcid.api.url}"/>
-        <!--<constructor-arg value="${orcid.oauth.url}"/>-->
-        <!--If you want to use authentication, also use the following fields.-->
-        <!--<constructor-arg value="${orcid.client.id}"/>-->
-        <!--<constructor-arg value="${orcid.client.secret}"/>-->
     </bean>
+
 
 </beans>

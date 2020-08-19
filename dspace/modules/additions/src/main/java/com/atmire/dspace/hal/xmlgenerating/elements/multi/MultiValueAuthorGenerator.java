@@ -1,12 +1,9 @@
 package com.atmire.dspace.hal.xmlgenerating.elements.multi;
 
-import com.atmire.authority.author.HalAuthorAuthorityValue;
 import com.atmire.dspace.content.service.AtmireMetadataValueService;
 import com.atmire.dspace.hal.xmlgenerating.HALSwordXmlGeneratorImpl;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
-import org.dspace.authority.AuthorityValue;
-import org.dspace.authority.service.CachedAuthorityService;
 import org.apache.log4j.Logger;
 import org.dspace.content.DCPersonName;
 import org.dspace.content.Item;
@@ -33,8 +30,6 @@ public class MultiValueAuthorGenerator extends MultiValueMetadataFieldGenerator 
     AtmireMetadataValueService metadataValueService;
     @Autowired
     MetadataFieldService metadataFieldService;
-    @Autowired
-    CachedAuthorityService cachedAuthorityService;
 
     @Override
     public void attachMetadataValue(Document doc, Element parent, Item i, MetadataValue author) {
@@ -47,46 +42,8 @@ public class MultiValueAuthorGenerator extends MultiValueMetadataFieldGenerator 
 
         Context context = new Context();
 
-        addAuthorID(context, doc, parent, author);
         processChildValues(context, doc, parent, author);
 
-    }
-
-    private void addAuthorID(Context context,Document doc, Element parent, MetadataValue author) {
-        String authority = author.getAuthority();
-        if(StringUtils.isNotBlank(authority)){
-
-            AuthorityValue authorityValue = cachedAuthorityService.findCachedAuthorityValueByAuthorityID(context, authority);
-            if(authorityValue instanceof HalAuthorAuthorityValue){
-                fillInHALIdentifiers(doc, parent, (HalAuthorAuthorityValue) authorityValue);
-            }
-        }
-    }
-
-    private void fillInHALIdentifiers(Document doc, Element parent, HalAuthorAuthorityValue authorityValue) {
-        String halID = authorityValue.getIdHal();
-        if(StringUtils.isNotBlank(halID)){
-            Element halAuthorID = doc.createElementNS(HALSwordXmlGeneratorImpl.TEI_NAMESPACE, "idno");
-            halAuthorID.setAttribute("type", "idhal");
-            halAuthorID.setAttribute("notation", "numeric");
-            halAuthorID.setTextContent(halID);
-            parent.appendChild(halAuthorID);
-        }
-        String docID = authorityValue.getDocid();
-        if(StringUtils.isNotBlank(docID)){
-            Element halAuthorID = doc.createElementNS(HALSwordXmlGeneratorImpl.TEI_NAMESPACE, "idno");
-            halAuthorID.setAttribute("type", "halauthorid");
-            halAuthorID.setTextContent(docID);
-            parent.appendChild(halAuthorID);
-        }
-        String halIDString = authorityValue.getIdHalString();
-        if(StringUtils.isNotBlank(halIDString)){
-            Element halAuthorID = doc.createElementNS(HALSwordXmlGeneratorImpl.TEI_NAMESPACE, "idno");
-            halAuthorID.setAttribute("type", "idhal");
-            halAuthorID.setAttribute("notation", "string");
-            halAuthorID.setTextContent(halIDString);
-            parent.appendChild(halAuthorID);
-        }
     }
 
     private void processChildValues(Context context,Document doc, Element parent, MetadataValue author) {
