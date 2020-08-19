@@ -73,6 +73,7 @@ Common usage:
          we load the local.cfg FIRST, so that its settings are used by default. -->
     <property file="${local-config}" />
     <property file="${config}" />
+    <property file="config/modules/hal.cfg" />
 
     <!-- Timestamp date used when creating backup directories -->
     <tstamp>
@@ -360,6 +361,7 @@ Common usage:
                 <include name="default.context.xml"/>
                 <!-- Filter RDF configs as these are TTL files -->
                 <include name="modules/rdf/*.ttl"/>
+                <include name="spring/api/hal-sword-export.xml"/>
             </fileset>
             <filterchain>
                 <expandproperties />
