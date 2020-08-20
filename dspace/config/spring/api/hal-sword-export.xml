@@ -1062,16 +1062,6 @@
                     <property name="bodyElementGenerators">
                         <list>
                             <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
-                                <property name="elementName" value="idno"/>
-                                <property name="metadataField" value="${hal.export.journal.title}"/>
-                                <property name="attributes">
-                                    <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
-                                        <property name="name" value="type"/>
-                                        <property name="value" value="halJournalId"/>
-                                    </bean>
-                                </property>
-                            </bean>
-                            <bean class="com.atmire.dspace.hal.xmlgenerating.elements.single.SingleValueMetadataFieldGenerator">
                                 <property name="elementName" value="title"/>
                                 <property name="metadataField" value="${hal.export.journal.title}"/>
                                 <property name="attributes">

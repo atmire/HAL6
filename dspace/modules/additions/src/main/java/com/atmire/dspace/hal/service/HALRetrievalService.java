@@ -10,8 +10,6 @@ import java.util.Map;
  */
 public interface HALRetrievalService {
 
-    List<Structure> findStructuresByName(String name);
-
     List<Structure> findStructuresByName(String name, Boolean allowInvalidStructures);
 
     List<Structure> findStructuresByAuthor(String lastName, String firstName, String email);

@@ -28,11 +28,6 @@ public class HALRetrievalServiceImpl implements HALRetrievalService {
     Map<String, String> mappedFunctionAbbreviations;
 
     @Override
-    public List<Structure> findStructuresByName(String name) {
-        return findStructuresByName(name, false);
-    }
-
-    @Override
     public List<Structure> findStructuresByName(String name, Boolean allowInvalidStructures) {
         List<String> params = new ArrayList<String>();
         params.add("((name_t:*" + name + "*) OR (acronym_t:*" + name + "*))");
