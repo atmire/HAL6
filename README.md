@@ -34,19 +34,23 @@ A feature has been added to manage affiliations of authors in a new submission. 
 ![Image not loading](/readme_images/author_affiliation.png?raw=true)
 
 ## Submission UI roles <a name="Submission-UI-roles"></a>
-The submission UI roles
+The role of the author, which is stored in dc.contributor.author, is stored in the hal.author.function metadata field. This role can be chosen in the submission forms using the dropdown menu next to the new author.
+
+![Image not loading](/readme_images/author_roles.png?raw=true)
 
 ## HAL compliance step <a name="HAL-compliance-step"></a>
-The submission HAL compliance step
+One of the last steps in the item submission workflow will test if all of the requirements for the item to be sent to HAL are satisfied.
+
+![Image not loading](/readme_images/hal_compliance.png?raw=true)
 
 ## HAL sidebar link <a name="HAL-sidebar-link"></a>
-The HAL sidebar link for admins on an item that is sent to HAL.
+In the item view of an archived item, the sidebar contains a link to verify the HAL status. Click this link to see if an item has been sent to HAL. In case it's not sent, the reason for it will be given.
 
 # Patch Installation Procedures <a name="Patch-installation-procedures"></a>
 
 ## Prerequisites  <a name="Prerequisites"></a>
 
-The CSL changes have been released as a "patch" for DSpace as this allows for the easiest installation process of the incremental codebase.
+The HAL changes have been released as a "patch" for DSpace as this allows for the easiest installation process of the incremental codebase.
 
 **__Important note__**: Hereunder, you will find guidance on how to apply the patch to your existing installation.
 This will affect your source code. Before applying a patch, it is **always** recommended to create backup of your DSpace source code.
@@ -54,7 +58,7 @@ This will affect your source code. Before applying a patch, it is **always** rec
 In order to apply the patch, you will need to locate the **DSpace source code** on your server. That source code directory contains a directory _dspace_, as well as the following files:  _LICENSE_,  _NOTICE_ ,  _README_ , ....
 
 For every release of DSpace, generally two release packages are available. One package has "src" in its name and the other one does not. The difference is that the release labelled "src" contains ALL of the DSpace source code, while the other release retrieves precompiled packages for specific DSpace artifacts from maven central. 
-**The CSL changes were designed to work on both "src" and other release packages of DSpace**. 
+**The HAL changes were designed to work on both "src" and other release packages of DSpace**. 
 
 To be able to install the patch, you will need the following prerequisites:
 
@@ -66,7 +70,7 @@ To be able to install the patch, you will need the following prerequisites:
 Atmire's modifications to a standard DSpace are tracked on Github. 
 The newest patch can therefore be generated from git.
 
-DSPACE 6.3 [https://github.com/atmire/CSL63/compare/813800ce1736ec503fdcfbee4d86de836788f87c...master.diff](https://github.com/atmire/CSL63/compare/813800ce1736ec503fdcfbee4d86de836788f87c...master.diff)
+DSPACE 6.3 [https://github.com/atmire/HAL6/compare/813800ce1736ec503fdcfbee4d86de836788f87c...master.diff](https://github.com/atmire/HAL6/compare/813800ce1736ec503fdcfbee4d86de836788f87c...master.diff)
 
 ## Patch installation <a name="Patch-installation"></a>
 
@@ -90,7 +94,7 @@ Run the following command where <patch file> needs to be replaced with the name 
 git apply --exclude README.md --exclude *.png --check <patch file>
 ```
 
-This command will return whether it is possible to apply the patch to your installation. This should pose no problems in case the DSpace is not customized or in case not much customizations are present.   
+This command will return whether it is possible to apply the patch to your installation. This should pose no problems in case the DSpace is not customized or in case not many customizations are present.   
 In case, the check is successful, the patch can be installed without any problems. Otherwise, you will have to merge some changes manually.
 
 ### 3. Apply the patch <a name="Apply-patch"></a>
@@ -114,87 +118,26 @@ After the repository has been rebuild and redeployed, the tomcat will need to be
 
 ## Configure the metadata mapping <a name="Metadata-mapping"></a>
 
-Configuring Metadata mapping is crucial in order for the metadata fields of your repository to be correctly mapped to the corresponding fields within the citation styles, especially if a custom metadata schema or custom metadata fields have been defined on your repository.
+Your HAL login credentials should be configured in the `hal.login.user` and `hal.login.pass` configuration parameters in `dspace/config/modules/hal.cfg`. The default values of the other configuration parameters in this file are set to use the HAL test servers. When moving to a production environment, these should be updated. To make this easy, a second set of the relevant parameters has been been included in this file, and commented out. To configure the HAL patch to use the production environment, simply uncomment the block
 
-The configuration of the metadata mapping is located in the dspace/config/spring/api/csl-citation.xml file.
-Hereunder, you will find an example mapping for the metadata "Title":
-        <property name="title" value="dc.title"/>
-
-The property name that should be defined is the type of field within the citation that you want to see filled in (you can find useful information about this within the CSL specification : https://github.com/citation-style-language/documentation/blob/master/specification.rst), the way how this is filled in is determined by the citation file that the user selects. The value of this field is defined by the config namely by entering a metadata field in the value of the property. This metadata field will be retrieved for the items for which a citation is created, the value of this metadata field will be filled in into the corresponding property of the citation.
-
-For example if we want to fill in the title for a citation, we define a property with name 'title' and value 'dc.title'. This will fill in the title in the citation with the value retrieved in the dc.title metadata field for an item. Example properties with all possible names are provided in comments.
-
-The property with the name "type" is special. The value of the metadata field referenced by this property is used to determine the format of the citation. To make a link between the custom types defined in your repository, a mapping is made between your repository's types, and the types supported by CSL. This mapping is made in the `<util:map id="CSLTypeMap">...</util:map>` element of the same configuration file. This element contains entries, for which the keys are the your repository's types, and the values are the corresponding CSL supported types. Take for example `<entry key="Article" value="#{ T(de.undercouch.citeproc.csl.CSLType).ARTICLE}"/>`. Here, the "ARTICLE" is the type as supported by CSL.
-
-The limited list of possible values is: `ARTICLE, ARTICLE_JOURNAL, ARTICLE_MAGAZINE, ARTICLE_NEWSPAPER, BILL, BOOK, BROADCAST, CHAPTER, DATASET, ENTRY, ENTRY_DICTIONARY, ENTRY_ENCYCLOPEDIA, FIGURE, GRAPHIC, INTERVIEW, LEGAL_CASE, LEGISLATION, MANUSCRIPT, MAP, MOTION_PICTURE, MUSICAL_SCORE, PAMPHLET, PAPER_CONFERENCE, PATENT, PERSONAL_COMMUNICATION, POST, POST_WEBLOG, REPORT, REVIEW, REVIEW_BOOK, SONG, SPEECH, THESIS, TREATY, WEBPAGE`
-
-The available export formats are configured in the dspace/config/spring/xmlui/csl-citation-formats.xml file. A list of available formats is specified, and for each format, the format name and the file extension is specified. The label for these formats can be found in the messages file using `xmlui.citation.format.` followed by the format.
-Example: `<message key="xmlui.citation.format.htmlFormat">HTML</message>`
-
-Currently, the following formats are configured:
 ```
-       <util:list id="citationFormatList" value-type="com.atmire.app.xmlui.aspect.citations.CitationFormat">
-           <ref bean="htmlFormat"/>
-           <ref bean="textFormat"/>
-           <ref bean="asciidocFormat"/>
-           <ref bean="foFormat"/>
-           <ref bean="rtfFormat"/>
-       </util:list>
-   
-       <bean id="htmlFormat" class="com.atmire.app.xmlui.aspect.citations.CitationFormat">
-           <property name="format" value="html"/>
-           <property name="fileExtension" value="html"/>
-       </bean>
-   
-       <bean id="textFormat" class="com.atmire.app.xmlui.aspect.citations.CitationFormat">
-           <property name="format" value="text"/>
-           <property name="fileExtension" value="txt"/>
-       </bean>
-   
-       <bean id="asciidocFormat" class="com.atmire.app.xmlui.aspect.citations.CitationFormat">
-           <property name="format" value="asciidoc"/>
-           <property name="fileExtension" value="txt"/>
-       </bean>
-   
-       <bean id="foFormat" class="com.atmire.app.xmlui.aspect.citations.CitationFormat">
-           <property name="format" value="fo"/>
-           <property name="fileExtension" value="fo"/>
-       </bean>
-   
-       <bean id="rtfFormat" class="com.atmire.app.xmlui.aspect.citations.CitationFormat">
-           <property name="format" value="rtf"/>
-           <property name="fileExtension" value="rtf"/>
-       </bean>
+# HAL.login.user = ****
+# HAL.login.pass = ****
+# HAL.v3.solr.server = http://api.archives-ouvertes.fr/ref/structure
+# HAL.v3.solr.server.authors = http://api.archives-ouvertes.fr/search/authorstructure
+# HAL.url = http://api.archives-ouvertes.fr/sword/
+# HAL.link.url = https://hal.univ-lille.fr/
+# HAL.v3.sword.deposit.url = https://api.archives-ouvertes.fr/sword/univ-lille
+# HAL.on-behalf-of =
 ```
 
-# Testing <a name="Testing"></a>
+and comment out the testing version of these parameters. In the end, each of the listed parameters should only occur once in this configuration file.
 
-Open your DSpace repository, make sure you're logged in and navigate to the "Citations format" page from the sidebar under "my account". You should see a page with a form to add a new style.
+The same file also contains a list of all hal metadata fields. In this example
 
-For some of the following tests you will need to be logged in as a submitter, and for the rest you will need to login as an administrator. For all of the following tests you should start by browsing to your repository's home page. Then in the sidebar, under "my account", follow the new "Citations format" link.
+```
+# HAL Label: Laboratory
+hal.export.laboratory = dc.contributor.author
+```
 
-| Logged in user | Test description |
-| -------------- | ---------------- |
-| Submitter | Click the add new style button. An error notification should be shown because you didn't select a file. |
-| Submitter | Choose a file and click the "add new style" button. A new style should be visible in the overview table. It should not be marked as global. The alias should be the filename. |
-| Submitter | Choose a file, enter an alias and click the "add new style" button. A new style with the given alias should be visible in the overview table. It should not be marked as global. |
-| Administrator | Just visit the citations page. The styles submitted by the other user should no longer be visible. |
-| Administrator | Choose a file, enter an alias and click the "add new style" button. A new style with the given alias should be visible in the overview table. It should not be marked as global. |
-| Administrator | Choose a file, enter an alias, check the global checkbox and click the "add new style" button. A new style with the given alias should be visible in the overview table. It should be marked as global. |
-| Administrator | Choose a file, enter an alias for which a personal style already exists and click the "add new style" button. An error notification should be shown because a personal style with this alias already exists. |
-| Administrator | Choose a file, enter an alias for which a global style already exists, check the global checkbox and click the "add new style" button. An error notification should be shown because a global style with this alias already exists. |
-| Submitter | Select some personal styles and click the "delete styles" button. A success notification should be shown. The selected styles should be deleted. |
-| Administrator | Select some personal and global styles and click the "delete styles" button. A success notification should be shown. The selected styles should be deleted. |
-| Submitter | Click the edit button next to a personal style. An edit page should be shown, with the style filename as a link, the style alias as a textbox. |
-| Submitter | Click the edit button next to a personal style. Click the style filename link. The style file should be downloaded. |
-| Submitter | Click the edit button next to a personal style. Click the cancel button. The citation formats overview page should be shown. |
-| Submitter | Click the edit button next to a personal style. Click the save button. The citation formats overview page should be shown. |
-| Submitter | Click the edit button next to a personal style. Alter the alias and click the save button. The citation formats overview page should be shown. The alias should be changed. |
-| Submitter | Click the edit button next to a personal style. Enter an alias for which a personal style already exists. Click the save button. The citation formats overview page should be shown. An error notification should be shown because a personal style with this alias already exists. |
-| Administrator | Click the edit button next to a personal style. An edit page should be shown, with the style filename as a link, the style alias as a textbox. A checkbox should be shown but not checked. |
-| Administrator | Click the edit button next to a global style. An edit page should be shown, with the style filename as a link, the style alias as a textbox. A checkbox should be shown and selected. Click the save button. |
-| Administrator | Click the edit button next to a personal style. Check the global checkbox and click the save button. The style should now be global. |
-| Administrator | Just visit the citations page. You should see an overview of your available citation styles. No checkboxes or edit buttons should be disabled. There should be a form to add a new style: a file chooser, a field for an alias and a checkbox to make the style global. |
-| Submitter | Just visit the citations page. You should see an overview of your available citation styles. The checkboxes for the global styles should be disabled, the edit buttons for these styles should be disabled as well. There should be a form to add a new style: a file chooser and a field to enter an alias. |
-| Administrator | Select all styles and click the "delete styles" button. The overview table should be gone. |
-| Administrator | Attempt to upload a file that doesn't have the .csl extension An error should be displayed that only csl files are supported. |
+the HAL field "Laboratory" is linked to the "dc.contributor.author" dspace metadata field. Some of the HAL fields only take a specific set of values. The allowed values are documented on the HAL website. For all relevant fields, a link to this HAL website is provided in the configuration file. The list of allowed values can be used to generate a controlled vocabulary or value-pairs in the input-forms.
