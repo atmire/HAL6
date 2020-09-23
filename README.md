@@ -34,17 +34,17 @@ A feature has been added to manage affiliations of authors in a new submission. 
 ![Image not loading](/readme_images/author_affiliation.png?raw=true)
 
 ## Submission UI roles <a name="Submission-UI-roles"></a>
-The role of the author, which is stored in dc.contributor.author, is stored in the hal.author.function metadata field. This role can be chosen in the submission forms using the dropdown menu next to the new author.
+Authors can have a "role", this role can be chosen in the submission forms using the dropdown menu next an already added author.
 
 ![Image not loading](/readme_images/author_roles.png?raw=true)
 
 ## HAL compliance step <a name="HAL-compliance-step"></a>
-One of the last steps in the item submission workflow will test if all of the requirements for the item to be sent to HAL are satisfied.
+One of the last steps in the item submission workflow will test if the non metadata requirements for the item to be sent to HAL are satisfied.
 
 ![Image not loading](/readme_images/hal_compliance.png?raw=true)
 
 ## HAL sidebar link <a name="HAL-sidebar-link"></a>
-In the item view of an archived item, the sidebar contains a link to verify the HAL status. Click this link to see if an item has been sent to HAL. In case it's not sent, the reason for it will be given.
+In the item view of an archived item, the sidebar contains a link to verify the HAL status. Click this link to see if an item has been sent to HAL. If the item isn't in HAL yet, you can upload it to HAl by using the popup.
 
 # Patch Installation Procedures <a name="Patch-installation-procedures"></a>
 
@@ -118,7 +118,7 @@ After the repository has been rebuild and redeployed, the tomcat will need to be
 
 ## Configure the metadata mapping <a name="Metadata-mapping"></a>
 
-Your HAL login credentials should be configured in the `hal.login.user` and `hal.login.pass` configuration parameters in `dspace/config/modules/hal.cfg`. The default values of the other configuration parameters in this file are set to use the HAL test servers. When moving to a production environment, these should be updated. To make this easy, a second set of the relevant parameters has been been included in this file, and commented out. To configure the HAL patch to use the production environment, simply uncomment the block
+Your HAL login credentials should be configured in the `hal.login.user` and `hal.login.pass` configuration parameters in `dspace/config/modules/hal.cfg`. The default values of the other configuration parameters in this file are set to use the HAL test servers. When moving to a production environment, these should be updated. To make this easy, a second set of the relevant parameters has been included in this file, and commented out. To configure the HAL patch to use the production environment, simply uncomment the block below & fill in the missing parameters.
 
 ```
 # HAL.login.user = ****
@@ -133,7 +133,7 @@ Your HAL login credentials should be configured in the `hal.login.user` and `hal
 
 and comment out the testing version of these parameters. In the end, each of the listed parameters should only occur once in this configuration file.
 
-The same file also contains a list of all hal metadata fields. In this example
+The same file also contains the metadata mapping. In the example below
 
 ```
 # HAL Label: Laboratory
@@ -141,3 +141,39 @@ hal.export.laboratory = dc.contributor.author
 ```
 
 the HAL field "Laboratory" is linked to the "dc.contributor.author" dspace metadata field. Some of the HAL fields only take a specific set of values. The allowed values are documented on the HAL website. For all relevant fields, a link to this HAL website is provided in the configuration file. The list of allowed values can be used to generate a controlled vocabulary or value-pairs in the input-forms.
+
+```
+# HAL Label: Audience
+# Possible values: https://api.archives-ouvertes.fr/ref/metadataList/?q=metaName_s:audience&fl=*&wt=xml
+hal.export.audience = hal.audience
+```
+
+The above configuration contains an example where the "hal.audience" field is sent to the HAL field with label: "Audience", but HAL only accepts a limited list of values:
+* 1
+* 2
+* 3
+
+For these fields you don't have to store the integer in the metadata, the HAL patch provides some internal mapping as well for these fields. 
+To see this mapping search for "hal.export.audience" in the "hal-sword-export.xml" file, it will look like this:
+```xml
+<bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.SingleValueMappedAttributeMetadataFieldGenerator">
+    <property name="elementName" value="note"/>
+    <property name="metadataField" value="${hal.export.audience}"/>
+    <property name="attributeName" value="n"/>
+    <property name="attributes">
+        <bean class="com.atmire.dspace.hal.xmlgenerating.attributes.metadata.ValueAsAttributeGenerator">
+            <property name="name" value="type"/>
+            <property name="value" value="audience"/>
+        </bean>
+    </property>
+    <property name="map">
+        <map>
+            <entry key="Non spécifiée" value="1"/>
+            <entry key="Internationale" value="2"/>
+            <entry key="Nationale" value="3"/>
+        </map>
+    </property>
+</bean>
+```                                            
+
+The property "map" contains as a key the values that are possible as metadata values, the left contains the values that DSpace can have in the metadata, the "value" contains the value that is sent to HAL. 
