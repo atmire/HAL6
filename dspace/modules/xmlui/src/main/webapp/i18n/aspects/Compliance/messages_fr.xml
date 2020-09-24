@@ -5,6 +5,7 @@
     <message key="xmlui.administrative.item.ItemComplianceMain.no_item">Aucune publication trouvée</message>
     <message key="xmlui.administrative.item.ItemComplianceMain.return">Retour à la publication</message>
     <message key="xmlui.administrative.item.ItemComplianceMain.item">Publication </message>
+    <message key="xmlui.compliance.ComplianceUI.applicable_help_hal">                  <p>L’archive ouverte pluridisciplinaire HAL, est destinée au dépôt et à la diffusion d’articles scientifiques de niveau recherche, publiés ou non, et de thèses, émanant des établissements d’enseignement et de recherche français ou étrangers, des laboratoires publics ou privés.</p>                  <p>Les règles à respecter pour permettre à votre dépôt d’être également répertorié sur HAL sont listées ci-dessous.</p>          </message>
     <message key="xmlui.compliance.ComplianceUI.info1">Actions que vous pouvez effectuer :</message>
     <message key="xmlui.compliance.ComplianceUI.continue">Suite</message>
     <message key="xmlui.compliance.ComplianceUI.continue_info">Sélectionnez Suite pour envoyer le document à l'étape suivante du workflow.</message>
