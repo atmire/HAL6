@@ -1,42 +1,15 @@
 <?xml version="1.0"?>
-<!--
-
-    The contents of this file are subject to the license and copyright
-    detailed in the LICENSE and NOTICE files at the root of the source
-    tree and available online at
-
-    http://www.dspace.org/license/
-
--->
 <catalogue xml:lang="en" xmlns:i18n="http://apache.org/cocoon/i18n/2.1">
-    <message key="xmlui.Submission.submit.input.hal.head.dc_contributor_author">Add Author</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.changeAuthor">Change Author</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structureByAuthor">Lookup Author's Structures</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structureByName">Rechercher</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.nostructures.error">This author does not have any associated structures in HAL.</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.nostructures.warn">No HAL structures were found.</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.notewhile">Please note that this lookup might take a while!</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.nostructures.error">There was an issue with the structures lookup, please try again.</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.div.canadditional">You can add additional structures to this list by using "Add additional Structures" below.<br></br>Only the checked structures will be stored.</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.div.enteredabove">Lookup structures linked to the author's name you entered above.</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.fieldset.additional.legend">Add Additional Structures</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.fieldset.additional.legend1">Par défaut, l'affiliation la plus récente de l'auteur est sélectionnée lorsque cette information est disponible.
-        Il vous est possible d'intervenir manuellement sur les affiliations dans le cas où plusieurs seraient nécessaires ou si la date de cette publication implique qu'une autre affiliation est d'application.
-        Les autres affiliations connues de l'auteur dans LillOA sont proposées mais il vous est, par ailleurs, possible d'utiliser l'outil de recherche ci-dessous pour en ajouter d'autres.</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.fieldset.additional.legend2">Rechercher une autre affiliation</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structuresToAuthor">Ajouter l'affiliation sélectionnée à l'auteur</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structuresToAuthorUpdate">Valider</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structuresToAuthorCancel">Annuler</message>
-    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.retryLookup">Retry the failed lookup</message>
-
-
-
-    <message key="xmlui.Submission.submit.resetFields">Reset fields</message>
-
-
+    <message key="modal.cancel.function">Cancel</message>
+    <message key="modal.title.addStructures">Add additional structures to the author</message>
+    <message key="modal.title.previously-added-authors">Previously added structures for author:</message>
+    <message key="modal.title.updateFunction">Update this author's function</message>
+    <message key="modal.update.function">Update</message>
+    <message key="xmlui.administrative.item.EditItemMetadataForm.child-value.header"><br/>Child Values:</message>
+    <message key="xmlui.administrative.item.EditItemMetadataForm.parent-value.header"><br/>Parent value:<br/>{0}</message>
+    <message key="xmlui.administrative.item.EditItemMetadataForm.remove">Language</message>
     <message key="xmlui.administrative.item.EditItemStatusForm.faultCode">{0} Please rectify this error &amp; perform the HAL operation again.</message>
     <message key="xmlui.administrative.item.EditItemStatusForm.hal_response">HAL fault message</message>
-
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal">HAL Status</message>
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_action_modify">Submit metadata changes</message>
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_action_noactionavailable">No action available</message>
@@ -45,60 +18,60 @@
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_action_submit">Submit item to HAL</message>
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_action_update">Update HAL item (new version)</message>
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_actions">Possible HAL operations</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_all_authors_need_structures"><span class="label label-danger">All the authors attached to this item need a structure associated to them</span></message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_authors_without_structures"><span class="label label-danger">The item has at least one author without a structure attached, because of this the item cannot be sent to HAL.</span></message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_error">Hal error</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_no_author_with_structure"><span class="label label-danger">At least one author attached to this item needs a structure associated to him/her</span></message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_no_files"><span class="label label-danger">The item has no files attached to it, because of this the item cannot be sent to HAL.</span></message>
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_accept">Item accepted in HAL</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_error">There was an error when retrieving the HAL status for this item, try again later.</message>
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_nostatus">Not known in HAL - Please submit - Please note the item still has to meet all requirements by HAL (authors with structures, contain at least one PDF/PS/RTF file...)</message>
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_update">HAL requested update - Please submit metadata update</message>
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_verify">Item awaiting verification - Nothing you can do right now</message>
-    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_error">There was an error when retrieving the HAL status for this item, try again later.</message>
-    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_error">Hal error</message>
     <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_warning">Hal warning</message>
-    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_authors_without_structures"><span class="label label-danger">The item has at least one author without a structure attached, because of this the item cannot be sent to HAL.</span></message>
-    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_no_files"><span class="label label-danger">The item has no files attached to it, because of this the item cannot be sent to HAL.</span></message>
-    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_all_authors_need_structures"><span class="label label-danger">All the authors attached to this item need a structure associated to them</span></message>
-    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_no_author_with_structure"><span class="label label-danger">At least one author attached to this item needs a structure associated to him/her</span></message>
-
-
-    <message key="xmlui.hal.Navigation.head">Hal</message>
-    <message key="xmlui.hal.Navigation.resend-to-hal">Resend Item To HAL</message>
-    <message key="xmlui.hal.Navigation.hal-status">HAL status</message>
+    <message key="xmlui.hal.compliance">HAL Compliance</message>
+    <message key="xmlui.hal.compliance.info.link">(more info)</message>
+    <message key="xmlui.hal.error">Previous error</message>
+    <message key="xmlui.hal.identifier">HAL Identifier</message>
+    <message key="xmlui.hal.link">HAL link</message>
+    <message key="xmlui.hal.manage.author">Manage author</message>
+    <message key="xmlui.hal.manage.functions">Alter Function</message>
+    <message key="xmlui.hal.manage.structures">Manage Structures</message>
     <message key="xmlui.hal.Navigation.compliance.compliant">Compliant</message>
     <message key="xmlui.hal.Navigation.compliance.not-compliant">Non Compliant</message>
-
-    <message key="xmlui.hal.version">HAL Version</message>
-    <message key="xmlui.hal.identifier">HAL Identifier</message>
-    <message key="xmlui.hal.status">HAL Status</message>
-    <message key="xmlui.hal.status.unknown">Unknown</message>
-    <message key="xmlui.hal.link">HAL link</message>
-    <message key="xmlui.hal.compliance">HAL Compliance</message>
-    <message key="xmlui.hal.error">Previous error</message>
+    <message key="xmlui.hal.Navigation.hal-status">HAL status</message>
+    <message key="xmlui.hal.Navigation.head">Hal</message>
+    <message key="xmlui.hal.Navigation.resend-to-hal">Resend Item To HAL</message>
+    <message key="xmlui.hal.not_valid_1">The item isn't valid and can not be sent to HAL.</message>
+    <message key="xmlui.hal.not_valid_2">here</message>
     <message key="xmlui.hal.send">Create new HAL version</message>
+    <message key="xmlui.hal.send.correction">Send correction(s) to HAL</message>
     <message key="xmlui.hal.send.first">Send item to HAL</message>
     <message key="xmlui.hal.send.metadata">Update metadata in HAL</message>
-    <message key="xmlui.hal.send.correction">Send correction(s) to HAL</message>
-    <message key="xmlui.hal.not_valid_1">The item isn't valid. For more information, click</message>
-    <message key="xmlui.hal.not_valid_2">here</message>
+    <message key="xmlui.hal.status">HAL Status</message>
     <message key="xmlui.hal.status.error">Error retrieving HAL status</message>
     <message key="xmlui.hal.status.unknown">Unknown</message>
-    <message key="xmlui.hal.manage.author">Manage author</message>
-    <message key="xmlui.hal.manage.structures">Gérer les affiliations</message>
-    <message key="xmlui.hal.manage.functions">Type de contribution</message>
-    <message key="xmlui.hal.compliance.info.link">(more info)</message>
+    <message key="xmlui.hal.status.unknown">Unknown</message>
+    <message key="xmlui.hal.version">HAL Version</message>
     <message key="xmlui.not.in.hal">This item is not present in HAL yet, click the "Send item to HAL" to deposit the item and it's attached file(s).</message>
-    <message key="modal.title.addStructures">Ajouter ou modifier l'affiliation de l'auteur</message>
-    <message key="modal.title.updateFunction">Précisez la contribution de cet auteur</message>
-    <message key="modal.title.previously-added-authors">Affiliations déjà connues pour l'auteur: </message>
-    <message key="modal.update.function">Valider</message>
-    <message key="modal.cancel.function">Annuler</message>
-
-    <message key="xmlui.administrative.item.EditItemMetadataForm.child-value.header"><br/>Child Values:</message>
-    <message key="xmlui.administrative.item.EditItemMetadataForm.parent-value.header"><br/>Parent value:<br/>{0}</message>
-
-    <message key="xmlui.Submission.submit.input.affiliation.button.structureByName">Recherchez une structure de recherche</message>
-    <message key="xmlui.Submission.submit.input.affiliation.notewhile">La recherche peut prendre quelques instants</message>
-    <message key="modal.title.addStructures.affiliation">Ajoutez une affiliation à votre profil </message>
-
-    <message key="xmlui.administrative.item.EditItemMetadataForm.child-value.header"><br/>Child Values:</message>
-    <message key="xmlui.administrative.item.EditItemMetadataForm.parent-value.header"><br/>Parent value:<br/>{0}</message>
     <message key="xmlui.Submission.structure.allow-invalid-checkbox">Check to allow non-valid affiliations</message>
-
+    <message key="xmlui.Submission.submit.DescribeStep.hal_lookup_help">While the provided author has been added to the submission, there was an issue when retrieving the attached structures. If you suspect this author needs a particular structure, you can add it by using the "Manage structures" button attached to it. </message>
+    <message key="xmlui.Submission.submit.input.affiliation.button.structureByName">Lookup By Structure Name</message>
+    <message key="xmlui.Submission.submit.input.affiliation.notewhile">Please note that this lookup might take a while!</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.changeAuthor">Change Author</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.retryLookup">Retry the failed lookup</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structureByAuthor">Lookup Author's Structures</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structureByName">Lookup By Structure Name</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structuresToAuthor">Add selected structures to Author</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structuresToAuthorCancel">Cancel</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structuresToAuthorUpdate">Update</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.div.canadditional">You can add additional structures to this list by using "Add additional Structures" below.<br></br>Only the checked structures will be stored.</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.div.enteredabove">Lookup structures linked to the author's name you entered above.</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.fieldset.additional.legend">Add Additional Structures</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.nostructures.error">There was an issue with the structures lookup, please try again.</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.nostructures.error">This author does not have any associated structures in HAL.</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.nostructures.warn">No HAL structures were found.</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.notewhile">Please note that this lookup might take a while!</message>
+    <message key="xmlui.Submission.submit.input.hal.head.dc_contributor_author">Add Author</message>
+    <message key="xmlui.Submission.submit.resetFields">Reset fields</message>
 </catalogue>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<catalogue xml:lang="en" xmlns:i18n="http://apache.org/cocoon/i18n/2.1">
+    <message key="modal.cancel.function">Annuler</message>
+    <message key="modal.title.addStructures">Ajouter des affiliations supplémentaires à l'auteur</message>
+    <message key="modal.title.previously-added-authors">Affiliations précédemment ajoutées pour l'auteur:</message>
+    <message key="modal.title.updateFunction">Mettre à jour la fonction de cet auteur</message>
+    <message key="modal.update.function">Mettre à jour</message>
+    <message key="xmlui.administrative.item.EditItemMetadataForm.child-value.header"><br/>TODO</message>
+    <message key="xmlui.administrative.item.EditItemMetadataForm.parent-value.header"><br/>TODO<br/>{0}</message>
+    <message key="xmlui.administrative.item.EditItemMetadataForm.remove">TODO</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.faultCode">{0} Corrigez cette erreur et effectuez à nouveau l'opération.</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.hal_response">Message d'erreur dans HAL</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal">Statut dans HAL</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_action_modify">Proposer les modifications de métadonnées</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_action_noactionavailable">Aucune action disponible</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_action_noactionselected">Aucune modification de métadonnées ou de fichier à déposer</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_action_replace">Mise à jour des fichiers dans HAL (nouvelle version)</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_action_submit">Déposer un document dans HAL</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_action_update">Mettre à jour le document dans HAL (nouvelle version)</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_actions">Opérations possibles dans HAL</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_all_authors_need_structures"><span class="label label-danger">Tous les auteurs de cette publication doivent avoir une affiliation</span></message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_authors_without_structures"><span class="label label-danger">La publication a au moins un auteur sans affiliation car elle ne peut pas être envoyée à HAL.</span></message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_error">Erreur HAL</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_no_author_with_structure"><span class="label label-danger">Cette publication doit avoir au minimum un auteur avec une affiliation</span></message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_no_files"><span class="label label-danger">Aucun fichier n'est associé à cette publication. Par conséquence, elle ne peut pas être envoyée vers HAL.</span></message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_accept">Publication acceptée par HAL</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_error">Une erreur est survenue lors de la récupération du statut HAL pour cette publication, réessayez plus tard.</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_nostatus">Publication non connue dans HAL - Vous pouvez l'envoyer - Veuillez noter qu'elle doit encore répondre à toutes les exigences de HAL (auteurs avec structures, contenant au moins un fichier PDF / PS / RTF ...)</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_update">Mise à jour demandée par HAL - Veuillez déposer des métadonnées à jour</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_status_verify">Publication en attente de vérification - Veuillez patienter.</message>
+    <message key="xmlui.administrative.item.EditItemStatusForm.label_hal_warning">Avertissement Hal</message>
+    <message key="xmlui.hal.compliance">Conformité avec HAL</message>
+    <message key="xmlui.hal.compliance.info.link">(plus d'information)</message>
+    <message key="xmlui.hal.error">Erreur précédente</message>
+    <message key="xmlui.hal.identifier">Identifiant HAL</message>
+    <message key="xmlui.hal.link">Lien HAL</message>
+    <message key="xmlui.hal.manage.author">Modifier l'auteur</message>
+    <message key="xmlui.hal.manage.functions">Modifier la fonction</message>
+    <message key="xmlui.hal.manage.structures">Modifier les affiliations</message>
+    <message key="xmlui.hal.Navigation.compliance.compliant">Conforme</message>
+    <message key="xmlui.hal.Navigation.compliance.not-compliant">Non conforme</message>
+    <message key="xmlui.hal.Navigation.hal-status">Statut HAL</message>
+    <message key="xmlui.hal.Navigation.head">HAL</message>
+    <message key="xmlui.hal.Navigation.resend-to-hal">Renvoyer la publication vers HAL</message>
+    <message key="xmlui.hal.not_valid_1">Cette publication n'est pas valide et ne peut pas être envoyée vers HAL</message>
+    <message key="xmlui.hal.not_valid_2">ici</message>
+    <message key="xmlui.hal.send">Créer une nouvelle version sur HAL</message>
+    <message key="xmlui.hal.send.correction">TODO</message>
+    <message key="xmlui.hal.send.first">Envoyer la publication vers HAL</message>
+    <message key="xmlui.hal.send.metadata">Mettre à jour les métadonnées sur HAL</message>
+    <message key="xmlui.hal.status">Statut HAL</message>
+    <message key="xmlui.hal.status.error">Erreur lors de la récupération du statut HAL</message>
+    <message key="xmlui.hal.status.unknown">Inconnue</message>
+    <message key="xmlui.hal.status.unknown">Inconnue</message>
+    <message key="xmlui.hal.version">Version de HAL</message>
+    <message key="xmlui.not.in.hal">Cette publication n'est pas encore présente dans HAL. Cliquez sur "Envoyer la publication vers HAL" pour la déposer avec le (s) fichier (s) joint (s).</message>
+    <message key="xmlui.Submission.structure.allow-invalid-checkbox">TODO</message>
+    <message key="xmlui.Submission.submit.DescribeStep.hal_lookup_help">TODO</message>
+    <message key="xmlui.Submission.submit.input.affiliation.button.structureByName">Vérifier par nom d'affiliation</message>
+    <message key="xmlui.Submission.submit.input.affiliation.notewhile">Cette recherche peut prendre un certain temps !</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.changeAuthor">Changer l'auteur</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.retryLookup">Echec : relancer la recherche </message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structureByAuthor">Vérifier l'affiliation de l'auteur</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structureByName">Vérifier par nom d'affiliation</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structuresToAuthor">Ajouter les affiliations sélectionnées à l'auteur</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structuresToAuthorCancel">Annuler</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.button.structuresToAuthorUpdate">Mettre à jour</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.div.canadditional">Vous pouvez ajouter des affiliations supplémentaires à cette liste en cliquant "Ajouter des affiliations supplémentaires" ci-dessous. <br> </br> Seules les structures cochées seront enregistrées.</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.div.enteredabove">Vérifier les affiliations de recherche liées au nom de l'auteur que vous avez entré ci-dessus.</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.fieldset.additional.legend">Ajouter des structures supplémentaires</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.nostructures.error">Cet auteur n'a aucune affiliation associée dans HAL.</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.nostructures.error">Cet auteur n'a aucune affiliation associée dans HAL.</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.nostructures.warn">Aucune affiliation dans HAL n'a été trouvée</message>
+    <message key="xmlui.Submission.submit.input.dc_contributor_author.notewhile">Cette recherche peut prendre un certain temps !</message>
+    <message key="xmlui.Submission.submit.input.hal.head.dc_contributor_author">Ajouter un auteur</message>
+    <message key="xmlui.Submission.submit.resetFields">Réinitialisation des champs</message>
+</catalogue>

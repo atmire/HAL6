@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<catalogue xml:lang="en" xmlns:i18n="http://apache.org/cocoon/i18n/2.1">
+    <message key="xmlui.administrative.item.ItemComplianceMain.head">Publication {0} Conforme</message>
+    <message key="xmlui.administrative.item.ItemComplianceMain.trail">Conformité de la publication</message>
+    <message key="xmlui.administrative.item.ItemComplianceMain.no_item">Aucune publication trouvée</message>
+    <message key="xmlui.administrative.item.ItemComplianceMain.return">Retour à la publication</message>
+    <message key="xmlui.administrative.item.ItemComplianceMain.item">Publication </message>
+    <message key="xmlui.compliance.ComplianceUI.info1">Actions que vous pouvez effectuer :</message>
+    <message key="xmlui.compliance.ComplianceUI.continue">Suite</message>
+    <message key="xmlui.compliance.ComplianceUI.continue_info">Sélectionnez Suite pour envoyer le document à l'étape suivante du workflow.</message>
+    <message key="xmlui.compliance.ComplianceUI.return">Retour </message>
+    <message key="xmlui.compliance.ComplianceUI.return_info">Sélectionnez Retour pour renvoyer l'élément à l'étape précédente du workflow s'il n'est pas conforme à toutes les règles.</message>
+    <message key="xmlui.compliance.ComplianceUI.cancel">Annuler</message>
+    <message key="xmlui.compliance.ComplianceUI.top_information_bar_compliant">Félicitations pour votre dépôt sur notre site ! Ce dépôt est conforme aux règles définies pour l'ajout dans {0}!</message>
+    <message key="xmlui.compliance.ComplianceUI.top_information_bar_not_applicable">Cette publication n'est pas admissible à la politique de conformité {0}.</message>
+    <message key="xmlui.compliance.ComplianceUI.top_information_bar_not_compliant">Attention, ce dépôt ne respecte pas les règles définies pour l’ajout dans {0}!</message>
+    <message key="xmlui.compliance.ComplianceUI.not_applicable_help_hal">Tout dépôt sur le site peut potentiellement être conforme aux lignes directrices de HAL. Vous ne devriez pas voir ce message, car cela indique que la publication n'a pas satisfait aux exigences d'admissibilité pour la conformité à HAL.</message>
+    <message key="xmlui.compliance.ComplianceUI.resolution_summary_title">Action(s) corrective(s) requise(s):</message>
+    <message key="xmlui.compliance.ComplianceUI.exceptions_section_title">Exceptions techniques et autres</message>
+    <message key="xmlui.compliance.ComplianceUI.circle_icon"><i class="fa fa-question-circle" aria-hidden="true"> </i></message>
+    <message key="xmlui.compliance.ComplianceUI.rules_show_applicable">(montrer les règles applicables)</message>
+    <message key="xmlui.compliance.ComplianceUI.rules_show_all">(montrer toutes les règles)</message>
+    <message key="xmlui.compliance.ComplianceUI.rules_show">(montrer les règles)</message>
+    <message key="xmlui.compliance.ComplianceUI.rules_hide">(cacher les règles)</message>
+    <message key="xmlui.compliance.ComplianceUI.not_applicable">(non éligible)</message>
+    <message key="xmlui.compliance.ComplianceUI.workflow_disabled_hint">Le dépôt d'articles non conformes est bloquée pour cette collection.</message>
+    <message key="xmlui.compliance.ComplianceUI.estimated_hint"><i>(estimé)*</i></message>
+    <message key="xmlui.compliance.ComplianceUI.estimated_help_info">* Ces valeurs ont été estimés comme pouvant être utilisés pour vérifier la conformité. Ils recevront une valeur réel une fois l'item archivé ou à la fin de l'embargo.</message>
+    <message key="xmlui.Compliance.Navigation.head_compliance">Conformité</message>
+    <message key="xmlui.Compliance.Navigation.item-hal-compliance">Conformité du dépôt aux règles d’export dans HAL</message>
+    <message key="xmlui.compliance.submission.error_blocked">Vous devez résoudre les problèmes de conformité avant de poursuivre la présentation.</message>
+    <message key="xmlui.compliance.submission.head">Conformité du dépôt aux règles d’ajout dans {0}</message>
+    <message key="xmlui.Submission.submit.progressbar.compliance">Conformité</message>
+    <message key="xmlui.Submission.submit.progressbar.hal.compliance">HAL &amp; Licence</message>
+    <message key="xmlui.compliance.submission.ExceptionStep.compliant">Il semble que votre dépôt soit conforme aux exigences de la REF OA. Cela signifie que vous n'avez pas besoin de sélectionner une exception ci-dessus.</message>
+    <message key="xmlui.compliance.submission.ExceptionStep.not_compliant">Votre dépôt n'est pas conforme aux exigences relatives au libre accès pour la prochaine RÉF. Vous pouvez sélectionner une exception ci-dessus relative aux exigences énumérées ci-dessous ou passer à l'étape " Conformité à la REF " pour vérifier pourquoi votre dépôt n'est pas conforme. Les exigences suivantes ne sont pas respectées :</message>
+</catalogue>

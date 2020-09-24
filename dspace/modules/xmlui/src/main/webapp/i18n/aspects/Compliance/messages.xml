@@ -1,36 +1,21 @@
 <?xml version="1.0"?>
-<!--
-
-    The contents of this file are subject to the license and copyright
-    detailed in the LICENSE and NOTICE files at the root of the source
-    tree and available online at
-
-    http://www.dspace.org/license/
-
--->
 <catalogue xml:lang="en" xmlns:i18n="http://apache.org/cocoon/i18n/2.1">
         <message key="xmlui.administrative.item.ItemComplianceMain.head">Item {0} Compliance</message>
         <message key="xmlui.administrative.item.ItemComplianceMain.trail">Item Compliance</message>
         <message key="xmlui.administrative.item.ItemComplianceMain.no_item">No item found</message>
         <message key="xmlui.administrative.item.ItemComplianceMain.return">Return to item</message>
         <message key="xmlui.administrative.item.ItemComplianceMain.item">Item</message>
-
-        <message key="xmlui.compliance.ComplianceUI.applicable_help_hal">
-                <p>L’archive ouverte pluridisciplinaire HAL, est destinée au dépôt et à la diffusion d’articles scientifiques de niveau recherche, publiés ou non, et de thèses, émanant des établissements d’enseignement et de recherche français ou étrangers, des laboratoires publics ou privés.</p>
-                <p>Les règles à respecter pour permettre à votre dépôt d’être également répertorié sur HAL sont listées ci-dessous.</p>
-        </message>
-
         <message key="xmlui.compliance.ComplianceUI.info1">Actions you may perform on this task:</message>
         <message key="xmlui.compliance.ComplianceUI.continue">Continue</message>
         <message key="xmlui.compliance.ComplianceUI.continue_info">Select Continue to send the item to the next workflow step.</message>
         <message key="xmlui.compliance.ComplianceUI.return">Return</message>
         <message key="xmlui.compliance.ComplianceUI.return_info">Select Return to send the item back to the previous workflow step if it is not compliant with all the rules.</message>
         <message key="xmlui.compliance.ComplianceUI.cancel">Cancel</message>
-        <message key="xmlui.compliance.ComplianceUI.top_information_bar_compliant">Félicitations, ce dépôt est conforme aux règles définies pour l’ajout dans {0}!</message>
-        <message key="xmlui.compliance.ComplianceUI.top_information_bar_not_compliant">Attention, ce dépôt ne respecte pas les règles définies pour l’ajout dans {0}!</message>
+        <message key="xmlui.compliance.ComplianceUI.top_information_bar_compliant">The item sent is compliant with all the rules defined for being added at {0}!</message>
+        <message key="xmlui.compliance.ComplianceUI.top_information_bar_not_compliant">Warning, this submission does not respect the rules defined for being added at  {0}!</message>
         <message key="xmlui.compliance.ComplianceUI.top_information_bar_not_applicable">This item is not eligible for the {0} compliance policy</message>
         <message key="xmlui.compliance.ComplianceUI.not_applicable_help_hal">Any submission to the repository can potentially comply to the HAL guidelines. You should not see this message, as this indicates that the publication has not met eligibility requirements for HAL compliance.</message>
-        <message key="xmlui.compliance.ComplianceUI.resolution_summary_title">Action(s) corrective(s) requise(s):</message>
+        <message key="xmlui.compliance.ComplianceUI.resolution_summary_title">Required Action(s) :</message>
         <message key="xmlui.compliance.ComplianceUI.exceptions_section_title">Technical and Other Exceptions</message>
         <message key="xmlui.compliance.ComplianceUI.circle_icon"><i class="fa fa-question-circle" aria-hidden="true"> </i></message>
         <message key="xmlui.compliance.ComplianceUI.rules_show_applicable">(show applicable rules)</message>
@@ -41,17 +26,12 @@
         <message key="xmlui.compliance.ComplianceUI.workflow_disabled_hint">The submission of non-compliant items is blocked for this collection.</message>
         <message key="xmlui.compliance.ComplianceUI.estimated_hint"><i>(estimated)*</i></message>
         <message key="xmlui.compliance.ComplianceUI.estimated_help_info">* These values were estimated so that they could be used in the compliance check. They will receive a “real” value upon item archival or at the end of the embargo.</message>
-
         <message key="xmlui.Compliance.Navigation.head_compliance">Compliance</message>
-        <message key="xmlui.Compliance.Navigation.item-hal-compliance">Conformité du dépôt aux règles d’ajout dans HAL</message>
-
+        <message key="xmlui.Compliance.Navigation.item-hal-compliance">Submission compliance with HAL policy</message>
         <message key="xmlui.compliance.submission.error_blocked">You must resolve the compliance issues before continuing the submission.</message>
-        <message key="xmlui.compliance.submission.head">Conformité du dépôt aux règles d’ajout dans {0)</message>
-
+        <message key="xmlui.compliance.submission.head">Item compliance with submission rules at {0}</message>
         <message key="xmlui.Submission.submit.progressbar.compliance">Compliance</message>
-        <message key="xmlui.Submission.submit.progressbar.hal.compliance">Conformité HAL</message>
-
+        <message key="xmlui.Submission.submit.progressbar.hal.compliance">HAL and license</message>
         <message key="xmlui.compliance.submission.ExceptionStep.compliant">It appears that your submission complies to the REF OA requirements. This means you do not have to select an exception above.</message>
         <message key="xmlui.compliance.submission.ExceptionStep.not_compliant">Your submission does not comply with the Open Access requirements for the next REF. You can select an exception above related to the requirements listed below or proceed to the ‘REF Compliance’ step to check why your submission is not compliant. The following requirements are not met:</message>
-
 </catalogue>
