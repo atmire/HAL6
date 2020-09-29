@@ -5,7 +5,7 @@
         <message key="xmlui.administrative.item.ItemComplianceMain.no_item">No item found</message>
         <message key="xmlui.administrative.item.ItemComplianceMain.return">Return to item</message>
         <message key="xmlui.administrative.item.ItemComplianceMain.item">Item</message>
-        <message key="xmlui.compliance.ComplianceUI.applicable_help_hal">TODO</message>
+        <message key="xmlui.compliance.ComplianceUI.applicable_help_hal"><p>HAL is an open archive where authors can deposit scholarly documents from all academic fields.</p>                  <p>Applicable rules for your submission to be accepted in HAL are listed hereunder.</p></message>
         <message key="xmlui.compliance.ComplianceUI.info1">Actions you may perform on this task:</message>
         <message key="xmlui.compliance.ComplianceUI.continue">Continue</message>
         <message key="xmlui.compliance.ComplianceUI.continue_info">Select Continue to send the item to the next workflow step.</message>
