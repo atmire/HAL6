@@ -145,8 +145,8 @@
             }
 
 
-            var lastName = encodeURIComponent($lastName.val());
-            var firstName = encodeURIComponent($firstName.val());
+            var lastName = $lastName.val();
+            var firstName = $firstName.val();
 
 
             $('div#structure_name_lookup_no_results_authorentered-' + lookupField).addClass('hidden');
