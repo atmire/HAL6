@@ -1,6 +1,7 @@
 - [Introduction](#Introduction)
 - [Acknowledgements](#Acknowledgements)
 - [Features](#Features)
+	- [Sword submission to HAL](#Sword-submission)
 	- [Affiliation lookup](#Affiliation-lookup)
 	- [Submission UI roles](#Submission-UI-roles)
 	- [HAL compliance step](#HAL-compliance-step)
@@ -27,6 +28,10 @@ For more information about HAL, please refer to https://hal.archives-ouvertes.fr
 The HAL patch has been supported and funded by the University of Lille (https://www.univ-lille.fr/) and the University of Bordeaux (www.u-bordeaux.com) within the framework IdEx Bordeaux n° ANR 10-IDEX-03-02, and developed by Atmire (https://www.atmire.com/).
 
 # Features <a name="Features"></a>
+
+## Sword submission to HAL <a name="Sword-submission"></a>
+The key feature of the HAL patch is to enable DSpace repositories to push items to the HAL repository using Sword protocol (as described in the HAL API documentation under https://api.archives-ouvertes.fr/docs/sword).
+The deposit to HAL relies on specific metadata mappings to translate the DSpace metadata into HAL metadata, as explained in the [metadata mapping](#Metadata-mapping) section.
 
 ## Affiliation lookup <a name="Affiliation-lookup"></a>
 A feature has been added to manage affiliations of authors in a new submission. This is done through a new dropdown menu which appears next to each author. This UI provides a search box to search for laboratories. Items which need to be sent to HAL need at least one author with an affiliated laboratory.
